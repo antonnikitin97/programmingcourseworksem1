@@ -27,14 +27,6 @@ public class ZooKeeper {
         return true;
     }
 
-    public ArrayList<String> checkEmptyItems() // Checks for food items that have ran out, returns a string array of such items
-    {
-        for(String s : this.zooFoodStore.getAvailableFoodInZoo())
-        {
-
-        }
-    }
-
     public void getFoodFromZooStore()
     {
 
