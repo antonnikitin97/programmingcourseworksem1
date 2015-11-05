@@ -10,10 +10,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/Tiger.class" afterPath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/Tiger.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/Zoo.class" afterPath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/Zoo.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/ZooKeeper.class" afterPath="$PROJECT_DIR$/out/production/ECS Zoo/com/company/ZooKeeper.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Zoo.java" afterPath="$PROJECT_DIR$/src/com/company/Zoo.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" afterPath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
     </list>
     <ignored path="ECS Zoo.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -79,8 +76,8 @@
       <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.75974023">
-              <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
+            <state vertical-scroll-proportion="0.35064936">
+              <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -297,7 +294,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="dynamic.classpath" value="false" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
+    <property name="settings.editor.selected.configurable" value="vcs.Git" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
@@ -740,12 +737,19 @@
       <workItem from="1446647301456" duration="4995000" />
       <workItem from="1446655825654" duration="1629000" />
       <workItem from="1446672017993" duration="612000" />
-      <workItem from="1446727914536" duration="1615000" />
+      <workItem from="1446727914536" duration="1674000" />
     </task>
+    <task id="LOCAL-00001" summary="Added getFoodAvaliable into the zoo class&#10;Changed project SDK to java 8 to work with ubuntu.">
+      <created>1446731159820</created>
+      <option name="number" value="00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1446731159820</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="51089000" />
+    <option name="totallyTimeSpent" value="51148000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="65" y="52" width="1248" height="1028" extended-state="4" />
@@ -787,6 +791,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added getFoodAvaliable into the zoo class&#10;Changed project SDK to java 8 to work with ubuntu." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added getFoodAvaliable into the zoo class&#10;Changed project SDK to java 8 to work with ubuntu." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1258,8 +1266,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.75974023">
-          <caret line="39" column="84" selection-start-line="39" selection-start-column="84" selection-end-line="39" selection-end-column="84" />
+        <state vertical-scroll-proportion="0.35064936">
+          <caret line="18" column="5" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
           <folding />
         </state>
       </provider>
