@@ -28,6 +28,7 @@ public class Lion extends BigCat
     public Boolean aMonthPasses()
     {
         eat();
+        this.monhtlyHealthDecrease();
         return true;
     }
 }

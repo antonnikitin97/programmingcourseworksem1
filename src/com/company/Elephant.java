@@ -28,6 +28,7 @@ public class Elephant extends Animal
     @Override
     public Boolean aMonthPasses()
     {
+        eat();
         return true;
     }
 }

@@ -28,6 +28,7 @@ public class Giraffe extends Animal
     @Override
     public Boolean aMonthPasses()
     {
+        eat();
         return true;
     }
 }

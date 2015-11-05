@@ -52,6 +52,11 @@ public class Enclosure
 		return animalWaste;
 	}
 
+    public void removeAnimalWaste(Integer wasteToRemove)
+    {
+        this.animalWaste -= wasteToRemove;
+    }
+
 	public FoodStore getFoodStore()
 	{
 		return foodStore;

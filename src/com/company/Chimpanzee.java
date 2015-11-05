@@ -27,6 +27,7 @@ public class Chimpanzee extends Ape
     @Override
     public Boolean aMonthPasses()
     {
+        eat();
         return true;
     }
 }

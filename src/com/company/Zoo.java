@@ -11,8 +11,7 @@ public class Zoo
     public Zoo()
     {
         zooFoodStore = new FoodStore();
-        foodAvailable = this.zooFoodStore.getAvailableFoodInZoo();
-        for(String s : foodAvailable)
+        for(String s : this.zooFoodStore.getAvailableFoodInZoo())
         {
             zooFoodStore.foodStorage.put(s , 200);
         }
@@ -34,10 +33,4 @@ public class Zoo
         enclosures[1].addAnimal(new Lion());
         enclosures[1].addAnimal(new Lion());
     }
-
-    public String[] getFoodAvailable()
-    {
-        return new String[]{"celery" , "ice cream" , "steak", "fish", "fruit", "hay"};
-    }
-
 }

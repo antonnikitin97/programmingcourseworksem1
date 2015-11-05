@@ -29,7 +29,30 @@ public class ZooKeeper {
 
     public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodstore.
     {
-        for(String s : this.zoo.)
+        Integer itemsMoved = 0;
+
+        while(itemsMoved <= 20)
+        {
+            for(String s : this.zoo.zooFoodStore.getAvailableFoodInZoo())
+            {
+                if(this.zooFoodStore.takeFood(s , 2)) {
+                    this.foodStoreKeeperAssignedTo.addFood(s, 2);
+                    itemsMoved += 2;
+                }else{
+                    System.out.format("Not enough of %s in zoo food store to move to enclosure!", s);
+                    itemsMoved += 0;
+                }
+            }
+        }
+    }
+
+    public void removedWasteFromEnclosure()
+    {
+        if(this.enclosureKeeperAssignedTo.getWasteSize() >= 20) {
+            this.enclosureKeeperAssignedTo.removeAnimalWaste(20);
+        }else{
+            this.enclosureKeeperAssignedTo.removeAnimalWaste(this.enclosureKeeperAssignedTo.getWasteSize());
+        }
     }
 }
 

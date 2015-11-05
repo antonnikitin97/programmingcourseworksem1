@@ -55,7 +55,6 @@ public abstract class Animal
                 return true;
             }
         }
-
         return false;
     }
 
@@ -65,7 +64,21 @@ public abstract class Animal
         Integer failedAttempts = 0;
         for(String s : temp.foodStorage.keySet())
         {
-
+            if(this.canEat(s))
+            {
+                if(temp.takeFood(s)) {
+                    temp.giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
+                    break;
+                }else{
+                    if(failedAttempts == this.eats.length)
+                    {
+                        System.out.println("\nNot enough food to feed animal! We should order more food!\n");
+                        break;
+                    }
+                    System.out.format("Not enough of %s in store, continuing search... " , s);
+                    failedAttempts += 1;
+                }
+            }
         }
     }
 
