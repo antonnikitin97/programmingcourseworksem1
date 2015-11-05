@@ -7,7 +7,6 @@ public class Zoo
     protected Enclosure[] enclosures;
     protected ArrayList<ZooKeeper> zooKeepers;
     protected FoodStore zooFoodStore;
-    protected String[] foodAvailable;
 
     public Zoo()
     {
@@ -34,6 +33,11 @@ public class Zoo
         enclosures[1].addAnimal(new Lion());
         enclosures[1].addAnimal(new Lion());
         enclosures[1].addAnimal(new Lion());
+    }
+
+    public String[] getFoodAvailable()
+    {
+        return new String[]{"celery" , "ice cream" , "steak", "fish", "fruit", "hay"};
     }
 
 }

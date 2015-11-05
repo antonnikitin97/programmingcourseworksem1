@@ -13,7 +13,7 @@ public class ZooKeeper {
 
     public ZooKeeper()
     {
-        // I have no idea why we need this...
+        // Default constructor for zookeeper
     }
 
     public ZooKeeper(Zoo zoo, Enclosure enclosureToSet, FoodStore zooFoodStore) {
@@ -27,9 +27,9 @@ public class ZooKeeper {
         return true;
     }
 
-    public void getFoodFromZooStore()
+    public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodstore.
     {
-
+        for(String s : this.zoo.)
     }
 }
 
