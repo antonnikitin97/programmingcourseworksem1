@@ -33,4 +33,13 @@ public class Zoo
         enclosures[1].addAnimal(new Lion());
         enclosures[1].addAnimal(new Lion());
     }
+
+    public void orderAdditionalFood() // This method will order additional food for the zoo food store
+    {
+        for(String s : this.zooFoodStore.foodStorage.keySet())
+        {
+            this.zooFoodStore.addFood(s, 10);
+            System.out.format("10 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!", s , this.zooFoodStore.getFoodQuantity(s), s);
+        }
+    }
 }

@@ -29,19 +29,13 @@ public class ZooKeeper {
 
     public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodstore.
     {
-        Integer itemsMoved = 0;
-
-        while(itemsMoved <= 20)
+        for(String s : this.zooFoodStore.foodStorage.keySet())
         {
-            for(String s : this.zoo.zooFoodStore.getAvailableFoodInZoo())
-            {
-                if(this.zooFoodStore.takeFood(s , 2)) {
-                    this.foodStoreKeeperAssignedTo.addFood(s, 2);
-                    itemsMoved += 2;
-                }else{
-                    System.out.format("Not enough of %s in zoo food store to move to enclosure!", s);
-                    itemsMoved += 0;
-                }
+            if(this.zooFoodStore.takeFood(s, 2)) {
+                this.foodStoreKeeperAssignedTo.addFood(s, 2);
+                System.out.format("\n2 lots of %s has been added to the enclosure!\n", s);
+            }else{
+                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", s);
             }
         }
     }
