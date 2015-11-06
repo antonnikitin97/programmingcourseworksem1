@@ -9,6 +9,6 @@ public class PlayZooKeeper extends ZooKeeper
 
     public PlayZooKeeper()
     {
-
+        this.keeperLabel = 1;
     }
 }

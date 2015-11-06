@@ -1,6 +1,18 @@
+/*
+ZooKeeper class houses all basic  functionality for the zookeeper, includes methods to get food from the zoo enclosure into the enclosure store, remove waste from
+the enclosure and a 'aMonthPasses' method. This is the base class for the Physio and Play ZooKeeper classes. As certain treats can only be administered by certain
+types of zookeepers, the base class has a 'keeperLabel' that all the other types will use. Each different keeper has a certain 'value' as follows:
+
+0 - default zookeeper
+1 - play keeper
+2 - physio keeper
+
+These will be used when deciding if a certain zookeeper can perform a given treat
+
+*/
+
 package com.company;
 
-import java.util.ArrayList;
 import java.util.Random;
 
 public class ZooKeeper {
@@ -10,6 +22,7 @@ public class ZooKeeper {
     protected FoodStore foodStoreKeeperAssignedTo;
     protected FoodStore zooFoodStore;
     protected Random randomGen = new Random();
+    protected Integer keeperLabel;
 
     public ZooKeeper()
     {
@@ -21,6 +34,7 @@ public class ZooKeeper {
         this.foodStoreKeeperAssignedTo = enclosureKeeperAssignedTo.getFoodStore();
         this.zooFoodStore = zooFoodStore;
         this.zoo = zoo;
+        this.keeperLabel = 0;
     }
 
     public Boolean aMonthPasses() {
