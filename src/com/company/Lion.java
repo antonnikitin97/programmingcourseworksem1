@@ -1,5 +1,8 @@
-package com.company;
+/*
 
+*/
+
+package com.company;
 
 public class Lion extends BigCat
 {

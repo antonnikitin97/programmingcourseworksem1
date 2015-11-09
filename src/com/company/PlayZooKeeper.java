@@ -5,12 +5,8 @@ package com.company;
  */
 public class PlayZooKeeper extends ZooKeeper
 {
-    public PlayZooKeeper(Zoo zoo, Enclosure enclosureToSet, FoodStore zooFoodStore)
+    public PlayZooKeeper ()
     {
-        this.enclosureKeeperAssignedTo = enclosureToSet;
-        this.foodStoreKeeperAssignedTo = enclosureKeeperAssignedTo.getFoodStore();
-        this.zooFoodStore = zooFoodStore;
-        this.zoo = zoo;
-        this.keeperLabel = 1;
+        this.keeperLabel = "play";
     }
 }

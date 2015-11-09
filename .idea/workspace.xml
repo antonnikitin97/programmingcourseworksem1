@@ -1,16 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b56dfaef-1a8a-4575-aa0f-ffaa2864a160" name="Default" comment="Added comments to the enclosure class.&#10;Added fields from ZooKeeper in the seperate types of zookeeper&#10;Began the process of commenting the classes to explain function&#10;Corrected minor spelling errors in Animal">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Animal.java" afterPath="$PROJECT_DIR$/src/com/company/Animal.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Ape.java" afterPath="$PROJECT_DIR$/src/com/company/Ape.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Bear.java" afterPath="$PROJECT_DIR$/src/com/company/Bear.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/BigCat.java" afterPath="$PROJECT_DIR$/src/com/company/BigCat.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Chimpanzee.java" afterPath="$PROJECT_DIR$/src/com/company/Chimpanzee.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Elephant.java" afterPath="$PROJECT_DIR$/src/com/company/Elephant.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Giraffe.java" afterPath="$PROJECT_DIR$/src/com/company/Giraffe.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Gorilla.java" afterPath="$PROJECT_DIR$/src/com/company/Gorilla.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Penguin.java" afterPath="$PROJECT_DIR$/src/com/company/Penguin.java" />
+    <list default="true" id="b56dfaef-1a8a-4575-aa0f-ffaa2864a160" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/com/company/ConfigFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Lion.java" afterPath="$PROJECT_DIR$/src/com/company/Lion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java" afterPath="$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/PlayZooKeeper.java" afterPath="$PROJECT_DIR$/src/com/company/PlayZooKeeper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Zoo.java" afterPath="$PROJECT_DIR$/src/com/company/Zoo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" afterPath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="ECS Zoo.iws" />
@@ -47,15 +44,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BigCat.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/BigCat.java">
+      <file leaf-file-name="PhysioZooKeeper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
+              <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
               <folding>
-                <element signature="e#92#93#0" expanded="true" />
-                <element signature="e#151#152#0" expanded="true" />
+                <element signature="e#104#105#0" expanded="true" />
+                <element signature="e#140#141#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ECS Zoo.iml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/ECS Zoo.iml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -63,62 +70,62 @@
       <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.10633307">
-              <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+            <state vertical-scroll-proportion="0.6747459">
+              <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
               <folding>
-                <element signature="e#0#1527#0" expanded="true" />
+                <element signature="e#0#1529#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Chimpanzee.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Chimpanzee.java">
+      <file leaf-file-name="Enclosure.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+              <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
               <folding>
-                <element signature="e#88#89#0" expanded="true" />
-                <element signature="e#113#114#0" expanded="true" />
+                <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
+                <element signature="method#removeAnimal#0;class#Enclosure#0" expanded="false" />
+                <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
+                <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Elephant.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Elephant.java">
+      <file leaf-file-name="ZooKeeper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="47" selection-start-line="6" selection-start-column="47" selection-end-line="6" selection-end-column="47" />
+              <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
               <folding>
-                <element signature="e#87#88#0" expanded="true" />
-                <element signature="e#143#144#0" expanded="true" />
+                <element signature="e#0#2511#0" expanded="true" />
+                <element signature="e#1405#1406#0" expanded="true" />
+                <element signature="e#1450#1451#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Giraffe.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Giraffe.java">
+      <file leaf-file-name="ConfigFile.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/ConfigFile.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="49" selection-start-line="6" selection-start-column="49" selection-end-line="6" selection-end-column="49" />
-              <folding>
-                <element signature="e#85#86#0" expanded="true" />
-                <element signature="e#141#142#0" expanded="true" />
-              </folding>
+              <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Gorilla.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Gorilla.java">
+      <file leaf-file-name="PlayZooKeeper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
+              <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
               <folding>
-                <element signature="e#82#83#0" expanded="true" />
-                <element signature="e#107#108#0" expanded="true" />
+                <element signature="e#144#145#0" expanded="true" />
+                <element signature="e#180#181#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -134,25 +141,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Bear.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Bear.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="50" selection-start-line="6" selection-start-column="50" selection-end-line="6" selection-end-column="50" />
-              <folding>
-                <element signature="e#79#80#0" expanded="true" />
-                <element signature="e#136#137#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="Lion.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/Lion.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-              <folding />
+              <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#866#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -185,12 +181,7 @@
         <option value="$PROJECT_DIR$/src/com/company/Tiger.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/FoodStore.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Lion.java" />
         <option value="$PROJECT_DIR$/src/com/company/Enclosure.java" />
-        <option value="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
-        <option value="$PROJECT_DIR$/src/com/company/PlayZooKeeper.java" />
-        <option value="$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Zoo.java" />
         <option value="$PROJECT_DIR$/src/com/company/Chimpanzee.java" />
         <option value="$PROJECT_DIR$/src/com/company/Gorilla.java" />
         <option value="$PROJECT_DIR$/src/com/company/Animal.java" />
@@ -200,6 +191,12 @@
         <option value="$PROJECT_DIR$/src/com/company/Elephant.java" />
         <option value="$PROJECT_DIR$/src/com/company/Giraffe.java" />
         <option value="$PROJECT_DIR$/src/com/company/Penguin.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Zoo.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PlayZooKeeper.java" />
+        <option value="$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Lion.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ConfigFile.java" />
       </list>
     </option>
   </component>
@@ -603,7 +600,7 @@
       <workItem from="1446727914536" duration="5839000" />
       <workItem from="1446809247300" duration="1378000" />
       <workItem from="1446829939949" duration="2541000" />
-      <workItem from="1446910060334" duration="7655000" />
+      <workItem from="1446910060334" duration="10134000" />
     </task>
     <task id="LOCAL-00001" summary="Added getFoodAvaliable into the zoo class&#10;Changed project SDK to java 8 to work with ubuntu.">
       <created>1446731159820</created>
@@ -653,15 +650,21 @@
       <option name="project" value="LOCAL" />
       <updated>1447065459622</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="In the interests of encapsulation:&#10;- Added parameters into constructor to set the life expectancy and the eats array&#10;- Subsequently changed these fields to PRIVATE in the animal class.">
+      <created>1447070966707</created>
+      <option name="number" value="00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1447070966707</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="66887000" />
+    <option name="totallyTimeSpent" value="69366000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -706,7 +709,8 @@
     <MESSAGE value="... General workage on the project" />
     <MESSAGE value="Added comments to the zookeeper class.&#10;Added  'keeperLabel' to zookeeper base class" />
     <MESSAGE value="Added comments to the enclosure class.&#10;Added fields from ZooKeeper in the seperate types of zookeeper&#10;Began the process of commenting the classes to explain function&#10;Corrected minor spelling errors in Animal" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added comments to the enclosure class.&#10;Added fields from ZooKeeper in the seperate types of zookeeper&#10;Began the process of commenting the classes to explain function&#10;Corrected minor spelling errors in Animal" />
+    <MESSAGE value="In the interests of encapsulation:&#10;- Added parameters into constructor to set the life expectancy and the eats array&#10;- Subsequently changed these fields to PRIVATE in the animal class." />
+    <option name="LAST_COMMIT_MESSAGE" value="In the interests of encapsulation:&#10;- Added parameters into constructor to set the life expectancy and the eats array&#10;- Subsequently changed these fields to PRIVATE in the animal class." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -719,22 +723,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="92" column="5" selection-start-line="92" selection-start-column="5" selection-end-line="92" selection-end-column="5" />
-          <folding>
-            <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#removeAnimal#0;class#Enclosure#0" expanded="false" />
-            <element signature="e#1105#1106#0" expanded="true" />
-            <element signature="e#1154#1155#0" expanded="true" />
-            <element signature="e#1191#1192#0" expanded="false" />
-            <element signature="e#1214#1215#0" expanded="false" />
-            <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Bear.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -782,7 +770,7 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="38" column="1" selection-start-line="32" selection-start-column="28" selection-end-line="38" selection-end-column="1" />
           <folding>
-            <element signature="e#0#1527#0" expanded="true" />
+            <element signature="e#0#1529#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -817,7 +805,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
-          <folding />
+          <folding>
+            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -849,7 +840,9 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="50" />
           <folding>
-            <element signature="e#0#2268#0" expanded="true" />
+            <element signature="e#0#2511#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -858,7 +851,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="50" selection-start-line="7" selection-start-column="50" selection-end-line="7" selection-end-column="50" />
-          <folding />
+          <folding>
+            <element signature="e#144#145#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -937,7 +933,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="5" column="46" selection-start-line="5" selection-start-column="46" selection-end-line="5" selection-end-column="46" />
-          <folding />
+          <folding>
+            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1003,47 +1002,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/ECS Zoo.iml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="12" column="23" selection-start-line="12" selection-start-column="23" selection-end-line="12" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="41" column="0" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#2268#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Lab Number 4/src/Part2/UserGroup.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6528836">
           <caret line="25" column="74" selection-start-line="25" selection-start-column="74" selection-end-line="25" selection-end-column="74" />
           <folding>
-            <element signature="e#136#137#0" expanded="true" />
-            <element signature="e#180#181#0" expanded="true" />
+            <element signature="e#136#137#0" expanded="false" />
+            <element signature="e#180#181#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1053,19 +1018,6 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="81" column="85" selection-start-line="81" selection-start-column="85" selection-end-line="81" selection-end-column="85" />
-          <folding>
-            <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#removeAnimal#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1177,14 +1129,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Lion.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Penguin.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1204,12 +1148,85 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/ECS Zoo.iml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="12" column="21" selection-start-line="12" selection-start-column="21" selection-end-line="12" selection-end-column="21" />
+          <folding>
+            <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#removeAnimal#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="29" selection-start-line="9" selection-start-column="29" selection-end-line="9" selection-end-column="29" />
+          <folding>
+            <element signature="e#144#145#0" expanded="true" />
+            <element signature="e#180#181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
+          <folding>
+            <element signature="e#104#105#0" expanded="true" />
+            <element signature="e#140#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/Lion.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="28" column="0" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#866#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="5" selection-start-line="47" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
+          <folding>
+            <element signature="e#0#2511#0" expanded="true" />
+            <element signature="e#1405#1406#0" expanded="true" />
+            <element signature="e#1450#1451#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ConfigFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.10633307">
-          <caret line="8" column="13" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
+        <state vertical-scroll-proportion="0.6747459">
+          <caret line="38" column="5" selection-start-line="38" selection-start-column="5" selection-end-line="38" selection-end-column="5" />
           <folding>
-            <element signature="e#0#1527#0" expanded="true" />
+            <element signature="e#0#1529#0" expanded="true" />
           </folding>
         </state>
       </provider>

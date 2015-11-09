@@ -3,9 +3,9 @@ ZooKeeper class houses all basic  functionality for the zookeeper, includes meth
 the enclosure and a 'aMonthPasses' method. This is the base class for the Physio and Play ZooKeeper classes. As certain treats can only be administered by certain
 types of zookeepers, the base class has a 'keeperLabel' that all the other types will use. Each different keeper has a certain 'value' as follows:
 
-0 - default zookeeper
-1 - play keeper
-2 - physio keeper
+"default" - default zookeeper
+"play" - play keeper
+"physio" - physio keeper
 
 These will be used when deciding if a certain zookeeper can perform a given treat
 
@@ -19,36 +19,43 @@ public class ZooKeeper {
     protected Enclosure enclosureKeeperAssignedTo;
     protected FoodStore foodStoreKeeperAssignedTo;
     protected FoodStore zooFoodStore;
-    protected Integer keeperLabel;
+    protected String keeperLabel;
 
     public ZooKeeper()
     {
         // Default constructor for zookeeper
     }
 
-    public ZooKeeper(Zoo zoo, Enclosure enclosureToSet, FoodStore zooFoodStore) {
+    public ZooKeeper(Zoo zoo, Enclosure enclosureToSet, FoodStore zooFoodStore, String keeperLabel) {
         this.enclosureKeeperAssignedTo = enclosureToSet;
         this.foodStoreKeeperAssignedTo = enclosureKeeperAssignedTo.getFoodStore();
         this.zooFoodStore = zooFoodStore;
         this.zoo = zoo;
-        this.keeperLabel = 0;
+        this.keeperLabel = keeperLabel;
+        this.addToListOfZooKeepers();
     }
 
-    public Boolean aMonthPasses() {
+    public void addToListOfZooKeepers()
+    {
+        this.zoo.zooKeepers.add(this);
+    }
+
+    public Boolean aMonthPasses()
+    {
         getFoodFromZooStore();
         removedWasteFromEnclosure();
         return true;
     }
 
-    public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodstore.
+    public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
     {
-        for(String s : this.zooFoodStore.foodStorage.keySet())
+        for(String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
         {
-            if(this.zooFoodStore.takeFood(s, 2)) {
-                this.foodStoreKeeperAssignedTo.addFood(s, 2);
-                System.out.format("\n2 lots of %s has been added to the enclosure!\n", s);
+            if(this.zooFoodStore.takeFood(foodInHashMap, 2)) {
+                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
+                System.out.format("\n2 lots of %s has been added to the enclosure!\n", foodInHashMap);
             }else{
-                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", s);
+                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
             }
         }
     }
