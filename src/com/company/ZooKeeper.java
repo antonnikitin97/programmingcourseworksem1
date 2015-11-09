@@ -69,4 +69,6 @@ public class ZooKeeper {
             this.enclosureKeeperAssignedTo.removeWaste(this.enclosureKeeperAssignedTo.getWasteSize());
         }
     }
+
+
 }

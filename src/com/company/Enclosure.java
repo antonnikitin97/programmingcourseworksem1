@@ -6,7 +6,6 @@ public class Enclosure
 {
 	protected FoodStore foodStore;
 	protected ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
-	protected ArrayList<ZooKeeper> zooKeepersAssignedToEnclosure = new ArrayList<>();
 	protected Integer animalWaste;
 	protected Boolean isFull = false;
 
@@ -57,22 +56,24 @@ public class Enclosure
 	public Integer size()
 	{
 		return animalsInEnclosure.size();
-	} //
+	}
 
-	// Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
-	// If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
-	// Referencing null, in this case, the animal is removed from the enclosure list.
+	/*
+	Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
+    If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
+	Referencing null, in this case, the animal is removed from the enclosure list.
+	*/
 	public void aMonthPasses()
 	{
 		for(Animal a: animalsInEnclosure)
         {
             try
             {
-                a.aMonthPasses();
                 if(checkIfAnimalIsDead(a))
                 {
                     this.animalsInEnclosure.remove(a);
                 }
+                a.aMonthPasses();
             }
             catch(NullPointerException e)
             {
@@ -84,7 +85,7 @@ public class Enclosure
 
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
-		if(a.health == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
+		if(a.getHealth() == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
 			System.out.print("An animal has died!");
 			return true;
 		}else{
