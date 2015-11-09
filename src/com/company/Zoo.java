@@ -1,3 +1,7 @@
+/*
+Zoo class that models the actual zoo, contains fields that represent the enclosures
+*/
+
 package com.company;
 
 import java.util.ArrayList;

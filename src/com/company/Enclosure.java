@@ -13,15 +13,10 @@ public class Enclosure
 	public Enclosure()
 	{
 		foodStore = new FoodStore();
-        this.foodStore.foodStorage.put("hay" , 200);
-        this.foodStore.foodStorage.put("steak" , 200);
-        this.foodStore.foodStorage.put("fruit" , 200);
-        this.foodStore.foodStorage.put("celery" , 200);
-        this.foodStore.foodStorage.put("fish" , 200);
-        this.foodStore.foodStorage.put("ice cream" , 200);
+
 	}
 
-	public Boolean addAnimal(Animal animalToAdd) //Adds the animal passed into the method to the ArrayList of animals.
+	public Boolean addAnimal(Animal animalToAdd) // Adds the animal passed into the method to the ArrayList of animals.
 	{
 		if(!isFull) {
 			System.out.println("Enclosure full cannot add animal!");
@@ -32,15 +27,11 @@ public class Enclosure
 		}
 	}
 
-	public void removeAnimal(Animal animalToRemove)
+	public void removeAnimal(Animal animalToRemove) // Removes the passed in animal from the enclosure.
 	{
 		this.animalsInEnclosure.remove(animalToRemove); //Removes the animal passed into the method from the ArrayList of animals.
 	}
 
-	public void removeWaste(Integer wasteToRemove)
-	{
-		animalWaste -= wasteToRemove;
-	}
 
 	public void addWaste(Integer wasteToAdd)
 	{
@@ -52,7 +43,7 @@ public class Enclosure
 		return animalWaste;
 	}
 
-    public void removeAnimalWaste(Integer wasteToRemove)
+    public void removeWaste(Integer wasteToRemove)
     {
         this.animalWaste -= wasteToRemove;
     }
@@ -65,7 +56,7 @@ public class Enclosure
 	public Integer size()
 	{
 		return animalsInEnclosure.size();
-	}
+	} //
 
 	public void aMonthPasses()
 	{
@@ -86,6 +77,9 @@ public class Enclosure
             }
         }
 	}
+    // Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
+    // If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
+    // Referencing null, in this case, the animal is removed from the enclosure list.
 
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{

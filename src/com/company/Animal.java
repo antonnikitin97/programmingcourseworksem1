@@ -41,7 +41,7 @@ public abstract class Animal
         return ageOfAnimal; // Method to get the age of the animal
     }
 
-    protected void monhtlyHealthDecrease()
+    protected void monthlyHealthDecrease()
     {
         health -= monthlyHealthDepreciation;
     }

@@ -9,7 +9,7 @@ public class Giraffe extends Animal
         eats = new String []{"hay", "fruit"};
     }
 
-    private void neckMassage()
+    private void neckMassage() // This method will 'treat' the giraffe and give it health
     {
         this.health += 4;
         System.out.println("Giraffe has had neck massaged! Health increased by 4");
