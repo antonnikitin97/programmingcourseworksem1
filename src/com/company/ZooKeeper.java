@@ -47,7 +47,8 @@ public class ZooKeeper {
         return true;
     }
 
-    public void getFoodFromZooStore() // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
+    // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
+    public void getFoodFromZooStore()
     {
         for(String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
         {

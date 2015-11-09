@@ -11,9 +11,10 @@ public abstract class Animal
     protected Enclosure enclosureAnimalResidesIn;
     protected Random randomGen = new Random();
 
-    protected Integer monthlyHealthDepreciation = 2;
+    private Integer monthlyHealthDepreciation = 2;
 
-    public Animal(Integer lifeExpectancy, String[] eats) // Constructor for a general animal, sets the age to 0 and health to 10
+    // Constructor for a general animal, sets the age to 0 and health to 10
+    public Animal(Integer lifeExpectancy, String[] eats)
     {
         Integer randomNumber = randomGen.nextInt(100);
         if(randomNumber % 2 == 0) { // Here we are generating a random number between 0 and 10, we are then saying
@@ -29,19 +30,22 @@ public abstract class Animal
 
     }
 
-    protected Integer getLifeExpectancy() // Method to return the life expectancy of the animal
+    // Method to return the life expectancy of the animal
+    protected Integer getLifeExpectancy()
     {
         return lifeExpectancy;
     }
 
+    // Method to return the gender of the animal
     protected char getGender()
     {
-        return gender; // Method to return the gender of the animal
+        return gender;
     }
 
+    // Method to get the age of the animal
     protected Integer getAgeOfAnimal()
     {
-        return ageOfAnimal; // Method to get the age of the animal
+        return ageOfAnimal;
     }
 
     protected void monthlyHealthDecrease()

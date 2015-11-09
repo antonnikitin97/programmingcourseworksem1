@@ -6,12 +6,14 @@ public class FoodStore
 {
     protected HashMap<String, Integer> foodStorage;
 
-    public FoodStore() // FoodStore constructor creates a new HashMap instance and assigns it to 'foodStorage'
+    // FoodStore constructor creates a new HashMap instance and assigns it to 'foodStorage'
+    public FoodStore()
     {
     	foodStorage = new HashMap<>();
     }
-    
-    public void addFood(String name, Integer quantityToAdd) //Here we are adding food to the foodstore.
+
+    //Here we are adding food to the foodstore.
+    public void addFood(String name, Integer quantityToAdd)
     {
         this.foodStorage.put(name, foodStorage.get(name) + quantityToAdd);
         System.out.format("%s of %s has been added to the store! There are now %s of this food in the store!", quantityToAdd, name, foodStorage.get(name));
@@ -33,7 +35,8 @@ public class FoodStore
         }
     }
 
-    public Boolean checkIsEnoughFood(String nameOfFood, Integer quantity) // Here we are checking if there is enough food in the foodstore, we'll return true if there is, and false if there isn't.
+    // Here we are checking if there is enough food in the foodstore, we'll return true if there is, and false if there isn't.
+    public Boolean checkIsEnoughFood(String nameOfFood, Integer quantity)
     {
         return (getFoodQuantity(nameOfFood) == null || getFoodQuantity(nameOfFood) >= quantity);
     }
@@ -43,13 +46,15 @@ public class FoodStore
         return this.foodStorage.get(name);
     }
 
+    // Here we are looking to see what type health increase and waste adding is required based on the food eaten.
+    // We are comparing the value in 'food' against multiple cases to decide on the best action.
     public void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure, Animal animal)
     {
         switch(food)
         {
             case "hay":
-                animal.health += 1;                // Here we are looking to see what type health increase and waste adding is required based on the food eaten.
-                enclosure.addWaste(4);             // We are comparing the value in 'food' against multiple cases to decide on the best action.
+                animal.health += 1;
+                enclosure.addWaste(4);
                 break;
             case "steak":
                 animal.health += 3;

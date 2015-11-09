@@ -21,8 +21,10 @@ public class Zoo
         }
     }
 
-    public void aMonthPasses() // This method will call the 'aMonthPasses' on each enclosure, it does this by iterating over the array of enclosures, which will in turn
-    {                          // call the 'aMonthPasses' method on each animal in the enclosure.
+    // This method will call the 'aMonthPasses' on each enclosure, it does this by iterating over the array of enclosures, which will in turn
+    // call the 'aMonthPasses' method on each animal in the enclosure.
+    public void aMonthPasses()
+    {
         for(Enclosure e : enclosures)
         {
             e.aMonthPasses();
@@ -38,7 +40,8 @@ public class Zoo
         enclosures[1].addAnimal(new Lion());
     }
 
-    public void orderAdditionalFood() // This method will order additional food for the zoo food store
+    // This method will order additional food for the zoo food store
+    public void orderAdditionalFood()
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {

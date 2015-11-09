@@ -16,7 +16,8 @@ public class Enclosure
 
 	}
 
-	public Boolean addAnimal(Animal animalToAdd) // Adds the animal passed into the method to the ArrayList of animals.
+    // Adds the animal passed into the method to the ArrayList of animals.
+    public Boolean addAnimal(Animal animalToAdd)
 	{
 		if(!isFull) {
 			System.out.println("Enclosure full cannot add animal!");
@@ -27,11 +28,11 @@ public class Enclosure
 		}
 	}
 
-	public void removeAnimal(Animal animalToRemove) // Removes the passed in animal from the enclosure.
+    // Removes the passed in animal from the enclosure.
+    public void removeAnimal(Animal animalToRemove)
 	{
 		this.animalsInEnclosure.remove(animalToRemove); //Removes the animal passed into the method from the ArrayList of animals.
 	}
-
 
 	public void addWaste(Integer wasteToAdd)
 	{
@@ -58,6 +59,9 @@ public class Enclosure
 		return animalsInEnclosure.size();
 	} //
 
+	// Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
+	// If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
+	// Referencing null, in this case, the animal is removed from the enclosure list.
 	public void aMonthPasses()
 	{
 		for(Animal a: animalsInEnclosure)
@@ -77,9 +81,6 @@ public class Enclosure
             }
         }
 	}
-    // Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
-    // If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
-    // Referencing null, in this case, the animal is removed from the enclosure list.
 
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
