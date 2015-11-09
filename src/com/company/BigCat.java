@@ -4,9 +4,7 @@ public abstract class BigCat extends Animal
 {
     public BigCat()
     {
-        super();
-        lifeExpectancy = 24;
-        eats = new String []{"steak", "celery"};
+        super(18, new String []{"steak", "celery"});
     }
 
 }

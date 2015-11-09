@@ -4,9 +4,7 @@ public class Giraffe extends Animal
 {
     public Giraffe()
     {
-        super();
-        this.lifeExpectancy = 28;
-        eats = new String []{"hay", "fruit"};
+        super(28, new String []{"hay", "fruit"});
     }
 
     private void neckMassage() // This method will 'treat' the giraffe and give it health

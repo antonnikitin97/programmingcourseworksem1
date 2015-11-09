@@ -5,25 +5,28 @@ public abstract class Animal
 {
     protected Integer ageOfAnimal;
     protected char gender;
-    protected String[] eats;
+    private String[] eats;
     protected Integer health;
-    protected Integer lifeExpectancy;
+    private Integer lifeExpectancy;
     protected Enclosure enclosureAnimalResidesIn;
     protected Random randomGen = new Random();
 
     protected Integer monthlyHealthDepreciation = 2;
 
-    public Animal() // Constructor for a general animal, sets the age to 0 and health to 10
+    public Animal(Integer lifeExpectancy, String[] eats) // Constructor for a general animal, sets the age to 0 and health to 10
     {
         Integer randomNumber = randomGen.nextInt(100);
         if(randomNumber % 2 == 0) { // Here we are generating a random number between 0 and 10, we are then saying
-            gender = 'm';           // if the number is a multiple of 2, the animal is a male, else it's a female
+            gender = 'm';           // if the number is a multiple of 2, the animal is a male, else it's a female -- FOR TESTING ONLY!!!
         }else{
             gender = 'f';
         }
 
-        ageOfAnimal = 0;
-        health = 10;
+        this.ageOfAnimal = 0;
+        this.health = 10;
+        this.lifeExpectancy = lifeExpectancy;
+        this.eats = eats;
+
     }
 
     protected Integer getLifeExpectancy() // Method to return the life expectancy of the animal

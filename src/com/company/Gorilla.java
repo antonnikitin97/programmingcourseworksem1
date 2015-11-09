@@ -4,8 +4,7 @@ public class Gorilla extends Ape
 {
     public Gorilla()
     {
-        super();
-        this.lifeExpectancy = 32;
+        super(32);
     }
 
     private void painting()

@@ -4,9 +4,7 @@ public class Bear extends Animal
 {
     public Bear()
     {
-        super();
-        this.lifeExpectancy = 18;
-        eats = new String []{"fish", "steak"};
+        super(18, new String []{"fish", "steak"});
     }
 
     private void hug()

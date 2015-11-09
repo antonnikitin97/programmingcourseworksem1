@@ -4,9 +4,7 @@ public class Elephant extends Animal
 {
     public Elephant()
     {
-        super();
-        this.lifeExpectancy = 18;
-        eats = new String []{"hay", "fruit"};
+        super(18, new String []{"hay", "fruit"});
     }
 
     private void bath()

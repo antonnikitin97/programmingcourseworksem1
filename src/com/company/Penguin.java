@@ -4,9 +4,7 @@ public class Penguin extends Animal
 {
     public Penguin()
     {
-        super();
-        this.lifeExpectancy = 15;
-        eats = new String []{"fish", "ice cream"};
+        super(15, new String []{"fish", "ice cream"});
     }
 
     private void watchAFilm()

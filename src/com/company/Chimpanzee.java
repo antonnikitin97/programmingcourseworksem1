@@ -4,8 +4,7 @@ public class Chimpanzee extends Ape
 {
     public Chimpanzee()
     {
-        super();
-        this.lifeExpectancy = 32;
+        super(32);
     }
 
     private void playChase()
