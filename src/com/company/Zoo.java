@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Zoo
 {
     protected Enclosure[] enclosures;
-    protected ArrayList<ZooKeeper> zooKeepers;
+    protected ArrayList<ZooKeeper> zooKeepers = new ArrayList<>();
     protected FoodStore zooFoodStore;
 
     public Zoo()
@@ -31,13 +31,17 @@ public class Zoo
         }
     }
 
+    public void createEnclosuresAndZooKeepers()
+    {
+        enclosures = new Enclosure[3];
+        for(int i = 0; i <= enclosures.length; i ++)
+        {
+            enclosures[i] = new Enclosure();
+        }
+    }
+
     public void populateZoo()
     {
-        enclosures = new Enclosure[1];
-        enclosures[1].addAnimal(new Lion());
-        enclosures[1].addAnimal(new Lion());
-        enclosures[1].addAnimal(new Lion());
-        enclosures[1].addAnimal(new Lion());
     }
 
     // This method will order additional food for the zoo food store

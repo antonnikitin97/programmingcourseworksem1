@@ -9,13 +9,14 @@ public class Tiger extends BigCat
 
     private void stroked()
     {
-        this.health += 3;
+        this.addHealth(3);
+        System.out.println("Tiger has been stroked!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health == 8) {
+        if(this.getHealth() > 7) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             stroked();

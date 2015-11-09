@@ -9,14 +9,14 @@ public class Gorilla extends Ape
 
     private void painting()
     {
-        this.health += 4;
+        this.addHealth(4);
         System.out.println("Gorilla has painted!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 6) {
+        if(this.getHealth() > 6) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             painting();

@@ -9,14 +9,14 @@ public class Bear extends Animal
 
     private void hug()
     {
-        this.health += 3;
+        this.addHealth(3);
         System.out.println("Bear has been hugged!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 7) {
+        if(this.getHealth() > 7) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             hug();

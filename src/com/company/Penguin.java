@@ -9,14 +9,14 @@ public class Penguin extends Animal
 
     private void watchAFilm()
     {
-        this.health += 2;
+        this.addHealth(2);
         System.out.println("A film has been watched with the penguin!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 8) {
+        if(this.getHealth() > 8) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             watchAFilm();

@@ -9,14 +9,14 @@ public class Elephant extends Animal
 
     private void bath()
     {
-        this.health += 5;
+        this.addHealth(5);
         System.out.println("Elephant has been bathed!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 6) {
+        if(this.getHealth() > 6) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             bath();

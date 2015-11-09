@@ -9,14 +9,14 @@ public class Giraffe extends Animal
 
     private void neckMassage() // This method will 'treat' the giraffe and give it health
     {
-        this.health += 4;
+        this.addHealth(4);
         System.out.println("Giraffe has had neck massaged! Health increased by 4");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 6) {
+        if(this.getHealth() > 6) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             neckMassage();

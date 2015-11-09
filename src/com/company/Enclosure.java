@@ -14,11 +14,10 @@ public class Enclosure
 		foodStore = new FoodStore();
 
 	}
-
-    // Adds the animal passed into the method to the ArrayList of animals.
+	// Adds the animal passed into the method to the ArrayList of animals.
     public Boolean addAnimal(Animal animalToAdd)
 	{
-		if(!isFull) {
+		if(isFull) {
 			System.out.println("Enclosure full cannot add animal!");
 			return false;
 		}else{

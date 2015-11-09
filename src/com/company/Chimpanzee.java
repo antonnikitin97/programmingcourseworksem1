@@ -9,14 +9,14 @@ public class Chimpanzee extends Ape
 
     private void playChase()
     {
-        this.health += 4;
+        this.addHealth(4);
         System.out.println("Chase has been played with Chimpanzee!");
     }
 
     @Override
     public void treat()
     {
-        if(this.health > 6) {
+        if(this.getHealth() > 6) {
             System.out.println("Cannot be treated at this time! (Health is max!)");
         }else{
             playChase();

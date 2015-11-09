@@ -173,7 +173,7 @@ public abstract class Animal
     If it does, it'll print out an 'error' message and return false. If it doesn't, it'll add the planned health to the animal's health and return
     true.
     */
-    private Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
+    protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
     {
         if(plannedHealthAddition + this.getHealth() > 10) {
             System.out.println("\nHealth cannot be added as it would exceed 10 health!\n");
@@ -187,7 +187,7 @@ public abstract class Animal
     This method will verify that the planned health removal will not take the animal's health below 0. If this is the case it will return false
     In all other cases it will return true.
     */
-    private Boolean checkIfHealthCanBeRemoved(Integer plannedHealthDecrement)
+    protected Boolean checkIfHealthCanBeRemoved(Integer plannedHealthDecrement)
     {
         if(this.getHealth() - plannedHealthDecrement < 0) {
             System.out.println("\nPlanned health removal will make health negative!\n");

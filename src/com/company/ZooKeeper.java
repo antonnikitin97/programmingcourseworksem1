@@ -26,16 +26,16 @@ public class ZooKeeper {
         // Default constructor for zookeeper
     }
 
-    public ZooKeeper(Zoo zoo, Enclosure enclosureToSet, FoodStore zooFoodStore, String keeperLabel) {
+    public ZooKeeper(Zoo zoo, Enclosure enclosureToSet, String keeperLabel) {
         this.enclosureKeeperAssignedTo = enclosureToSet;
         this.foodStoreKeeperAssignedTo = enclosureKeeperAssignedTo.getFoodStore();
-        this.zooFoodStore = zooFoodStore;
+        this.zooFoodStore = zoo.zooFoodStore;
         this.zoo = zoo;
         this.keeperLabel = keeperLabel;
         this.addToListOfZooKeepers();
     }
 
-    public void addToListOfZooKeepers()
+    private void addToListOfZooKeepers()
     {
         this.zoo.zooKeepers.add(this);
     }
@@ -44,6 +44,10 @@ public class ZooKeeper {
     {
         getFoodFromZooStore();
         removedWasteFromEnclosure();
+        for(Animal a : enclosureKeeperAssignedTo.animalsInEnclosure)
+        {
+            a.treat();
+        }
         return true;
     }
 
