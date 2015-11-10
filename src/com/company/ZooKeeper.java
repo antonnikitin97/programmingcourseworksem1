@@ -74,5 +74,9 @@ public class ZooKeeper {
         }
     }
 
+    public void treatAnimalsInEnclosre()
+    {
+        
+    }
 
 }

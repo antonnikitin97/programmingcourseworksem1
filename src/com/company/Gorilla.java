@@ -14,7 +14,7 @@ public class Gorilla extends Ape
     }
 
     @Override
-    public void treat()
+    public void treat(String keeperLabel)
     {
         if(this.getHealth() > 6) {
             System.out.println("Cannot be treated at this time! (Health is max!)");

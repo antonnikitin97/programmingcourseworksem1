@@ -122,7 +122,7 @@ public abstract class Animal
         }
     }
 
-    protected void treat()
+    public void treat(String keeperLabel)
     {
     	
     }

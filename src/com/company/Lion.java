@@ -21,7 +21,7 @@ public class Lion extends BigCat
     }
 
     @Override
-    public void treat()
+    public void treat(String keeperLabel)
     {
         if(this.getHealth() > 8) {
             System.out.println("Cannot be treated at this time! (Health is max!)");

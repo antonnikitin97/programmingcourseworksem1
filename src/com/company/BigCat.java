@@ -6,5 +6,4 @@ public abstract class BigCat extends Animal
     {
         super(18, new String []{"steak", "celery"});
     }
-
 }
