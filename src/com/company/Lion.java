@@ -12,6 +12,7 @@ public class Lion extends BigCat
     public Lion()
     {
         super();
+        this.type = "Lion";
     }
 
     private void stroked()
@@ -23,10 +24,10 @@ public class Lion extends BigCat
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.getHealth() > 8) {
-            System.out.println("Cannot be treated at this time! (Health is max!)");
+        if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(2)) {
+            this.stroked();
         }else{
-            stroked();
+            System.out.println("Health is max OR this keeper can't treat this animal!");
         }
     }
 

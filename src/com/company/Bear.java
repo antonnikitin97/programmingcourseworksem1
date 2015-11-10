@@ -5,6 +5,7 @@ public class Bear extends Animal
     public Bear()
     {
         super(18, new String []{"fish", "steak"});
+        this.type = "Bear";
     }
 
     private void hug()
@@ -16,7 +17,11 @@ public class Bear extends Animal
     @Override
     public void treat(String keeperLabel)
     {
-        if(keeperLabel.equals("default"));
+        if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
+            this.hug();
+        }else{
+            System.out.println("Health is max OR this keeper can't treat this animal!");
+        }
     }
 
     @Override

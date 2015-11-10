@@ -10,8 +10,7 @@ public abstract class Animal
     private Integer lifeExpectancy;
     protected Enclosure enclosureAnimalResidesIn;
     protected Random randomGen = new Random();
-
-    private Integer monthlyHealthDepreciation = 2;
+    protected String type;
 
     /*
     Constructor for a general animal, sets the age to 0 and health to 10
@@ -58,11 +57,7 @@ public abstract class Animal
 
     protected void addHealth(Integer healthToAdd)
     {
-        if(checkIfHealthCanBeAdded(healthToAdd)) {
-            this.health += healthToAdd;
-        }else{
-            System.out.println("Planned health addition takes health over 10! Not adding health!");
-        }
+        this.health += healthToAdd;
     }
 
     protected void removeHealth(Integer healthToRemove)
@@ -108,6 +103,7 @@ public abstract class Animal
             {
                 if(temp.takeFood(s)) {
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
+                    System.out.format("\n%s has eaten %s! Om nom nom nom!\n", this.type , s);
                     break;
                 }else{
                     if(failedAttempts == this.eats.length)

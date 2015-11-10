@@ -10,6 +10,15 @@ public class FoodStore
     public FoodStore()
     {
     	foodStorage = new HashMap<>();
+        populateInitialAmountsTEST();
+    }
+
+    private void populateInitialAmountsTEST()
+    {
+        for(String s : getAvailableFoodInZoo())
+        {
+            this.foodStorage.put(s, 10);
+        }
     }
 
     //Here we are adding food to the foodstore.

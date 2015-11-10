@@ -5,9 +5,9 @@ public class Main
     public static void main(String[] args)
     {
         Zoo myZoo = new Zoo();
-        myZoo.populateZoo();
+        myZoo.createEnclosuresAndZooKeepersTEST();
+        myZoo.populateZooTEST();
 
-
-
+        myZoo.aMonthPasses();
     }
 }

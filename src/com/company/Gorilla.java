@@ -5,6 +5,7 @@ public class Gorilla extends Ape
     public Gorilla()
     {
         super(32);
+        this.type = "Gorilla";
     }
 
     private void painting()
@@ -16,10 +17,10 @@ public class Gorilla extends Ape
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.getHealth() > 6) {
-            System.out.println("Cannot be treated at this time! (Health is max!)");
+        if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(4)) {
+            this.painting();
         }else{
-            painting();
+            System.out.println("Health is max OR this keeper can't treat this animal!");
         }
     }
 

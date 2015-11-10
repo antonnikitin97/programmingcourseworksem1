@@ -6,7 +6,7 @@ public class Enclosure
 {
 	protected FoodStore foodStore;
 	protected ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
-	protected Integer animalWaste;
+	protected Integer animalWaste = 0;
 	protected Boolean isFull = false;
 
 	public Enclosure()

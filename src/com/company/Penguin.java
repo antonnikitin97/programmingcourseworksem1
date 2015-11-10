@@ -5,6 +5,7 @@ public class Penguin extends Animal
     public Penguin()
     {
         super(15, new String []{"fish", "ice cream"});
+        this.type = "Penguin";
     }
 
     private void watchAFilm()
@@ -16,10 +17,10 @@ public class Penguin extends Animal
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.getHealth() > 8) {
-            System.out.println("Cannot be treated at this time! (Health is max!)");
+        if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(2)) {
+            this.watchAFilm();
         }else{
-            watchAFilm();
+            System.out.println("Health is max OR this keeper can't treat this animal!");
         }
     }
 

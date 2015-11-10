@@ -31,17 +31,40 @@ public class Zoo
         }
     }
 
-    public void createEnclosuresAndZooKeepers()
+    public void createEnclosuresAndZooKeepersTEST()
     {
-        enclosures = new Enclosure[3];
-        for(int i = 0; i <= enclosures.length; i ++)
+        enclosures = new Enclosure[1];
+        enclosures[0] = new Enclosure();
+        zooKeepers.add(new ZooKeeper());
+        zooKeepers.add(new PlayZooKeeper());
+        zooKeepers.add(new PhysioZooKeeper());
+
+        for(ZooKeeper k : zooKeepers)
         {
-            enclosures[i] = new Enclosure();
+            k.enclosureKeeperAssignedTo = enclosures[0];
         }
     }
 
-    public void populateZoo()
+    public void populateZooTEST()
     {
+        for(Enclosure e : enclosures)
+        {
+            e.addAnimal(new Bear());
+            e.addAnimal(new Chimpanzee());
+            e.addAnimal(new Elephant());
+            e.addAnimal(new Giraffe());
+            e.addAnimal(new Gorilla());
+            e.addAnimal(new Lion());
+            e.addAnimal(new Penguin());
+            e.addAnimal(new Tiger());
+        }
+
+        for(Animal a : enclosures[0].animalsInEnclosure)
+        {
+            a.enclosureAnimalResidesIn = enclosures[0];
+        }
+
+
     }
 
     // This method will order additional food for the zoo food store
@@ -49,7 +72,7 @@ public class Zoo
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {
-            this.zooFoodStore.addFood(s, 10);
+            this.zooFoodStore.addFood(s, 1);
             System.out.format("10 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }

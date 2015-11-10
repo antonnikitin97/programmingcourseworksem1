@@ -5,6 +5,7 @@ public class Elephant extends Animal
     public Elephant()
     {
         super(18, new String []{"hay", "fruit"});
+        this.type = "Elephant";
     }
 
     private void bath()
@@ -16,10 +17,10 @@ public class Elephant extends Animal
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.getHealth() > 6) {
-            System.out.println("Cannot be treated at this time! (Health is max!)");
+        if(keeperLabel.equals("physio") && this.checkIfHealthCanBeAdded(5)) {
+            this.bath();
         }else{
-            bath();
+            System.out.println("Health is max OR this keeper can't treat this animal!");
         }
     }
 

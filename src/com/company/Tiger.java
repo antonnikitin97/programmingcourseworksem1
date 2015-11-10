@@ -5,6 +5,7 @@ public class Tiger extends BigCat
     public Tiger()
     {
         super();
+        this.type = "Tiger";
     }
 
     private void stroked()
@@ -16,10 +17,10 @@ public class Tiger extends BigCat
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.getHealth() > 7) {
-            System.out.println("Cannot be treated at this time! (Health is max!)");
+        if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
+            this.stroked();
         }else{
-            stroked();
+            System.out.println("Health is max OR this keeper can't treat this animal!");
         }
     }
 

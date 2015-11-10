@@ -32,18 +32,19 @@ public class ZooKeeper {
         this.zooFoodStore = zoo.zooFoodStore;
         this.zoo = zoo;
         this.keeperLabel = keeperLabel;
-        this.addToListOfZooKeepers();
+        //this.addToListOfZooKeepers();
     }
 
-    private void addToListOfZooKeepers()
+    /*private void addToListOfZooKeepers()
     {
         this.zoo.zooKeepers.add(this);
-    }
+    }*/
 
     public Boolean aMonthPasses()
     {
         getFoodFromZooStore();
         removedWasteFromEnclosure();
+        this.zoo.orderAdditionalFood();
         for(Animal a : enclosureKeeperAssignedTo.animalsInEnclosure)
         {
             a.treat(this.keeperLabel);
