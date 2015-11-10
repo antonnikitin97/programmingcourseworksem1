@@ -29,19 +29,25 @@ public class Zoo
         {
             e.aMonthPasses();
         }
+
+        for(ZooKeeper k : zooKeepers)
+        {
+            k.aMonthPasses();
+        }
     }
 
     public void createEnclosuresAndZooKeepersTEST()
     {
         enclosures = new Enclosure[1];
         enclosures[0] = new Enclosure();
-        zooKeepers.add(new ZooKeeper());
-        zooKeepers.add(new PlayZooKeeper());
-        zooKeepers.add(new PhysioZooKeeper());
+        zooKeepers.add(new ZooKeeper(this, "default"));
+        zooKeepers.add(new PlayZooKeeper(this));
+        zooKeepers.add(new PhysioZooKeeper(this));
 
         for(ZooKeeper k : zooKeepers)
         {
             k.enclosureKeeperAssignedTo = enclosures[0];
+            k.foodStoreKeeperAssignedTo = enclosures[0].getFoodStore();
         }
     }
 

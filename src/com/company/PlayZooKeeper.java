@@ -5,8 +5,9 @@ package com.company;
  */
 public class PlayZooKeeper extends ZooKeeper
 {
-    public PlayZooKeeper ()
+    public PlayZooKeeper (Zoo zoo)
     {
+        this.zoo = zoo;
         this.keeperLabel = "play";
     }
 }
