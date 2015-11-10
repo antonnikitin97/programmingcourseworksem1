@@ -46,7 +46,7 @@ public class ZooKeeper {
         removedWasteFromEnclosure();
         for(Animal a : enclosureKeeperAssignedTo.animalsInEnclosure)
         {
-            a.treat();
+            a.treat(this.keeperLabel);
         }
         return true;
     }
@@ -76,7 +76,7 @@ public class ZooKeeper {
 
     public void treatAnimalsInEnclosre()
     {
-        
+
     }
 
 }
