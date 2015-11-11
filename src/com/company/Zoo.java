@@ -17,7 +17,7 @@ public class Zoo
         zooFoodStore = new FoodStore();
         for(String s : this.zooFoodStore.getAvailableFoodInZoo())
         {
-            zooFoodStore.foodStorage.put(s , 200);
+            zooFoodStore.foodStorage.put(s , 10);
         }
     }
 
@@ -46,8 +46,7 @@ public class Zoo
 
         for(ZooKeeper k : zooKeepers)
         {
-            k.enclosureKeeperAssignedTo = enclosures[0];
-            k.foodStoreKeeperAssignedTo = enclosures[0].getFoodStore();
+            k.assignEnclosure(enclosures[0]);
         }
     }
 
@@ -79,7 +78,7 @@ public class Zoo
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {
             this.zooFoodStore.addFood(s, 1);
-            System.out.format("10 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!", s , this.zooFoodStore.getFoodQuantity(s), s);
+            System.out.format("\n1 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }
 

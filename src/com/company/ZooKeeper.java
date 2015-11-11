@@ -13,6 +13,8 @@ These will be used when deciding if a certain zookeeper can perform a given trea
 
 package com.company;
 
+import java.util.Random;
+
 public class ZooKeeper {
 
     protected Zoo zoo;
@@ -20,6 +22,7 @@ public class ZooKeeper {
     protected FoodStore foodStoreKeeperAssignedTo;
     protected FoodStore zooFoodStore;
     protected String keeperLabel;
+    private Random generator = new Random();
 
     public ZooKeeper()
     {
@@ -34,33 +37,32 @@ public class ZooKeeper {
 
     public void assignEnclosure(Enclosure e)
     {
-
+        this.enclosureKeeperAssignedTo = e;
+        this.foodStoreKeeperAssignedTo = e.getFoodStore();
     }
 
     public Boolean aMonthPasses()
     {
         getFoodFromZooStore();
         removedWasteFromEnclosure();
-        this.zoo.orderAdditionalFood();
-        for(Animal a : enclosureKeeperAssignedTo.animalsInEnclosure)
-        {
-            a.treat(this.keeperLabel);
-        }
+        treatTwoAnimals();
         return true;
     }
 
     // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
     public void getFoodFromZooStore()
     {
-        for(String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
-        {
-            if(this.zooFoodStore.takeFood(foodInHashMap, 2)) {
-                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
-                System.out.format("\n2 lots of %s has been added to the enclosure!\n", foodInHashMap);
-            }else{
-                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
+        if(this.keeperLabel == "default") {
+            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
+                if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
+                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
+                    System.out.format("\n2 lots of %s from the zoo store has been added to the enclosure!\n", foodInHashMap);
+                } else {
+                    System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
+                }
             }
         }
+
     }
 
     public void removedWasteFromEnclosure()
@@ -72,9 +74,13 @@ public class ZooKeeper {
         }
     }
 
-    public void treatAnimalsInEnclosre()
+    private void treatTwoAnimals()
     {
-
+        for(int i = 0; i < 2; i ++ )
+        {
+            System.out.format("\n--- %s NOW TREATING ---\n", this.keeperLabel);
+            this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
+            System.out.println();
+        }
     }
-
 }

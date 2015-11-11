@@ -20,7 +20,7 @@ public class Elephant extends Animal
         if(keeperLabel.equals("physio") && this.checkIfHealthCanBeAdded(5)) {
             this.bath();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -28,6 +28,7 @@ public class Elephant extends Animal
     public Boolean aMonthPasses()
     {
         eat();
+        removeHealth(2);
         return true;
     }
 }

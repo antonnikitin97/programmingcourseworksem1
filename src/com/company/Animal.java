@@ -57,7 +57,11 @@ public abstract class Animal
 
     protected void addHealth(Integer healthToAdd)
     {
-        this.health += healthToAdd;
+        if(checkIfHealthCanBeAdded(healthToAdd)) {
+            System.out.format("\nHealth of %s cannot be increased by %s as it would exceed 10 health!", this.type, healthToAdd);
+        }else{
+            this.health += healthToAdd;
+        }
     }
 
     protected void removeHealth(Integer healthToRemove)
@@ -103,7 +107,7 @@ public abstract class Animal
             {
                 if(temp.takeFood(s)) {
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
-                    System.out.format("\n%s has eaten %s! Om nom nom nom!\n", this.type , s);
+                    System.out.format("\n%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
                     if(failedAttempts == this.eats.length)
@@ -121,11 +125,6 @@ public abstract class Animal
     public void treat(String keeperLabel)
     {
     	
-    }
-
-    protected void setEnclosure(Enclosure enclosureToSet)
-    {
-        this.enclosureAnimalResidesIn = enclosureToSet;
     }
 
     protected abstract Boolean aMonthPasses();
@@ -171,12 +170,7 @@ public abstract class Animal
     */
     protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
     {
-        if(plannedHealthAddition + this.getHealth() > 10) {
-            System.out.println("\nHealth cannot be added as it would exceed 10 health!\n");
-            return false;
-        }else{
-            return true;
-        }
+        return (plannedHealthAddition + this.getHealth() > 10);
     }
 
     /*

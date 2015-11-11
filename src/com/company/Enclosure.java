@@ -8,12 +8,13 @@ public class Enclosure
 	protected ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
 	protected Integer animalWaste = 0;
 	protected Boolean isFull = false;
+    protected ArrayList<ZooKeeper> listOfKeepers = new ArrayList<>();
 
 	public Enclosure()
 	{
 		foodStore = new FoodStore();
-
 	}
+
 	// Adds the animal passed into the method to the ArrayList of animals.
     public Boolean addAnimal(Animal animalToAdd)
 	{
@@ -29,7 +30,7 @@ public class Enclosure
     // Removes the passed in animal from the enclosure.
     public void removeAnimal(Animal animalToRemove)
 	{
-		this.animalsInEnclosure.remove(animalToRemove); //Removes the animal passed into the method from the ArrayList of animals.
+		this.animalsInEnclosure.remove(animalToRemove);
 	}
 
 	public void addWaste(Integer wasteToAdd)
@@ -91,4 +92,9 @@ public class Enclosure
 			return false;
 		}
 	}
+
+    public void addKeeper(ZooKeeper zk)
+    {
+        this.listOfKeepers.add(zk);
+    }
 }

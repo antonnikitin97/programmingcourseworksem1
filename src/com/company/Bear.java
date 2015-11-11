@@ -20,7 +20,7 @@ public class Bear extends Animal
         if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
             this.hug();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -28,6 +28,7 @@ public class Bear extends Animal
     public Boolean aMonthPasses()
     {
         eat();
+        removeHealth(2);
         return true;
     }
 }

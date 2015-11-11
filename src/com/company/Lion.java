@@ -27,7 +27,7 @@ public class Lion extends BigCat
         if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(2)) {
             this.stroked();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -35,7 +35,7 @@ public class Lion extends BigCat
     public Boolean aMonthPasses()
     {
         eat();
-        this.monthlyHealthDecrease();
+        removeHealth(2);
         return true;
     }
 }

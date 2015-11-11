@@ -20,7 +20,7 @@ public class Penguin extends Animal
         if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(2)) {
             this.watchAFilm();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -28,6 +28,7 @@ public class Penguin extends Animal
     public Boolean aMonthPasses()
     {
         eat();
+        removeHealth(2);
         return true;
     }
 }

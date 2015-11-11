@@ -20,7 +20,7 @@ public class Gorilla extends Ape
         if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(4)) {
             this.painting();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -28,6 +28,7 @@ public class Gorilla extends Ape
     public Boolean aMonthPasses()
     {
         eat();
+        removeHealth(2);
         return true;
     }
 }

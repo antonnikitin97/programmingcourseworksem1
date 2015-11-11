@@ -21,7 +21,7 @@ public class Giraffe extends Animal
         if(keeperLabel.equals("physio") && this.checkIfHealthCanBeAdded(4)) {
             this.neckMassage();
         }else{
-            System.out.println("Health is max OR this keeper can't treat this animal!");
+            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
         }
     }
 
@@ -29,6 +29,7 @@ public class Giraffe extends Animal
     public Boolean aMonthPasses()
     {
         eat();
+        removeHealth(2);
         return true;
     }
 }
