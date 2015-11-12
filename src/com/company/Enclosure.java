@@ -65,6 +65,8 @@ public class Enclosure
 	*/
 	public void aMonthPasses()
 	{
+		printTypesOfAnimalInEnclosre();
+
 		for(Animal a: animalsInEnclosure)
         {
             try
@@ -100,6 +102,8 @@ public class Enclosure
 
 	public void printTypesOfAnimalInEnclosre()
 	{
+
+		System.out.println("--- STATUS ON ANIMALS IN ENCLOSURE ---");
 
 		for(Animal s : animalsInEnclosure)
 		{

@@ -11,7 +11,7 @@ public class Penguin extends Animal
     private void watchAFilm()
     {
         this.addHealth(2);
-        System.out.println("\nA film has been watched with the penguin!");
+        System.out.format("%s has watched a film!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

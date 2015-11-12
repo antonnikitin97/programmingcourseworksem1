@@ -30,10 +30,16 @@ public class Zoo
             e.aMonthPasses();
         }
 
+        System.out.println("\n--- ZOO KEEPER DUTY!!! ---");
+
         for(ZooKeeper k : zooKeepers)
         {
             k.aMonthPasses();
         }
+
+        System.out.println("\n--- ZOO ADMIN ---");
+
+        orderAdditionalFood();
     }
 
     public void createEnclosuresAndZooKeepersTEST()

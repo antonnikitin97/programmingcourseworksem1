@@ -44,8 +44,8 @@ public class ZooKeeper {
     public Boolean aMonthPasses()
     {
         getFoodFromZooStore();
-        removedWasteFromEnclosure();
         treatTwoAnimals();
+        removedWasteFromEnclosure();
         return true;
     }
 
@@ -69,16 +69,20 @@ public class ZooKeeper {
     {
         if(this.enclosureKeeperAssignedTo.getWasteSize() >= 20) {
             this.enclosureKeeperAssignedTo.removeWaste(20);
+            System.out.format("20 waste has been removed from the enclosure! There is now %s waste in the enclosure!", enclosureKeeperAssignedTo.getWasteSize());
         }else{
             this.enclosureKeeperAssignedTo.removeWaste(this.enclosureKeeperAssignedTo.getWasteSize());
+            System.out.format("%s waste has been removed from the enclosure! There is now %s waste in the enclosure!", this.enclosureKeeperAssignedTo.getWasteSize() ,enclosureKeeperAssignedTo.getWasteSize());
         }
     }
 
     private void treatTwoAnimals()
     {
+        System.out.format("\n--- %s NOW TREATING ---\n", this.keeperLabel);
+
         for(int i = 0; i < 2; i ++ )
         {
-            System.out.format("\n--- %s NOW TREATING ---\n", this.keeperLabel);
+            System.out.format("Treating animal #%s: " , i+1);
             this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
             System.out.println();
         }

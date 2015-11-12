@@ -12,7 +12,7 @@ public class Giraffe extends Animal
     private void neckMassage()
     {
         this.addHealth(4);
-        System.out.println("\nGiraffe has had neck massaged!");
+        System.out.format("%s has been massaged!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

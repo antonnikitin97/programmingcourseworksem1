@@ -18,7 +18,7 @@ public class Lion extends BigCat
     private void stroked()
     {
         this.addHealth(2);
-        System.out.println("\nLion has been stroked!");
+        System.out.format("%s has been stroked!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

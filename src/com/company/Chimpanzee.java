@@ -11,7 +11,7 @@ public class Chimpanzee extends Ape
     private void playChase()
     {
         this.addHealth(4);
-        System.out.println("\nChase has been played with Chimpanzee!");
+        System.out.format("Chase has been played with %s!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Gorilla extends Ape
     private void painting()
     {
         this.addHealth(4);
-        System.out.println("\nGorilla has painted!");
+        System.out.format("%s has painted!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

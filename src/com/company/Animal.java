@@ -107,7 +107,7 @@ public abstract class Animal
             {
                 if(temp.takeFood(s)) {
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
-                    System.out.format("\n%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
+                    System.out.format("\n%s has eaten %s! Health is now %s", this.type , s, this.getHealth());
                     break;
                 }else{
                     if(failedAttempts == this.eats.length)

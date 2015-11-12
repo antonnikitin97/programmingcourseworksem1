@@ -11,7 +11,7 @@ public class Elephant extends Animal
     private void bath()
     {
         this.addHealth(5);
-        System.out.println("\nElephant has been bathed!");
+        System.out.format("%s has been bathed!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override

@@ -11,7 +11,7 @@ public class Bear extends Animal
     private void hug()
     {
         this.addHealth(3);
-        System.out.format("Bear has been hugged!\n health is now: %s", this.getHealth());
+        System.out.format("%s has been hugged!\nHealth is now: %s", this.type ,this.getHealth());
     }
 
     @Override
