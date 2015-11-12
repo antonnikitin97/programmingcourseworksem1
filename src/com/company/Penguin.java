@@ -11,7 +11,7 @@ public class Penguin extends Animal
     private void watchAFilm()
     {
         this.addHealth(2);
-        System.out.println("A film has been watched with the penguin!");
+        System.out.println("\nA film has been watched with the penguin!");
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Penguin extends Animal
         if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(2)) {
             this.watchAFilm();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("play")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

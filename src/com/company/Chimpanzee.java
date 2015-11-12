@@ -11,7 +11,7 @@ public class Chimpanzee extends Ape
     private void playChase()
     {
         this.addHealth(4);
-        System.out.println("Chase has been played with Chimpanzee!");
+        System.out.println("\nChase has been played with Chimpanzee!");
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Chimpanzee extends Ape
         if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(4)) {
             this.playChase();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("play")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

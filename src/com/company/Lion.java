@@ -18,7 +18,7 @@ public class Lion extends BigCat
     private void stroked()
     {
         this.addHealth(2);
-        System.out.println("Lion has been stroked!");
+        System.out.println("\nLion has been stroked!");
     }
 
     @Override
@@ -27,7 +27,11 @@ public class Lion extends BigCat
         if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(2)) {
             this.stroked();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("default")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

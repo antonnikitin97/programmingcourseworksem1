@@ -11,7 +11,7 @@ public class Elephant extends Animal
     private void bath()
     {
         this.addHealth(5);
-        System.out.println("Elephant has been bathed!");
+        System.out.println("\nElephant has been bathed!");
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Elephant extends Animal
         if(keeperLabel.equals("physio") && this.checkIfHealthCanBeAdded(5)) {
             this.bath();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("physio")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

@@ -11,7 +11,7 @@ public class Bear extends Animal
     private void hug()
     {
         this.addHealth(3);
-        System.out.println("Bear has been hugged!");
+        System.out.format("Bear has been hugged!\n health is now: %s", this.getHealth());
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Bear extends Animal
         if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
             this.hug();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("default")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

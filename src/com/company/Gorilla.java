@@ -11,7 +11,7 @@ public class Gorilla extends Ape
     private void painting()
     {
         this.addHealth(4);
-        System.out.println("Gorilla has painted!");
+        System.out.println("\nGorilla has painted!");
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Gorilla extends Ape
         if(keeperLabel.equals("play") && this.checkIfHealthCanBeAdded(4)) {
             this.painting();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("play")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

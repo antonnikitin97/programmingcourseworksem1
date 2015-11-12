@@ -11,7 +11,7 @@ public class Tiger extends BigCat
     private void stroked()
     {
         this.addHealth(3);
-        System.out.println("Tiger has been stroked!");
+        System.out.println("\nTiger has been stroked!");
     }
 
     @Override
@@ -20,7 +20,11 @@ public class Tiger extends BigCat
         if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
             this.stroked();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("default")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

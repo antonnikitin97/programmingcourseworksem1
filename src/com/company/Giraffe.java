@@ -12,7 +12,7 @@ public class Giraffe extends Animal
     private void neckMassage()
     {
         this.addHealth(4);
-        System.out.println("Giraffe has had neck massaged! Health increased by 4");
+        System.out.println("\nGiraffe has had neck massaged!");
     }
 
     @Override
@@ -21,7 +21,11 @@ public class Giraffe extends Animal
         if(keeperLabel.equals("physio") && this.checkIfHealthCanBeAdded(4)) {
             this.neckMassage();
         }else{
-            System.out.format("Health of %s is max OR this keeper can't treat this animal!", this.type);
+            if(!keeperLabel.equals("physio")) {
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+            }else{
+                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+            }
         }
     }
 

@@ -25,7 +25,7 @@ public abstract class Animal
         }
 
         this.ageOfAnimal = 0;
-        this.health = 10;
+        this.health = 5;
         this.lifeExpectancy = lifeExpectancy;
         this.eats = eats;
 
@@ -57,8 +57,8 @@ public abstract class Animal
 
     protected void addHealth(Integer healthToAdd)
     {
-        if(checkIfHealthCanBeAdded(healthToAdd)) {
-            System.out.format("\nHealth of %s cannot be increased by %s as it would exceed 10 health!", this.type, healthToAdd);
+        if(checkIfHealthCanBeAdded(healthToAdd) == false) {
+            System.out.format("Health of %s cannot be increased by %s as it would exceed 10 health!", this.type, healthToAdd);
         }else{
             this.health += healthToAdd;
         }
@@ -170,7 +170,11 @@ public abstract class Animal
     */
     protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
     {
-        return (plannedHealthAddition + this.getHealth() > 10);
+        if(this.getHealth() + plannedHealthAddition > 10) {
+            return false;
+        }else{
+            return true;
+        }
     }
 
     /*

@@ -97,4 +97,13 @@ public class Enclosure
     {
         this.listOfKeepers.add(zk);
     }
+
+	public void printTypesOfAnimalInEnclosre()
+	{
+
+		for(Animal s : animalsInEnclosure)
+		{
+			System.out.format("Animal: %s --- Health: %s --- Age: %s\n", s.type, s.getHealth(), s.getAgeOfAnimal());
+		}
+	}
 }

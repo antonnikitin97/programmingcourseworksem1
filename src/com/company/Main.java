@@ -7,7 +7,6 @@ public class Main
         Zoo myZoo = new Zoo();
         myZoo.createEnclosuresAndZooKeepersTEST();
         myZoo.populateZooTEST();
-
         myZoo.aMonthPasses();
 
     }
