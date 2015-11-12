@@ -9,6 +9,7 @@ public class Enclosure
 	protected Integer animalWaste = 0;
 	protected Boolean isFull = false;
     protected ArrayList<ZooKeeper> listOfKeepers = new ArrayList<>();
+	protected ArrayList<Animal> deadAnimalsToRemove = new ArrayList<>();
 
 	public Enclosure()
 	{
@@ -65,17 +66,16 @@ public class Enclosure
 	*/
 	public void aMonthPasses()
 	{
-		printTypesOfAnimalInEnclosre();
-
 		for(Animal a: animalsInEnclosure)
         {
             try
             {
                 if(checkIfAnimalIsDead(a))
                 {
-                    this.animalsInEnclosure.remove(a);
+                    deadAnimalsToRemove.add(a);
                 }
                 a.aMonthPasses();
+				a.incrementAge();
             }
             catch(NullPointerException e)
             {
@@ -83,12 +83,17 @@ public class Enclosure
                 this.removeAnimal(a);
             }
         }
+
+		for(Animal a : deadAnimalsToRemove)
+		{
+			this.animalsInEnclosure.remove(a);
+		}
 	}
 
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
 		if(a.getHealth() == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
-			System.out.print("An animal has died!");
+			System.out.format("%s has died!\n", a.type);
 			return true;
 		}else{
 			return false;

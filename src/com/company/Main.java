@@ -4,10 +4,7 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Zoo myZoo = new Zoo();
-        myZoo.createEnclosuresAndZooKeepersTEST();
-        myZoo.populateZooTEST();
-        myZoo.aMonthPasses();
-
+        Simulation zooSim = new Simulation();
+        zooSim.go();
     }
 }

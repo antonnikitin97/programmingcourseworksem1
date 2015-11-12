@@ -11,9 +11,11 @@ public class Zoo
     protected Enclosure[] enclosures;
     protected ArrayList<ZooKeeper> zooKeepers = new ArrayList<>();
     protected FoodStore zooFoodStore;
+    protected Simulation mySim;
 
-    public Zoo()
+    public Zoo(Simulation mySim)
     {
+        this.mySim = mySim;
         zooFoodStore = new FoodStore();
         for(String s : this.zooFoodStore.getAvailableFoodInZoo())
         {
@@ -25,11 +27,14 @@ public class Zoo
     // call the 'aMonthPasses' method on each animal in the enclosure.
     public void aMonthPasses()
     {
+        mySim.displayStats();
+
         for(Enclosure e : enclosures)
         {
             e.aMonthPasses();
         }
 
+        System.out.println();
         System.out.println("\n--- ZOO KEEPER DUTY!!! ---");
 
         for(ZooKeeper k : zooKeepers)
@@ -37,9 +42,13 @@ public class Zoo
             k.aMonthPasses();
         }
 
+        System.out.println();
         System.out.println("\n--- ZOO ADMIN ---");
 
         orderAdditionalFood();
+
+        mySim.incrementMonth();
+
     }
 
     public void createEnclosuresAndZooKeepersTEST()
@@ -84,7 +93,7 @@ public class Zoo
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {
             this.zooFoodStore.addFood(s, 1);
-            System.out.format("\n1 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
+            System.out.format("1 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }
 

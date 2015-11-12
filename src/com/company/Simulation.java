@@ -11,17 +11,24 @@ public class Simulation
 
     public Simulation()
     {
-        zooSimLinkedTo = new Zoo();
+        zooSimLinkedTo = new Zoo(this);
+        zooSimLinkedTo.createEnclosuresAndZooKeepersTEST();
+        zooSimLinkedTo.populateZooTEST();
     }
 
     public void displayStats()
     {
-        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s", monthPassed, zooSimLinkedTo.enclosures.length);
+        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", monthPassed, zooSimLinkedTo.enclosures.length);
         getEnclosureStatus();
     }
 
     public void go()
     {
+        for(int i = 0; i <= 20; i ++)
+        {
+            zooSimLinkedTo.aMonthPasses();
+            System.out.println();
+        }
     }
 
     public void incrementMonth()
@@ -39,7 +46,7 @@ public class Simulation
 
         for(Enclosure e : zooSimLinkedTo.enclosures)
         {
-            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s", currentEnclosure, e.size());
+            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\n", currentEnclosure, e.size());
             e.printTypesOfAnimalInEnclosre();
             System.out.println("####");
             currentEnclosure += 1;

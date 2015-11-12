@@ -56,13 +56,12 @@ public class ZooKeeper {
             for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
                 if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
                     this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
-                    System.out.format("\n2 lots of %s from the zoo store has been added to the enclosure!\n", foodInHashMap);
+                    System.out.format("2 lots of %s from the zoo store has been added to the enclosure!\n", foodInHashMap);
                 } else {
                     System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
                 }
             }
         }
-
     }
 
     public void removedWasteFromEnclosure()
@@ -71,8 +70,8 @@ public class ZooKeeper {
             this.enclosureKeeperAssignedTo.removeWaste(20);
             System.out.format("20 waste has been removed from the enclosure! There is now %s waste in the enclosure!", enclosureKeeperAssignedTo.getWasteSize());
         }else{
+            System.out.format("%s waste has been removed from the enclosure! There is now %s waste in the enclosure!", this.enclosureKeeperAssignedTo.getWasteSize() ,this.enclosureKeeperAssignedTo.getWasteSize() - enclosureKeeperAssignedTo.getWasteSize());
             this.enclosureKeeperAssignedTo.removeWaste(this.enclosureKeeperAssignedTo.getWasteSize());
-            System.out.format("%s waste has been removed from the enclosure! There is now %s waste in the enclosure!", this.enclosureKeeperAssignedTo.getWasteSize() ,enclosureKeeperAssignedTo.getWasteSize());
         }
     }
 

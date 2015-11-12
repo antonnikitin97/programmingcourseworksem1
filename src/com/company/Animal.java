@@ -127,6 +127,11 @@ public abstract class Animal
     	
     }
 
+    public void incrementAge()
+    {
+        this.ageOfAnimal ++;
+    }
+
     protected abstract Boolean aMonthPasses();
 
     /*
