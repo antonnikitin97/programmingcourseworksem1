@@ -73,6 +73,7 @@ public class Enclosure
                 if(checkIfAnimalIsDead(a))
                 {
                     deadAnimalsToRemove.add(a);
+					continue;
                 }
                 a.aMonthPasses();
 				a.incrementAge();
@@ -93,7 +94,7 @@ public class Enclosure
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
 		if(a.getHealth() == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
-			System.out.format("%s has died!\n", a.type);
+			System.out.format("\n###%s has died!###\n", a.type);
 			return true;
 		}else{
 			return false;

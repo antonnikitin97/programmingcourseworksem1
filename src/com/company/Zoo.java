@@ -92,8 +92,8 @@ public class Zoo
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {
-            this.zooFoodStore.addFood(s, 1);
-            System.out.format("1 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
+            this.zooFoodStore.addFood(s, 2);
+            System.out.format("2 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }
 

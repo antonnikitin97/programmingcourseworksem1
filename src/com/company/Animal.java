@@ -25,7 +25,7 @@ public abstract class Animal
         }
 
         this.ageOfAnimal = 0;
-        this.health = 5;
+        this.health = 10;
         this.lifeExpectancy = lifeExpectancy;
         this.eats = eats;
 
@@ -66,7 +66,10 @@ public abstract class Animal
 
     protected void removeHealth(Integer healthToRemove)
     {
-        checkIfHealthCanBeRemoved(healthToRemove);
+        if(checkIfHealthCanBeRemoved(healthToRemove))
+        {
+            this.health -= healthToRemove;
+        }
     }
 
     protected Integer getHealth()

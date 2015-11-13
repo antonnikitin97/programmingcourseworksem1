@@ -24,7 +24,7 @@ public class Simulation
 
     public void go()
     {
-        for(int i = 0; i <= 20; i ++)
+        for(int i = 0; i <= 7; i ++)
         {
             zooSimLinkedTo.aMonthPasses();
             System.out.println();
