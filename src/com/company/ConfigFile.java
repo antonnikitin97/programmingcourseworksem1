@@ -3,12 +3,14 @@ package com.company;
 import java.io.BufferedInputStream;
 import java.io.DataInputStream;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 
 public class ConfigFile
 {
     protected Scanner inputScanner = new Scanner(System.in);
+    protected Scanner fileScanner;
     protected File configFile;
     private BufferedInputStream inputStream;
     protected DataInputStream dataInputStream;
@@ -24,6 +26,24 @@ public class ConfigFile
 
     public void readConfig()
     {
+        try
+        {
+            fileScanner = new Scanner(configFile);
+
+            switch(fileScanner.nextLine())
+            {
+
+            }
+        }
+        catch(FileNotFoundException e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void extractEnclosure()
+    {
 
     }
+
 }

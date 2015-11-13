@@ -11,9 +11,6 @@ public class Simulation
 
     public Simulation()
     {
-        zooSimLinkedTo = new Zoo(this);
-        zooSimLinkedTo.createEnclosuresAndZooKeepersTEST();
-        zooSimLinkedTo.populateZooTEST();
     }
 
     public void go()
@@ -35,4 +32,8 @@ public class Simulation
         return monthPassed;
     }
 
+    public void setZooSimLinkedTo(Zoo zoo)
+    {
+        this.zooSimLinkedTo = zoo;
+    }
 }

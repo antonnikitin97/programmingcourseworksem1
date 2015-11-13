@@ -10,15 +10,17 @@ import java.util.Random;
 public class Zoo
 {
     protected Enclosure[] enclosures;
-    protected ArrayList<ZooKeeper> zooKeepers = new ArrayList<>();
+    protected ArrayList<ZooKeeper> zooKeepers;
     protected FoodStore zooFoodStore;
     protected Simulation mySim;
     protected Random ran = new Random();
 
-    public Zoo(Simulation mySim)
+    public Zoo(Simulation mySim, FoodStore zooFoodStore, Enclosure[] enclosureList, ArrayList<ZooKeeper> keeperArrayList)
     {
         this.mySim = mySim;
-        zooFoodStore = new FoodStore();
+        this.zooFoodStore = zooFoodStore;
+        this.enclosures = enclosureList;
+        this.zooKeepers = keeperArrayList;
         for(String s : this.zooFoodStore.getAvailableFoodInZoo())
         {
             zooFoodStore.foodStorage.put(s , 10);
