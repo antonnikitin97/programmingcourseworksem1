@@ -25,11 +25,17 @@ public class Zoo
         }
     }
 
-    // This method will call the 'aMonthPasses' on each enclosure, it does this by iterating over the array of enclosures, which will in turn
-    // call the 'aMonthPasses' method on each animal in the enclosure.
+    /*
+    This method first displays the statistics for the whole zoo, which includes the number of months that have passed, the number of enclosures in the zoo,
+    the animals in those enclosure and their health and age. It then proceeds to check through the list of enclosures, and returns the ones that have animals
+    in them. It then calls the 'aMonthPasses' method on these enclosures. After this has finished. It then checks to see whether these enclosures STILL
+    has animals in them, if they don't, all animals have died and the simulation terminates. If they do then it then proceeds to iterate over the list of
+    ZooKeepers and calls their 'aMonthPasses' method. After this it orders additional food for the zoo and then increments the number of months passed
+    by one.
+    */
     public void aMonthPasses()
     {
-        mySim.displayStats();
+        displayStats();
         for(Enclosure e : getValidEnclosures())
         {
             System.out.format("\nEnclosure %s animals eating!!!\n\n", getValidEnclosures().indexOf(e));
@@ -122,6 +128,29 @@ public class Zoo
         {
             this.zooFoodStore.addFood(s, 2);
             System.out.format("2 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
+        }
+    }
+
+    public void displayStats()
+    {
+        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", mySim.getMonthsPassed() , this.enclosures.length);
+        getEnclosureStatus();
+    }
+
+    /*
+    This method iterates over all the enclosures in the zoo and prints out information about them including
+    the types of animal in the enclosure, their age and their health.
+    */
+    private void getEnclosureStatus()
+    {
+        Integer currentEnclosure = 0;
+
+        for(Enclosure e : this.enclosures)
+        {
+            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.size(), e.getWasteSize());
+            e.printTypesOfAnimalInEnclosre();
+            System.out.println("#######################################");
+            currentEnclosure += 1;
         }
     }
 }

@@ -16,12 +16,6 @@ public class Simulation
         zooSimLinkedTo.populateZooTEST();
     }
 
-    public void displayStats()
-    {
-        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", monthPassed, zooSimLinkedTo.enclosures.length);
-        getEnclosureStatus();
-    }
-
     public void go()
     {
         for(int i = 0; i <= 1; i ++)
@@ -33,23 +27,12 @@ public class Simulation
 
     public void incrementMonth()
     {
-        monthPassed ++;
+        monthPassed += 1;
     }
 
-    /*
-    This method iterates over all the enclosures in the zoo and prints out information about them including
-    the types of animal in the enclosure, their age and their health.
-    */
-    private void getEnclosureStatus()
+    public Integer getMonthsPassed()
     {
-        Integer currentEnclosure = 0;
-
-        for(Enclosure e : zooSimLinkedTo.enclosures)
-        {
-            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.size(), e.getWasteSize());
-            e.printTypesOfAnimalInEnclosre();
-            System.out.println("#######################################");
-            currentEnclosure += 1;
-        }
+        return monthPassed;
     }
+
 }
