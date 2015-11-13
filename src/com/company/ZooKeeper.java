@@ -57,7 +57,7 @@ public class ZooKeeper {
                 if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
                     this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
                     System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, this.zoo.getValidEnclosures().indexOf(this.enclosureKeeperAssignedTo));
-                } else {
+                }else{
                     System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
                 }
             }
