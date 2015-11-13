@@ -58,7 +58,7 @@ public abstract class Animal
     protected void addHealth(Integer healthToAdd)
     {
         if(checkIfHealthCanBeAdded(healthToAdd) == false) {
-            System.out.format("Health of %s cannot be increased by %s as it would exceed 10 health!", this.type, healthToAdd);
+            System.out.format("Health of %s cannot be increased by %s as it would exceed 10 health!\n", this.type, healthToAdd);
         }else{
             this.health += healthToAdd;
         }
@@ -110,12 +110,12 @@ public abstract class Animal
             {
                 if(temp.takeFood(s)) {
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
-                    System.out.format("\n%s has eaten %s! Health is now %s", this.type , s, this.getHealth());
+                    System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
                     if(failedAttempts == this.eats.length)
                     {
-                        System.out.println("\nNot enough food to feed animal! We should order more food!\n");
+                        System.out.println("Not enough food to feed animal! We should order more food!");
                         break;
                     }
                     System.out.format("Not enough of %s in store, continuing search... " , s);
@@ -192,7 +192,7 @@ public abstract class Animal
     protected Boolean checkIfHealthCanBeRemoved(Integer plannedHealthDecrement)
     {
         if(this.getHealth() - plannedHealthDecrement < 0) {
-            System.out.println("\nPlanned health removal will make health negative!\n");
+            System.out.println("Planned health removal will make health negative!");
             return false;
         }else{
             return true;

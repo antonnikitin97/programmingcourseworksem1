@@ -24,7 +24,7 @@ public class Simulation
 
     public void go()
     {
-        for(int i = 0; i <= 7; i ++)
+        for(int i = 0; i <= 50; i ++)
         {
             zooSimLinkedTo.aMonthPasses();
             System.out.println();
@@ -48,7 +48,7 @@ public class Simulation
         {
             System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\n", currentEnclosure, e.size());
             e.printTypesOfAnimalInEnclosre();
-            System.out.println("####");
+            System.out.println("#######################################");
             currentEnclosure += 1;
         }
     }

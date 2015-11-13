@@ -1,5 +1,5 @@
 /*
-Zoo class that models the actual zoo, contains fields that represent the enclosures
+Zoo class that models the actual zoo, contains fields that represent the enclosures, and the zookeepers
 */
 
 package com.company;
@@ -27,14 +27,19 @@ public class Zoo
     // call the 'aMonthPasses' method on each animal in the enclosure.
     public void aMonthPasses()
     {
+        setEmptyStatus();
+
         mySim.displayStats();
 
         for(Enclosure e : enclosures)
         {
+            if(e.isEmpty)
+            {
+
+            }
             e.aMonthPasses();
         }
 
-        System.out.println();
         System.out.println("\n--- ZOO KEEPER DUTY!!! ---");
 
         for(ZooKeeper k : zooKeepers)
@@ -42,7 +47,6 @@ public class Zoo
             k.aMonthPasses();
         }
 
-        System.out.println();
         System.out.println("\n--- ZOO ADMIN ---");
 
         orderAdditionalFood();
@@ -83,8 +87,6 @@ public class Zoo
         {
             a.enclosureAnimalResidesIn = enclosures[0];
         }
-
-
     }
 
     // This method will order additional food for the zoo food store
@@ -97,4 +99,15 @@ public class Zoo
         }
     }
 
+    private void setEmptyStatus()
+    {
+        for(Enclosure e : enclosures)
+        {
+            if(e.animalsInEnclosure.size() == 0) {
+                e.isEmpty = true;
+            }else{
+                e.isEmpty = false;
+            }
+        }
+    }
 }
