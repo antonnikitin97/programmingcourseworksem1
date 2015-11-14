@@ -10,5 +10,15 @@ fish =
 ice cream =
 NewEnclosure:
 Waste =
+steak =
+hay =
+fruit =
+celery =
+fish =
+ice cream =
 Animals:
-Lion = M 12 4 0
+Lion = M 12 4
+ZooKeeper:
+Default [] (enclosure NUMBER here)
+Play []
+Physio []
