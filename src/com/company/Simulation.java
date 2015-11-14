@@ -1,5 +1,6 @@
 /*
-The class responsible for 'running' the simulation, keeps track of the months that have passed
+The class responsible for 'running' the simulation, keeps track of the months that have passed and contains
+
  */
 
 package com.company;

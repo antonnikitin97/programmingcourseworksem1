@@ -107,6 +107,11 @@ public class Zoo
         }
     }
 
+    /*
+    Iterates over the list of enclosures and checks to see whether they are empty,
+    returns the ones which are not. If the method returns a list containing no enclosures, then this means
+    all the animals are dead.
+    */
     public ArrayList<Enclosure> getValidEnclosures()
     {
         ArrayList<Enclosure> listOfValid = new ArrayList<>();
@@ -123,7 +128,7 @@ public class Zoo
         return listOfValid;
     }
 
-    // This method will order additional food for the zoo food store
+    //This method will order additional food for the zoo food store
     public void orderAdditionalFood()
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())
@@ -133,6 +138,11 @@ public class Zoo
         }
     }
 
+    /*
+    Displays statistics such as the months passed, and the number of enclosures in the zoo
+    It then proceeds to call a method which displays information about the animals in the
+    enclosures.
+    */
     public void displayStats()
     {
         System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", mySim.getMonthsPassed() , this.enclosures.length);
@@ -150,7 +160,7 @@ public class Zoo
         for(Enclosure e : this.enclosures)
         {
             System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.size(), e.getWasteSize());
-            e.printTypesOfAnimalInEnclosre();
+            e.printTypesOfAnimalInEnclosure();
             System.out.println("#######################################");
             currentEnclosure += 1;
         }

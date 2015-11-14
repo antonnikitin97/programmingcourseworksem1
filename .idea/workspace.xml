@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="BookmarkManager">
-    <bookmark url="file://$PROJECT_DIR$/src/com/company/Zoo.java" line="141" />
+    <bookmark url="file://$PROJECT_DIR$/src/com/company/Zoo.java" line="151" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12c4e788-1b3b-4123-a4ae-155e894d84c7" name="Default" comment="Begun implementation of config file.... (added further code)">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/NotCode/Exemplar Config File" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ConfigFile.java" afterPath="$PROJECT_DIR$/src/com/company/ConfigFile.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Enclosure.java" afterPath="$PROJECT_DIR$/src/com/company/Enclosure.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Simulation.java" afterPath="$PROJECT_DIR$/src/com/company/Simulation.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Zoo.java" afterPath="$PROJECT_DIR$/src/com/company/Zoo.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" afterPath="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
     </list>
     <ignored path="programmingcourseworksem1.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -42,28 +42,51 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="Zoo.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+            <state vertical-scroll-proportion="0.4423913">
+              <caret line="112" column="29" selection-start-line="112" selection-start-column="29" selection-end-line="112" selection-end-column="29" />
               <folding>
-                <element signature="e#0#5560#0" expanded="true" />
+                <element signature="e#0#6005#0" expanded="true" />
                 <element signature="imports" expanded="true" />
+                <element signature="method#Zoo#0;class#Zoo#0" expanded="false" />
                 <element signature="method#aMonthPasses#0;class#Zoo#0" expanded="false" />
                 <element signature="method#createEnclosuresAndZooKeepersTEST#0;class#Zoo#0" expanded="false" />
                 <element signature="method#populateZooTEST#0;class#Zoo#0" expanded="false" />
                 <element signature="method#getValidEnclosures#0;class#Zoo#0" expanded="false" />
+                <element signature="method#orderAdditionalFood#0;class#Zoo#0" expanded="false" />
+                <element signature="method#displayStats#0;class#Zoo#0" expanded="false" />
                 <element signature="method#getEnclosureStatus#0;class#Zoo#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Exemplar Config File" pinned="false" current-in-tab="true">
+      <file leaf-file-name="PlayZooKeeper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PhysioZooKeeper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Exemplar Config File" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/NotCode/Exemplar Config File">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.120567374">
+            <state vertical-scroll-proportion="0.0">
               <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
               <folding />
             </state>
@@ -86,23 +109,13 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+              <caret line="65" column="82" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
               <folding>
                 <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
                 <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
                 <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
-                <element signature="method#printTypesOfAnimalInEnclosre#0;class#Enclosure#0" expanded="false" />
+                <element signature="method#printTypesOfAnimalInEnclosure#0;class#Enclosure#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Penguin.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/com/company/Penguin.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -111,14 +124,11 @@
         <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding>
-                <element signature="e#463#464#0" expanded="true" />
-                <element signature="e#495#496#0" expanded="true" />
-                <element signature="e#539#540#0" expanded="true" />
-                <element signature="e#573#574#0" expanded="true" />
-                <element signature="e#623#624#0" expanded="true" />
-                <element signature="e#664#665#0" expanded="true" />
+                <element signature="e#0#682#0" expanded="true" />
+                <element signature="method#Simulation#0;class#Simulation#0" expanded="false" />
+                <element signature="method#go#0;class#Simulation#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -134,22 +144,15 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ECS Zoo.iml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/ECS Zoo.iml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="ZooKeeper.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
-              <folding />
+              <caret line="88" column="118" selection-start-line="88" selection-start-column="118" selection-end-line="88" selection-end-column="118" />
+              <folding>
+                <element signature="method#ZooKeeper#1;class#ZooKeeper#0" expanded="false" />
+                <element signature="method#assignEnclosure#0;class#ZooKeeper#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -159,15 +162,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GradleLocalSettings">
+    <option name="externalProjectsViewState">
+      <projects_view />
+    </option>
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/com/company/ConfigFile.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Zoo.java" />
-        <option value="$PROJECT_DIR$/src/com/company/Simulation.java" />
         <option value="$PROJECT_DIR$/src/NotCode/Exemplar Config File" />
+        <option value="$PROJECT_DIR$/src/com/company/Simulation.java" />
+        <option value="$PROJECT_DIR$/src/com/company/ZooKeeper.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Enclosure.java" />
+        <option value="$PROJECT_DIR$/src/com/company/Zoo.java" />
       </list>
     </option>
   </component>
@@ -177,10 +186,10 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="2576" />
-    <option name="height" value="1416" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1058" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -207,8 +216,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -265,130 +272,20 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="js-jscs-nodeInterpreter" value="C:\Program Files\nodejs\node.exe" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="H:\programmingcourseworksem1\programmingcourseworksem1\src\NotCode" />
     </key>
-  </component>
-  <component name="RestoreUpdateTree" date="Moments ago" ActionInfo="_Update">
-    <UpdatedFiles>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Updated from server" />
-        <option name="myStatusName" value="Changed on server" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="CHANGED_ON_SERVER" />
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Updated" />
-          <option name="myStatusName" value="Changed" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="UPDATED" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Animal.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Enclosure.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Simulation.java</PATH>
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/src/com/company/Zoo.java</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Created" />
-          <option name="myStatusName" value="Created" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="CREATED" />
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Deleted" />
-          <option name="myStatusName" value="Deleted" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="true" />
-          <option name="myId" value="REMOVED_FROM_REPOSITORY" />
-          <PATH vcs="Git" revision="">$PROJECT_DIR$/.idea/workspace.xml</PATH>
-        </FILE-GROUP>
-        <FILE-GROUP>
-          <option name="myUpdateName" value="Restored" />
-          <option name="myStatusName" value="Will be restored" />
-          <option name="mySupportsDeletion" value="false" />
-          <option name="myCanBeAbsent" value="false" />
-          <option name="myId" value="RESTORED" />
-        </FILE-GROUP>
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Modified" />
-        <option name="myStatusName" value="Modified" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MODIFIED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Skipped" />
-        <option name="myStatusName" value="Skipped" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SKIPPED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with conflicts" />
-        <option name="myStatusName" value="Will be merged with conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_CONFLICTS" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with tree conflicts" />
-        <option name="myStatusName" value="Merged with tree conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_TREE_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged with property conflicts" />
-        <option name="myStatusName" value="Will be merged with property conflicts" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED_WITH_PROPERTY_CONFLICT" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Merged" />
-        <option name="myStatusName" value="Will be merged" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="MERGED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Not in repository" />
-        <option name="myStatusName" value="Not in repository" />
-        <option name="mySupportsDeletion" value="true" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="UNKNOWN" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally added" />
-        <option name="myStatusName" value="Locally added" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_ADDED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Locally removed" />
-        <option name="myStatusName" value="Locally removed" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="LOCALLY_REMOVED" />
-      </FILE-GROUP>
-      <FILE-GROUP>
-        <option name="myUpdateName" value="Switched" />
-        <option name="myStatusName" value="Switched" />
-        <option name="mySupportsDeletion" value="false" />
-        <option name="myCanBeAbsent" value="false" />
-        <option name="myId" value="SWITCHED" />
-      </FILE-GROUP>
-    </UpdatedFiles>
   </component>
   <component name="RunManager" selected="Application.Unnamed">
     <configuration default="true" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" factoryName="Plugin">
@@ -782,6 +679,11 @@
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.gulp" factoryName="Gulp.js">
+      <node-options />
+      <gulpfile />
+      <tasks />
+      <arguments />
+      <envs />
       <method />
     </configuration>
     <configuration default="true" type="js.build_tools.npm" factoryName="npm">
@@ -816,6 +718,9 @@
     </list>
   </component>
   <component name="ShelveChangesManager" show_recycled="false" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="Began testing of multiple enclosures....&#10;">
       <created>1447442076252</created>
@@ -841,19 +746,27 @@
       <option name="project" value="LOCAL" />
       <updated>1447445554007</updated>
     </task>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="12c4e788-1b3b-4123-a4ae-155e894d84c7" name="Default" comment="Begun implementation of config file.... (added further code)" />
+      <created>1447464411141</created>
+      <option name="number" value="Default" />
+      <updated>1447464411141</updated>
+      <workItem from="1447464412562" duration="5000" />
+      <workItem from="1447464445086" duration="3000" />
+      <workItem from="1447537674607" duration="1899000" />
+    </task>
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7841000" />
+    <option name="totallyTimeSpent" value="9748000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="2576" height="1416" extended-state="6" />
+    <frame x="-9" y="-9" width="1938" height="1058" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -861,21 +774,33 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3598775" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23725286" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.330781" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.45788667" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.330781" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
+  </component>
+  <component name="Vcs.Log.UiProperties">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
+      <collection />
+    </option>
+    <option name="RECENTLY_FILTERED_BRANCH_GROUPS">
+      <collection />
+    </option>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Began testing of multiple enclosures....&#10;" />
@@ -886,7 +811,7 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="29" />
+      <option name="time" value="31" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="Application">
@@ -904,7 +829,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -933,12 +857,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
           <folding>
-            <element signature="e#0#5560#0" expanded="true" />
+            <element signature="e#0#6005#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#Zoo#0;class#Zoo#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Zoo#0" expanded="false" />
             <element signature="method#createEnclosuresAndZooKeepersTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#populateZooTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#getValidEnclosures#0;class#Zoo#0" expanded="false" />
+            <element signature="method#orderAdditionalFood#0;class#Zoo#0" expanded="false" />
+            <element signature="method#displayStats#0;class#Zoo#0" expanded="false" />
             <element signature="method#getEnclosureStatus#0;class#Zoo#0" expanded="false" />
           </folding>
         </state>
@@ -967,7 +894,7 @@
             <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
             <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#printTypesOfAnimalInEnclosre#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#printTypesOfAnimalInEnclosure#0;class#Enclosure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -976,7 +903,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="method#ZooKeeper#1;class#ZooKeeper#0" expanded="false" />
+            <element signature="method#assignEnclosure#0;class#ZooKeeper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,7 +935,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1034,12 +963,15 @@
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="52" selection-start-line="42" selection-start-column="52" selection-end-line="42" selection-end-column="52" />
           <folding>
-            <element signature="e#0#5560#0" expanded="true" />
+            <element signature="e#0#6005#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#Zoo#0;class#Zoo#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Zoo#0" expanded="false" />
             <element signature="method#createEnclosuresAndZooKeepersTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#populateZooTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#getValidEnclosures#0;class#Zoo#0" expanded="false" />
+            <element signature="method#orderAdditionalFood#0;class#Zoo#0" expanded="false" />
+            <element signature="method#displayStats#0;class#Zoo#0" expanded="false" />
             <element signature="method#getEnclosureStatus#0;class#Zoo#0" expanded="false" />
           </folding>
         </state>
@@ -1068,7 +1000,7 @@
             <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
             <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#printTypesOfAnimalInEnclosre#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#printTypesOfAnimalInEnclosure#0;class#Enclosure#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1077,7 +1009,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="24" column="5" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
-          <folding />
+          <folding>
+            <element signature="method#ZooKeeper#1;class#ZooKeeper#0" expanded="false" />
+            <element signature="method#assignEnclosure#0;class#ZooKeeper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1161,7 +1096,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="48" column="36" selection-start-line="48" selection-start-column="36" selection-end-line="48" selection-end-column="36" />
-          <folding />
+          <folding>
+            <element signature="method#ZooKeeper#1;class#ZooKeeper#0" expanded="false" />
+            <element signature="method#assignEnclosure#0;class#ZooKeeper#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1169,13 +1107,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1191,9 +1122,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding>
-            <element signature="e#108#109#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1201,7 +1129,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1209,7 +1136,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1217,7 +1143,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1233,7 +1158,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1241,7 +1165,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="42" column="0" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1267,14 +1190,6 @@
             <element signature="e#1380#1381#0" expanded="true" />
             <element signature="e#1414#1415#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1312,17 +1227,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
+    <entry file="file://$PROJECT_DIR$/src/NotCode/Exemplar Config File">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="0" selection-start-line="39" selection-start-column="0" selection-end-line="39" selection-end-column="0" />
+          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="88" column="118" selection-start-line="88" selection-start-column="118" selection-end-line="88" selection-end-column="118" />
           <folding>
-            <element signature="e#463#464#0" expanded="true" />
-            <element signature="e#495#496#0" expanded="true" />
-            <element signature="e#539#540#0" expanded="true" />
-            <element signature="e#573#574#0" expanded="true" />
-            <element signature="e#623#624#0" expanded="true" />
-            <element signature="e#664#665#0" expanded="true" />
+            <element signature="method#ZooKeeper#1;class#ZooKeeper#0" expanded="false" />
+            <element signature="method#assignEnclosure#0;class#ZooKeeper#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1335,10 +1254,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/com/company/ZooKeeper.java">
+    <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="28" column="33" selection-start-line="28" selection-start-column="33" selection-end-line="28" selection-end-column="33" />
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding>
+            <element signature="e#0#682#0" expanded="true" />
+            <element signature="method#Simulation#0;class#Simulation#0" expanded="false" />
+            <element signature="method#go#0;class#Simulation#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PlayZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/com/company/PhysioZooKeeper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1346,37 +1285,32 @@
     <entry file="file://$PROJECT_DIR$/src/com/company/Enclosure.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="67" column="30" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
+          <caret line="65" column="82" selection-start-line="65" selection-start-column="82" selection-end-line="65" selection-end-column="82" />
           <folding>
             <element signature="method#addAnimal#0;class#Enclosure#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Enclosure#0" expanded="false" />
             <element signature="method#checkIfAnimalIsDead#0;class#Enclosure#0" expanded="false" />
-            <element signature="method#printTypesOfAnimalInEnclosre#0;class#Enclosure#0" expanded="false" />
+            <element signature="method#printTypesOfAnimalInEnclosure#0;class#Enclosure#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Zoo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="126" column="31" selection-start-line="126" selection-start-column="31" selection-end-line="126" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.4423913">
+          <caret line="112" column="29" selection-start-line="112" selection-start-column="29" selection-end-line="112" selection-end-column="29" />
           <folding>
-            <element signature="e#0#5560#0" expanded="true" />
+            <element signature="e#0#6005#0" expanded="true" />
             <element signature="imports" expanded="true" />
+            <element signature="method#Zoo#0;class#Zoo#0" expanded="false" />
             <element signature="method#aMonthPasses#0;class#Zoo#0" expanded="false" />
             <element signature="method#createEnclosuresAndZooKeepersTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#populateZooTEST#0;class#Zoo#0" expanded="false" />
             <element signature="method#getValidEnclosures#0;class#Zoo#0" expanded="false" />
+            <element signature="method#orderAdditionalFood#0;class#Zoo#0" expanded="false" />
+            <element signature="method#displayStats#0;class#Zoo#0" expanded="false" />
             <element signature="method#getEnclosureStatus#0;class#Zoo#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/NotCode/Exemplar Config File">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.120567374">
-          <caret line="6" column="7" selection-start-line="6" selection-start-column="7" selection-end-line="6" selection-end-column="7" />
-          <folding />
         </state>
       </provider>
     </entry>

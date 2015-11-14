@@ -107,7 +107,7 @@ public class Enclosure
         this.listOfKeepers.add(zk);
     }
 
-	public void printTypesOfAnimalInEnclosre()
+	public void printTypesOfAnimalInEnclosure()
 	{
 
 		System.out.println("--- STATUS ON ANIMALS IN ENCLOSURE ---");

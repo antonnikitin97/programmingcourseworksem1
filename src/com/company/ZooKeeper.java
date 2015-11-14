@@ -75,13 +75,17 @@ public class ZooKeeper {
         }
     }
 
+    /*
+    This method allows the zookeeper to treat up to two animals, it does this by generating two random numbers between 0 and the size of the enclosure (to avoid
+    out of bounds exceptions). The keeper then treats this animal. (Twice)
+    */
     private void treatTwoAnimals()
     {
         System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, this.zoo.getValidEnclosures().indexOf(this.enclosureKeeperAssignedTo));
 
         for(int i = 0; i < 2; i ++ )
         {
-            System.out.format("Treating animal #%s: " , i+1);
+            System.out.format("Treating animal #%s: " , i + 1);
             this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
             System.out.println();
         }
