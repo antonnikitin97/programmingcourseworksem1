@@ -15,16 +15,10 @@ public class Zoo
     protected Simulation mySim;
     protected Random ran = new Random();
 
-    public Zoo(Simulation mySim, FoodStore zooFoodStore, Enclosure[] enclosureList, ArrayList<ZooKeeper> keeperArrayList)
+    public Zoo(Simulation mySim, FoodStore zooFoodStore)
     {
         this.mySim = mySim;
         this.zooFoodStore = zooFoodStore;
-        this.enclosures = enclosureList;
-        this.zooKeepers = keeperArrayList;
-        for(String s : this.zooFoodStore.getAvailableFoodInZoo())
-        {
-            zooFoodStore.foodStorage.put(s , 10);
-        }
     }
 
     /*
