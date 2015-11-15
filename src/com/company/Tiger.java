@@ -2,9 +2,9 @@ package com.company;
 
 public class Tiger extends BigCat
 {
-    public Tiger()
+    public Tiger(Integer lifeExpectancy, Integer age, Integer health, char gender)
     {
-        super();
+        super(lifeExpectancy, age, health, gender);
         this.type = "Tiger";
     }
 

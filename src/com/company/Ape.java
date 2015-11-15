@@ -2,8 +2,8 @@ package com.company;
 
 public abstract class Ape extends Animal
 {
-    public Ape(Integer lifeExpectancy)
+    public Ape(Integer lifeExpectancy, Integer age, Integer health, char gender)
     {
-        super(lifeExpectancy, new String []{"fruit", "ice cream"});
+        super(age, lifeExpectancy, health, new String []{"fruit", "ice cream"}, gender );
     }
 }

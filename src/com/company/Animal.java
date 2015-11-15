@@ -9,7 +9,6 @@ public abstract class Animal
     private Integer health;
     private Integer lifeExpectancy;
     protected Enclosure enclosureAnimalResidesIn;
-    protected Random randomGen = new Random();
     protected String type;
 
     /*
@@ -17,7 +16,7 @@ public abstract class Animal
     */
     public Animal(Integer age, Integer lifeExpectancy, Integer health, String[] eats, char gender)
     {
-        this.ageOfAnimal = 0;
+        this.ageOfAnimal = age;
         this.health = health;
         this.lifeExpectancy = lifeExpectancy;
         this.eats = eats;

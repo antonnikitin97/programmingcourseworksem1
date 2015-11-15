@@ -9,9 +9,9 @@ public class Lion extends BigCat
     // Constructor for the lion object, in it we are calling the constructor of the parent class
     // This is because the parent class' constructor initializes default values for 'eats' and
     // lifeExpectancy for 'BigCats'
-    public Lion()
+    public Lion(Integer lifeExpectancy, Integer age, Integer health, char gender)
     {
-        super();
+        super(lifeExpectancy, age, health, gender);
         this.type = "Lion";
     }
 
