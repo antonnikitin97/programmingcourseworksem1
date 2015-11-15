@@ -1,7 +1,10 @@
 package com.company;
 
+import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
+
 import javax.xml.crypto.Data;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ConfigFile
@@ -9,6 +12,10 @@ public class ConfigFile
     protected Scanner inputScanner = new Scanner(System.in);
     protected File configFile;
     protected Simulation mySim;
+    protected ArrayList<String> zooConfig = new ArrayList<>();
+    protected ArrayList<String> enclsoureConfig = new ArrayList<>();
+    protected ArrayList<String> animalConfig = new ArrayList<>();
+    protected ArrayList<String> zookeeperConfig = new ArrayList<>();
 
     private String configFilePath = "";
 
@@ -27,21 +34,35 @@ public class ConfigFile
 
     public void readConfig()
     {
-        BufferedReader reader = null;
-        BufferedInputStream inputStream = null;
-        DataInputStream dataInputStream = null;
-        FileInputStream fileInputStream = null;
+        FileReader reader = null;
+        BufferedReader bufferedReader = null;
 
         try
         {
-            fileInputStream = new FileInputStream(configFile);
-            inputStream = new BufferedInputStream(fileInputStream);
-            dataInputStream = new DataInputStream(inputStream);
+            reader = new FileReader(configFile);
+            bufferedReader = new BufferedReader(reader);
 
-            while(dataInputStream.available() != 0)
+            String line = "";
+            while(!(line = bufferedReader.readLine()).equals("NewEnclosure:"))
             {
-
+                zooConfig.add(line);
             }
+            zooConfig.remove("zoo:");
+            while(!(line = bufferedReader.readLine()).equals("Animals:"))
+            {
+                enclsoureConfig.add(line);
+            }
+            enclsoureConfig.remove("Animals:");
+            while(!(line = bufferedReader.readLine()).equals("ZooKeeper:"))
+            {
+                animalConfig.add(line);
+            }
+            animalConfig.remove("Animals:");
+            while((line = bufferedReader.readLine()) != null)
+            {
+                zookeeperConfig.add(line);
+            }
+            zookeeperConfig.remove("ZooKeeper:");
         }
         catch (FileNotFoundException e)
         {
@@ -54,7 +75,7 @@ public class ConfigFile
         }
     }
 
-    public void extractEnclosure()
+    public void extractEnclosure(ArrayList<String> )
     {
 
     }
