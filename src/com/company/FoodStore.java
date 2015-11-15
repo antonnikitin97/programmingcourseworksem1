@@ -10,14 +10,14 @@ public class FoodStore
     public FoodStore()
     {
     	foodStorage = new HashMap<>();
-        populateInitialAmountsTEST();
+        populateZeroFood();
     }
 
-    private void populateInitialAmountsTEST()
+    public void populateZeroFood()
     {
         for(String s : getAvailableFoodInZoo())
         {
-            this.foodStorage.put(s, 10);
+            this.foodStorage.put(s, 0);
         }
     }
 

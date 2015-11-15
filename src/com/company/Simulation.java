@@ -16,11 +16,6 @@ public class Simulation
 
     public void go()
     {
-        for(int i = 0; i <= 1; i ++)
-        {
-            zooSimLinkedTo.aMonthPasses();
-            System.out.println();
-        }
     }
 
     public void incrementMonth()

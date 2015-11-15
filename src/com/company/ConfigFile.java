@@ -1,8 +1,5 @@
 package com.company;
 
-import com.sun.xml.internal.ws.policy.privateutil.PolicyUtils;
-
-import javax.xml.crypto.Data;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -13,7 +10,7 @@ public class ConfigFile
     protected File configFile;
     protected Simulation mySim;
     protected ArrayList<String> zooConfig = new ArrayList<>();
-    protected ArrayList<String> enclsoureConfig = new ArrayList<>();
+    protected ArrayList<String> enclosureConfig = new ArrayList<>();
     protected ArrayList<String> animalConfig = new ArrayList<>();
     protected ArrayList<String> zookeeperConfig = new ArrayList<>();
 
@@ -21,7 +18,7 @@ public class ConfigFile
 
     public ConfigFile()
     {
-        //this.mySim = simToPassIn;
+        mySim = new Simulation();
     }
 
     public void getDirectoryOfFile()
@@ -50,9 +47,9 @@ public class ConfigFile
             zooConfig.remove("zoo:");
             while(!(line = bufferedReader.readLine()).equals("Animals:"))
             {
-                enclsoureConfig.add(line);
+                enclosureConfig.add(line);
             }
-            enclsoureConfig.remove("Animals:");
+            enclosureConfig.remove("Animals:");
             while(!(line = bufferedReader.readLine()).equals("ZooKeeper:"))
             {
                 animalConfig.add(line);
@@ -73,26 +70,65 @@ public class ConfigFile
         {
             e.printStackTrace();
         }
+        finally
+        {
+            try
+            {
+                bufferedReader.close();
+            }
+            catch (IOException e)
+            {
+                e.printStackTrace();
+            }
+
+            extractData();
+        }
     }
 
-    public void extractEnclosure(ArrayList<String> )
+    public void extractData()
+    {
+        setUpZoo(zooConfig);
+        //extractEnclosure(enclosureConfig);
+        //extractAnimals(animalConfig);
+        //extractKeepers(zookeeperConfig);
+    }
+
+    public void extractEnclosure(ArrayList<String> enclsoureConfig)
     {
 
     }
 
-    public void extractZooAndFood()
+    public void setUpZoo(ArrayList<String> zooAndFoodConfig)
+    {
+        FoodStore tempZooStore = new FoodStore();
+
+        for(String s : zooAndFoodConfig)
+        {
+            String[] foodAndAmount = s.split(" ");
+            if(foodAndAmount[0].equals("ice"))
+            {
+                foodAndAmount[0] = "ice cream";
+                foodAndAmount[1] = foodAndAmount[2];
+            }
+            tempZooStore.addFood(foodAndAmount[0], Integer.parseInt(foodAndAmount[1]));
+        }
+        mySim.setZooSimLinkedTo(new Zoo(this.mySim, tempZooStore));
+        System.out.println("Zoo initialised!");
+    }
+
+    public void extractAnimals(ArrayList<String> animalConfig)
+    {
+
+
+        for(String s : animalConfig)
+        {
+            String [] animalInfo = s.split(" ");
+
+        }
+    }
+
+    public void extractKeepers(ArrayList<String> zookeeperConfig)
     {
 
     }
-
-    public void extractAnimals()
-    {
-
-    }
-
-    public void extractKeepers()
-    {
-
-    }
-
 }

@@ -15,20 +15,13 @@ public abstract class Animal
     /*
     Constructor for a general animal, sets the age to 0 and health to 10
     */
-    public Animal(Integer lifeExpectancy, String[] eats)
+    public Animal(Integer age, Integer lifeExpectancy, Integer health, String[] eats, char gender)
     {
-        Integer randomNumber = randomGen.nextInt(100);
-        if(randomNumber % 2 == 0) { // Here we are generating a random number between 0 and 10, we are then saying
-            gender = 'm';           // if the number is a multiple of 2, the animal is a male, else it's a female -- FOR TESTING ONLY!!!
-        }else{
-            gender = 'f';
-        }
-
         this.ageOfAnimal = 0;
-        this.health = 10;
+        this.health = health;
         this.lifeExpectancy = lifeExpectancy;
         this.eats = eats;
-
+        this.gender = gender;
     }
 
     /*

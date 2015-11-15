@@ -52,55 +52,6 @@ public class Zoo
         mySim.incrementMonth();
     }
 
-    public void createEnclosuresAndZooKeepersTEST()
-    {
-        enclosures = new Enclosure[2];
-        enclosures[0] = new Enclosure();
-        enclosures[1] = new Enclosure();
-        zooKeepers.add(new ZooKeeper(this, "default"));
-        zooKeepers.add(new PlayZooKeeper(this));
-        zooKeepers.add(new PhysioZooKeeper(this));
-        zooKeepers.add(new ZooKeeper(this, "default"));
-        zooKeepers.add(new PlayZooKeeper(this));
-        zooKeepers.add(new PhysioZooKeeper(this));
-        zooKeepers.add(new ZooKeeper(this, "default"));
-        zooKeepers.add(new PlayZooKeeper(this));
-        zooKeepers.add(new PhysioZooKeeper(this));
-
-        for(ZooKeeper k : zooKeepers)
-        {
-            if(ran.nextInt(10) % 2 == 0) {
-                k.assignEnclosure(enclosures[0]);
-            }else{
-                k.assignEnclosure(enclosures[1]);
-            }
-        }
-    }
-
-    public void populateZooTEST()
-    {
-        for(Enclosure e : enclosures)
-        {
-            e.addAnimal(new Bear());
-            e.addAnimal(new Chimpanzee());
-            e.addAnimal(new Elephant());
-            e.addAnimal(new Giraffe());
-            e.addAnimal(new Gorilla());
-            e.addAnimal(new Lion());
-            e.addAnimal(new Penguin());
-            e.addAnimal(new Tiger());
-        }
-
-        for(Animal a : enclosures[0].animalsInEnclosure)
-        {
-            a.enclosureAnimalResidesIn = enclosures[0];
-        }
-        for(Animal a : enclosures[1].animalsInEnclosure)
-        {
-            a.enclosureAnimalResidesIn = enclosures[1];
-        }
-    }
-
     /*
     Iterates over the list of enclosures and checks to see whether they are empty,
     returns the ones which are not. If the method returns a list containing no enclosures, then this means

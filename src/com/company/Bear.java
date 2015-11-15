@@ -2,7 +2,7 @@ package com.company;
 
 public class Bear extends Animal
 {
-    public Bear()
+    public Bear(Integer age, Integer health)
     {
         super(18, new String []{"fish", "steak"});
         this.type = "Bear";
