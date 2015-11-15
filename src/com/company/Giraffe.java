@@ -2,9 +2,9 @@ package com.company;
 
 public class Giraffe extends Animal
 {
-    public Giraffe(Integer lifeExpectancy, Integer age, Integer health, char gender)
+    public Giraffe(Integer age, Integer health, char gender)
     {
-        super(age, lifeExpectancy, health, new String []{"hay", "fruit"}, gender);
+        super(age, 28, health, new String []{"hay", "fruit"}, gender);
         this.type = "Giraffe";
     }
 

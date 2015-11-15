@@ -2,9 +2,9 @@ package com.company;
 
 public class Gorilla extends Ape
 {
-    public Gorilla(Integer lifeExpectancy, Integer age, Integer health, char gender)
+    public Gorilla(Integer age, Integer health, char gender)
     {
-        super(lifeExpectancy, age, health, gender);
+        super(age, health, gender);
         this.type = "Gorilla";
     }
 

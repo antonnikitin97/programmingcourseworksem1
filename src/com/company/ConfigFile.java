@@ -2,6 +2,7 @@ package com.company;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Scanner;
 
 public class ConfigFile
@@ -13,6 +14,7 @@ public class ConfigFile
     protected ArrayList<String> enclosureConfig = new ArrayList<>();
     protected ArrayList<String> animalConfig = new ArrayList<>();
     protected ArrayList<String> zookeeperConfig = new ArrayList<>();
+    protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
 
     private String configFilePath = "";
 
@@ -89,7 +91,7 @@ public class ConfigFile
     {
         setUpZoo(zooConfig);
         //extractEnclosure(enclosureConfig);
-        //extractAnimals(animalConfig);
+        extractAnimals(animalConfig);
         //extractKeepers(zookeeperConfig);
     }
 
@@ -118,12 +120,54 @@ public class ConfigFile
 
     public void extractAnimals(ArrayList<String> animalConfig)
     {
-
+        ArrayList<Animal> temp = new ArrayList<>();
 
         for(String s : animalConfig)
         {
             String [] animalInfo = s.split(" ");
-
+            switch (animalInfo[0])
+            {
+                case "Lion":
+                    Animal tempA = new Lion(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempA);
+                    enclosureForAnimal.put(tempA, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Tiger":
+                    Animal tempB = new Tiger(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempB);
+                    enclosureForAnimal.put(tempB, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Elephant":
+                    Animal tempC = new Elephant(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempC);
+                    enclosureForAnimal.put(tempC, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Giraffe":
+                    Animal tempD = new Giraffe(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempD);
+                    enclosureForAnimal.put(tempD, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Penguin":
+                    Animal tempE = new Penguin(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempE);
+                    enclosureForAnimal.put(tempE, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Chimpanzee":
+                    Animal tempF = new Chimpanzee(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempF);
+                    enclosureForAnimal.put(tempF, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Bear":
+                    Animal tempG = new Lion(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempG);
+                    enclosureForAnimal.put(tempG, Integer.parseInt(animalInfo[4]));
+                    break;
+                case "Gorilla":
+                    Animal tempH = new Gorilla(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    temp.add(tempH);
+                    enclosureForAnimal.put(tempH, Integer.parseInt(animalInfo[4]));
+                    break;
+            }
         }
     }
 
