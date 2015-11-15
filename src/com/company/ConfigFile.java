@@ -37,11 +37,20 @@ public class ConfigFile
             fileInputStream = new FileInputStream(configFile);
             inputStream = new BufferedInputStream(fileInputStream);
             dataInputStream = new DataInputStream(inputStream);
+
+            while(dataInputStream.available() != 0)
+            {
+
+            }
         }
         catch (FileNotFoundException e)
         {
             System.out.println("We cannot find the required file! Please try again!");
             getDirectoryOfFile();
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
         }
     }
 
