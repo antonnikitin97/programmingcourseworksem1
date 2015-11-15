@@ -15,6 +15,8 @@ public class ConfigFile
     protected ArrayList<String> animalConfig = new ArrayList<>();
     protected ArrayList<String> zookeeperConfig = new ArrayList<>();
     protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
+    protected ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
+    protected Integer enclosureID = 0;
 
     private String configFilePath = "";
 
@@ -25,8 +27,8 @@ public class ConfigFile
 
     public void getDirectoryOfFile()
     {
-        System.out.print("Please enter the path of your file: ");
-        configFilePath = inputScanner.nextLine();
+        //System.out.print("Please enter the path of your file: ");
+        configFilePath = "C:\\Users\\anton\\Desktop\\config.txt";
         configFile = new File(configFilePath);
         readConfig();
     }
@@ -90,14 +92,32 @@ public class ConfigFile
     public void extractData()
     {
         setUpZoo(zooConfig);
-        //extractEnclosure(enclosureConfig);
         extractAnimals(animalConfig);
+        extractEnclosure(enclosureConfig, enclosureForAnimal);
         //extractKeepers(zookeeperConfig);
     }
 
-    public void extractEnclosure(ArrayList<String> enclsoureConfig)
+    public void extractEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal)
     {
+        tempEnclosureList.add(new Enclosure());
 
+        for (String s : enclosureConfig)
+        {
+            String[] enclosureInfo = s.split(" ");
+            switch (enclosureInfo[0])
+            {
+                case "Waste":
+                    tempEnclosureList.get(enclosureID).addWaste(Integer.parseInt(enclosureInfo[1]));
+                    continue;
+            }
+            if(enclosureInfo[0].equals("ice"))
+            {
+                enclosureInfo[0] = "ice cream";
+                enclosureInfo[1] = enclosureInfo[2];
+            }
+            tempEnclosureList.get(0).getFoodStore().addFood(enclosureInfo[0], Integer.parseInt(enclosureInfo[1]));
+        }
+        System.out.println("Enclosure initialised!");
     }
 
     public void setUpZoo(ArrayList<String> zooAndFoodConfig)
@@ -120,7 +140,6 @@ public class ConfigFile
 
     public void extractAnimals(ArrayList<String> animalConfig)
     {
-        ArrayList<Animal> temp = new ArrayList<>();
 
         for(String s : animalConfig)
         {
@@ -129,46 +148,40 @@ public class ConfigFile
             {
                 case "Lion":
                     Animal tempA = new Lion(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempA);
                     enclosureForAnimal.put(tempA, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Tiger":
                     Animal tempB = new Tiger(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempB);
                     enclosureForAnimal.put(tempB, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Elephant":
                     Animal tempC = new Elephant(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempC);
                     enclosureForAnimal.put(tempC, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Giraffe":
                     Animal tempD = new Giraffe(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempD);
                     enclosureForAnimal.put(tempD, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Penguin":
                     Animal tempE = new Penguin(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempE);
                     enclosureForAnimal.put(tempE, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Chimpanzee":
                     Animal tempF = new Chimpanzee(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempF);
                     enclosureForAnimal.put(tempF, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Bear":
                     Animal tempG = new Lion(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempG);
                     enclosureForAnimal.put(tempG, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Gorilla":
                     Animal tempH = new Gorilla(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
-                    temp.add(tempH);
                     enclosureForAnimal.put(tempH, Integer.parseInt(animalInfo[4]));
                     break;
             }
         }
+
+        System.out.println("Animals initialised!");
     }
 
     public void extractKeepers(ArrayList<String> zookeeperConfig)
