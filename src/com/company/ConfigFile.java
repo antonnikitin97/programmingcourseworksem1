@@ -10,12 +10,14 @@ public class ConfigFile
     protected Scanner inputScanner = new Scanner(System.in);
     protected File configFile;
     protected Simulation mySim;
+
     protected ArrayList<String> zooConfig = new ArrayList<>();
     protected ArrayList<String> enclosureConfig = new ArrayList<>();
     protected ArrayList<String> animalConfig = new ArrayList<>();
     protected ArrayList<String> zookeeperConfig = new ArrayList<>();
+
     protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
-    protected ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
+    protected ArrayList<ZooKeeper> tempKeeperList = new ArrayList<>();
     protected Integer enclosureID = 0;
 
     private String configFilePath = "";
@@ -99,6 +101,7 @@ public class ConfigFile
 
     public void extractEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal)
     {
+        ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
         tempEnclosureList.add(new Enclosure());
 
         for (String s : enclosureConfig)
@@ -117,6 +120,7 @@ public class ConfigFile
             }
             tempEnclosureList.get(0).getFoodStore().addFood(enclosureInfo[0], Integer.parseInt(enclosureInfo[1]));
         }
+        mySim.getZooSimLinkedTo().enclosures = new Enclosure[tempEnclosureList.size()];
         System.out.println("Enclosure initialised!");
     }
 
@@ -186,6 +190,13 @@ public class ConfigFile
 
     public void extractKeepers(ArrayList<String> zookeeperConfig)
     {
-
+        for(String s : zookeeperConfig)
+        {
+            switch (s)
+            {
+                case "Default":
+                    tempKeeperList.add(new ZooKeeper(mySim.getZooSimLinkedTo(), "default"));
+            }
+        }
     }
 }

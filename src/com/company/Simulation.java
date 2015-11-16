@@ -32,4 +32,9 @@ public class Simulation
     {
         this.zooSimLinkedTo = zoo;
     }
+
+    public Zoo getZooSimLinkedTo()
+    {
+        return zooSimLinkedTo;
+    }
 }
