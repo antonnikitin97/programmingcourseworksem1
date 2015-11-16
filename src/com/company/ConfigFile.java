@@ -30,7 +30,7 @@ public class ConfigFile
     public void getDirectoryOfFile()
     {
         //System.out.print("Please enter the path of your file: ");
-        configFilePath = "C:\\Users\\anton\\Desktop\\config.txt";
+        configFilePath = "H:\\.das\\Desktop\\config.txt";
         configFile = new File(configFilePath);
         readConfig();
     }
@@ -46,7 +46,7 @@ public class ConfigFile
             bufferedReader = new BufferedReader(reader);
 
             String line = "";
-            while(!(line = bufferedReader.readLine()).equals("NewEnclosure:"))
+            while(!((line = bufferedReader.readLine()).equals("NewEnclosure:")) || (line = bufferedReader.readLine()).equals("Animals:"))
             {
                 zooConfig.add(line);
             }
@@ -87,6 +87,7 @@ public class ConfigFile
                 e.printStackTrace();
             }
 
+
             extractData();
         }
     }
@@ -113,10 +114,9 @@ public class ConfigFile
                     tempEnclosureList.get(enclosureID).addWaste(Integer.parseInt(enclosureInfo[1]));
                     continue;
             }
-            if(enclosureInfo[0].equals("ice"))
+            if(enclosureInfo[0].equals("ice_cream"))
             {
                 enclosureInfo[0] = "ice cream";
-                enclosureInfo[1] = enclosureInfo[2];
             }
             tempEnclosureList.get(0).getFoodStore().addFood(enclosureInfo[0], Integer.parseInt(enclosureInfo[1]));
         }
@@ -131,10 +131,9 @@ public class ConfigFile
         for(String s : zooAndFoodConfig)
         {
             String[] foodAndAmount = s.split(" ");
-            if(foodAndAmount[0].equals("ice"))
+            if(foodAndAmount[0].equals("ice_cream"))
             {
                 foodAndAmount[0] = "ice cream";
-                foodAndAmount[1] = foodAndAmount[2];
             }
             tempZooStore.addFood(foodAndAmount[0], Integer.parseInt(foodAndAmount[1]));
         }

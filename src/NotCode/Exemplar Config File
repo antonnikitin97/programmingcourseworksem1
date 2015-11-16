@@ -2,23 +2,22 @@ Exemplar Config File
 
 ---BEGIN CONFIG FILE--- (not actually part of the file)
 zoo:
-steak =
-hay =
-fruit =
-celery =
-fish =
-ice cream =
-NewEnclosure:
-Waste =
-steak =
-hay =
-fruit =
-celery =
-fish =
-ice cream =
+steak = 2
+hay = 2
+fruit = 2
+celery = 2
+fish = 2
+ice_cream = 2
+steak = 2
+hay = 2
+fruit = 2
+celery = 2
+fish = 2
+ice_cream = 2
 Animals:
-Lion = M 12 4
+Lion = M 12 4 1
+Penguin = M 4 8 1
 ZooKeeper:
-Default [] (enclosure NUMBER here)
-Play []
-Physio []
+Default
+Play
+Physio
