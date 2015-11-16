@@ -38,12 +38,8 @@ public class ZooKeeper {
 
     public void assignEnclosure()
     {
-        Integer numberOfEnclosures = zoo.enclosures.size();
-
-        if(numberOfEnclosures == 1) {
-            this.enclosureKeeperAssignedTo = zoo.enclosures.get(numberOfEnclosures - 1);
-            this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
-        }
+        this.enclosureKeeperAssignedTo = zoo.enclosures.get(generator.nextInt(zoo.enclosures.size()));
+        this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
     }
 
     public Boolean aMonthPasses()
@@ -57,14 +53,12 @@ public class ZooKeeper {
     // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
     public void getFoodFromZooStore()
     {
-        if(this.keeperLabel == "default") {
-            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
-                if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
-                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
-                    System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, this.zoo.getValidEnclosures().indexOf(this.enclosureKeeperAssignedTo));
-                }else{
-                    System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
-                }
+        for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
+            if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
+                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
+                System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+            }else{
+                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
             }
         }
     }
@@ -86,13 +80,17 @@ public class ZooKeeper {
     */
     private void treatTwoAnimals()
     {
-        System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, this.zoo.getValidEnclosures().indexOf(this.enclosureKeeperAssignedTo));
+        if(this.enclosureKeeperAssignedTo.checkIfAllDead()) {
+            System.out.format("%S Can't treat as all animals in my enclosure are dead!\n", this.keeperLabel);
+        }else{
+            System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
 
-        for(int i = 0; i < 2; i ++ )
-        {
-            System.out.format("Treating animal #%s: " , i + 1);
-            this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
-            System.out.println();
+            for(int i = 0; i < 2; i ++ )
+            {
+                System.out.format("Treating animal #%s: " , i + 1);
+                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
+                System.out.println();
+            }
         }
     }
 }

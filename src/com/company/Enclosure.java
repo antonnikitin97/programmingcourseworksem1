@@ -11,6 +11,7 @@ public class Enclosure
     protected ArrayList<ZooKeeper> listOfKeepers = new ArrayList<>();
 	protected ArrayList<Animal> deadAnimalsToRemove = new ArrayList<>();
 	protected Boolean isEmpty = true;
+    protected Boolean allDead = false;
 
 	public Enclosure()
 	{
@@ -102,6 +103,19 @@ public class Enclosure
 			return false;
 		}
 	}
+
+    public Boolean checkIfAllDead()
+    {
+        Integer numberDead = 0;
+        for(Animal a : animalsInEnclosure)
+        {
+            if(a.getHealth() == 0)
+            {
+                numberDead += 1;
+            }
+        }
+        return (numberDead.equals(this.size()));
+    }
 
     public void addKeeper(ZooKeeper zk)
     {

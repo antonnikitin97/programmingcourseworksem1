@@ -110,7 +110,7 @@ public abstract class Animal
                         System.out.println("Not enough food to feed animal! We should order more food!");
                         break;
                     }
-                    System.out.format("Not enough of %s in store, continuing search... " , s);
+                    System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n " ,this.type, s, s);
                     failedAttempts += 1;
                 }
             }

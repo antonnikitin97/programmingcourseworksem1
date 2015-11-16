@@ -32,15 +32,16 @@ public class Zoo
     public void aMonthPasses()
     {
         displayStats();
-        for(Enclosure e : getValidEnclosures())
-        {
-            System.out.format("\nEnclosure %s animals eating!!!\n\n", getValidEnclosures().indexOf(e));
-            e.aMonthPasses();
-        }
         if(getValidEnclosures().size() == 0)
         {
-            System.out.println("\n###All animals have died! Simulation ending...###\n");
+            Integer iterationSimStopped = mySim.getMonthsPassed();
+            System.out.format("\n###All animals have died! Simulation ending!###\nYour zoo ran for %s iterations!", iterationSimStopped);
             System.exit(0);
+        }
+        for(Enclosure e : getValidEnclosures())
+        {
+            System.out.format("\nEnclosure %s animals eating!!!\n\n", enclosures.indexOf(e));
+            e.aMonthPasses();
         }
         System.out.println("\n--- ZOO KEEPER DUTY!!! ---");
         for(ZooKeeper k : zooKeepers)
@@ -63,13 +64,12 @@ public class Zoo
 
         for(Enclosure e : enclosures)
         {
-            if(e.animalsInEnclosure.size() == 0) {
+            if(e.checkIfAllDead()) {
                 continue;
             }else{
                 listOfValid.add(e);
             }
         }
-
         return listOfValid;
     }
 
@@ -78,8 +78,8 @@ public class Zoo
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())
         {
-            this.zooFoodStore.addFood(s, 2);
-            System.out.format("2 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
+            this.zooFoodStore.addFood(s, 40);
+            System.out.format("40 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }
 

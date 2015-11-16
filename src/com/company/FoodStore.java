@@ -39,7 +39,6 @@ public class FoodStore
             this.foodStorage.put(name, this.getFoodQuantity(name) - quantity);
             return true;
         }else{
-            System.out.println("Not enough of the specified food in foodstore!");
             return false;
         }
     }
