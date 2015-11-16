@@ -18,7 +18,7 @@ public class ConfigFile
 
     protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
     protected ArrayList<ZooKeeper> tempKeeperList = new ArrayList<>();
-    protected Integer enclosureID = 0;
+    Integer numberOfEnclosuresToCreate = 0;
 
     private String configFilePath = "";
 
@@ -46,16 +46,28 @@ public class ConfigFile
             bufferedReader = new BufferedReader(reader);
 
             String line = "";
-            while(!((line = bufferedReader.readLine()).equals("NewEnclosure:")) || (line = bufferedReader.readLine()).equals("Animals:"))
+            while(!(line = bufferedReader.readLine()).contains("NewEnclosure"))
             {
                 zooConfig.add(line);
             }
-            zooConfig.remove("zoo:");
-            while(!(line = bufferedReader.readLine()).equals("Animals:"))
+            switch(line.split(" ")[1])
             {
-                enclosureConfig.add(line);
+                case "0":
+                    while(!(line = bufferedReader.readLine()).equals("Animals:"))
+                    {
+                        zooConfig.add(line);
+                    }
+                    break;
+                default:
+                    numberOfEnclosuresToCreate = Integer.parseInt(line.split(" ")[1]);
+                    while(!(line = bufferedReader.readLine()).equals("Animals:"))
+                    {
+                        enclosureConfig.add(line);
+                    }
+                    break;
             }
-            enclosureConfig.remove("Animals:");
+            enclosureConfig.remove("NewEnclosure " + numberOfEnclosuresToCreate);
+            zooConfig.remove("zoo:");
             while(!(line = bufferedReader.readLine()).equals("ZooKeeper:"))
             {
                 animalConfig.add(line);
@@ -96,32 +108,48 @@ public class ConfigFile
     {
         setUpZoo(zooConfig);
         extractAnimals(animalConfig);
-        extractEnclosure(enclosureConfig, enclosureForAnimal);
+        initializeEnclosure(enclosureConfig, enclosureForAnimal, numberOfEnclosuresToCreate);
         //extractKeepers(zookeeperConfig);
     }
 
-    public void extractEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal)
+    public void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
     {
-        ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
-        tempEnclosureList.add(new Enclosure());
+        if(enclosureConfig.size() == 0) {
+            System.out.println("No Enclosures configured in file! Resulting food will go to the zoo!");
+        }else{
+            ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
+            for(int i = 0; i < numberOfEnclosuresToCreate; i++)
+            {
+                tempEnclosureList.add(new Enclosure());
+            }
 
-        for (String s : enclosureConfig)
-        {
-            String[] enclosureInfo = s.split(" ");
-            switch (enclosureInfo[0])
+            Integer counter = 0;
+            for(Enclosure e : tempEnclosureList)
             {
-                case "Waste":
-                    tempEnclosureList.get(enclosureID).addWaste(Integer.parseInt(enclosureInfo[1]));
-                    continue;
+                for (String s : enclosureConfig)
+                {
+                    String[] enclosureInfo = s.split(" ");
+                    switch (enclosureInfo[0])
+                    {
+                        case "Waste":
+                            tempEnclosureList.get(counter).addWaste(Integer.parseInt(enclosureInfo[1]));
+                            continue;
+                    }
+                    if(enclosureInfo[0].equals("ice_cream"))
+                    {
+                        enclosureInfo[0] = "ice cream";
+                    }
+                    tempEnclosureList.get(counter).getFoodStore().addFood(enclosureInfo[0], Integer.parseInt(enclosureInfo[1]));
+                }
+                counter += 1;
             }
-            if(enclosureInfo[0].equals("ice_cream"))
+            mySim.getZooSimLinkedTo().enclosures = new Enclosure[tempEnclosureList.size()];
+            for(int i = 0; i < tempEnclosureList.size(); i++)
             {
-                enclosureInfo[0] = "ice cream";
+                mySim.getZooSimLinkedTo().enclosures[i] = tempEnclosureList.get(i);
             }
-            tempEnclosureList.get(0).getFoodStore().addFood(enclosureInfo[0], Integer.parseInt(enclosureInfo[1]));
+            System.out.println("Enclosure initialised!");
         }
-        mySim.getZooSimLinkedTo().enclosures = new Enclosure[tempEnclosureList.size()];
-        System.out.println("Enclosure initialised!");
     }
 
     public void setUpZoo(ArrayList<String> zooAndFoodConfig)
