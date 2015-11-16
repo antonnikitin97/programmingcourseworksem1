@@ -107,9 +107,10 @@ public class ConfigFile
     public void extractData()
     {
         setUpZoo(zooConfig);
-        extractAnimals(animalConfig);
+        initializeAnimals(animalConfig);
         initializeEnclosure(enclosureConfig, enclosureForAnimal, numberOfEnclosuresToCreate);
-        //extractKeepers(zookeeperConfig);
+        initializeKeepers(zookeeperConfig);
+        mySim.go();
     }
 
     public void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
@@ -122,7 +123,6 @@ public class ConfigFile
             {
                 tempEnclosureList.add(new Enclosure());
             }
-
             Integer counter = 0;
             for(Enclosure e : tempEnclosureList)
             {
@@ -143,10 +143,13 @@ public class ConfigFile
                 }
                 counter += 1;
             }
-            mySim.getZooSimLinkedTo().enclosures = new Enclosure[tempEnclosureList.size()];
             for(int i = 0; i < tempEnclosureList.size(); i++)
             {
-                mySim.getZooSimLinkedTo().enclosures[i] = tempEnclosureList.get(i);
+                mySim.getZooSimLinkedTo().enclosures = tempEnclosureList;
+            }
+            for(Animal a : enclosureForAnimal.keySet())
+            {
+                mySim.getZooSimLinkedTo().enclosures.get(enclosureForAnimal.get(a)).addAnimal(a);
             }
             System.out.println("Enclosure initialised!");
         }
@@ -169,7 +172,7 @@ public class ConfigFile
         System.out.println("Zoo initialised!");
     }
 
-    public void extractAnimals(ArrayList<String> animalConfig)
+    public void initializeAnimals(ArrayList<String> animalConfig)
     {
 
         for(String s : animalConfig)
@@ -215,7 +218,7 @@ public class ConfigFile
         System.out.println("Animals initialised!");
     }
 
-    public void extractKeepers(ArrayList<String> zookeeperConfig)
+    public void initializeKeepers(ArrayList<String> zookeeperConfig)
     {
         for(String s : zookeeperConfig)
         {
@@ -223,7 +226,16 @@ public class ConfigFile
             {
                 case "Default":
                     tempKeeperList.add(new ZooKeeper(mySim.getZooSimLinkedTo(), "default"));
+                    break;
+                case "Physio":
+                    tempKeeperList.add(new PhysioZooKeeper(mySim.getZooSimLinkedTo()));
+                    break;
+                case "Play":
+                    tempKeeperList.add(new PlayZooKeeper(mySim.getZooSimLinkedTo()));
+                    break;
             }
         }
+        mySim.getZooSimLinkedTo().zooKeepers = tempKeeperList;
+        System.out.println("Zookeepers Initialized!");
     }
 }

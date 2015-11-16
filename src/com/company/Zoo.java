@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class Zoo
 {
-    protected Enclosure[] enclosures;
+    protected ArrayList<Enclosure> enclosures;
     protected ArrayList<ZooKeeper> zooKeepers;
     protected FoodStore zooFoodStore;
     protected Simulation mySim;
@@ -90,7 +90,7 @@ public class Zoo
     */
     public void displayStats()
     {
-        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", mySim.getMonthsPassed() , this.enclosures.length);
+        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", mySim.getMonthsPassed() , this.enclosures.size());
         getEnclosureStatus();
     }
 

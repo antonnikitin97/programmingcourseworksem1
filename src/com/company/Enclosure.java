@@ -25,6 +25,7 @@ public class Enclosure
 			return false;
 		}else{
 			this.animalsInEnclosure.add(animalToAdd);
+            animalToAdd.enclosureAnimalResidesIn = this;
 			return true;
 		}
 	}

@@ -33,12 +33,17 @@ public class ZooKeeper {
         this.zooFoodStore = zoo.zooFoodStore;
         this.zoo = zoo;
         this.keeperLabel = keeperLabel;
+        assignEnclosure();
     }
 
-    public void assignEnclosure(Enclosure e)
+    public void assignEnclosure()
     {
-        this.enclosureKeeperAssignedTo = e;
-        this.foodStoreKeeperAssignedTo = e.getFoodStore();
+        Integer numberOfEnclosures = zoo.enclosures.size();
+
+        if(numberOfEnclosures == 1) {
+            this.enclosureKeeperAssignedTo = zoo.enclosures.get(numberOfEnclosures - 1);
+            this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
+        }
     }
 
     public Boolean aMonthPasses()
