@@ -1,23 +1,38 @@
-Exemplar Config File
-
----BEGIN CONFIG FILE--- (not actually part of the file)
 zoo:
-steak = 2
-hay = 2
-fruit = 2
-celery = 2
-fish = 2
-ice_cream = 2
-steak = 2
-hay = 2
-fruit = 2
-celery = 2
-fish = 2
-ice_cream = 2
+steak 4
+hay 4
+fruit 4
+celery 4
+fish 4
+ice_cream 2
+NewEnclosure 4
+Waste 4
+steak 2
+hay 2
+fruit 2
+celery 2
+fish 2
+ice_cream 2
 Animals:
-Lion = M 12 4 1
-Penguin = M 4 8 1
+Lion M 12 4 0
+Penguin M 4 8 0
+Lion M 12 4 1
+Penguin M 4 8 1
+Lion M 12 4 1
+Penguin M 4 8 0
+Elephant F 4 8 2
+Elephant F 4 8 1
+Elephant F 4 8 3
+Elephant F 4 8 2
+Elephant F 4 8 3
 ZooKeeper:
 Default
-Play
 Physio
+Play
+Default
+Physio
+Default
+Physio
+Play
+Play
+
