@@ -250,12 +250,11 @@ public class ConfigFile
                     break;
             }
         }
-        if(tempKeeperList.size() < enclosureConfig.size())
+        while(tempKeeperList.size() < mySim.getZooSimLinkedTo().enclosures.size())
         {
-            while(tempKeeperList.size() < enclosureConfig.size())
-            {
-                
-            }
+            tempKeeperList.add(new ZooKeeper(mySim.getZooSimLinkedTo(), "default"));
+            tempKeeperList.add(new PhysioZooKeeper(mySim.getZooSimLinkedTo()));
+            tempKeeperList.add(new PlayZooKeeper(mySim.getZooSimLinkedTo()));
         }
         mySim.getZooSimLinkedTo().zooKeepers = tempKeeperList;
         System.out.println("Zookeepers Initialized!");
