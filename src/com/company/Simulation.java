@@ -34,6 +34,8 @@ public class Simulation
         for (int i = 0; i < numberOfIterations; i++)
         {
             zooSimLinkedTo.aMonthPasses();
+            System.out.println("Iteration complete! Press 'enter' to continue!");
+            inputScanner.nextLine();
         }
     }
 

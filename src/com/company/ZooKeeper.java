@@ -53,12 +53,15 @@ public class ZooKeeper {
     // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
     public void getFoodFromZooStore()
     {
-        for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
-            if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
-                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
-                System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
-            }else{
-                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!\n", foodInHashMap);
+        if(this.keeperLabel.equals("default") || this.keeperLabel.equals("play"))
+        {
+            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
+                if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
+                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
+                    System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+                }else{
+                    System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
+                }
             }
         }
     }
@@ -81,7 +84,7 @@ public class ZooKeeper {
     private void treatTwoAnimals()
     {
         if(this.enclosureKeeperAssignedTo.checkIfAllDead()) {
-            System.out.format("%S Can't treat as all animals in my enclosure are dead!\n", this.keeperLabel);
+            System.out.format("\n%S Can't treat as all animals in my enclosure are dead!\n", this.keeperLabel);
         }else{
             System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
 

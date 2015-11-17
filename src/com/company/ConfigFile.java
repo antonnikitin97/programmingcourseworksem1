@@ -28,9 +28,9 @@ public class ConfigFile
     }
 
     public void getDirectoryOfFile()
-    {
+     {
         //System.out.print("Please enter the path of your file: ");
-        configFilePath = "H:\\.das\\Desktop\\config.txt";
+        configFilePath = "C:\\Users\\anton\\Desktop\\config.txt";
         configFile = new File(configFilePath);
         readConfig();
     }
@@ -113,6 +113,9 @@ public class ConfigFile
         mySim.go();
     }
 
+    /*
+    This method creates the enclosures and populates them with the animals that have been read in from the config file
+    */
     public void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
     {
         if(enclosureConfig.size() == 0) {
@@ -158,7 +161,6 @@ public class ConfigFile
     public void setUpZoo(ArrayList<String> zooAndFoodConfig)
     {
         FoodStore tempZooStore = new FoodStore();
-
         for(String s : zooAndFoodConfig)
         {
             String[] foodAndAmount = s.split(" ");
