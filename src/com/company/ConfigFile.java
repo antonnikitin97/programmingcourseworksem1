@@ -27,10 +27,8 @@ public class ConfigFile
         mySim = new Simulation();
     }
 
-    public void getDirectoryOfFile()
-     {
-        //System.out.print("Please enter the path of your file: ");
-        configFilePath = "C:\\Users\\anton\\Desktop\\config.txt";
+    public void getDirectoryOfFile(String configFilePath)
+    {
         configFile = new File(configFilePath);
         readConfig();
     }

@@ -2,10 +2,8 @@
 The class responsible for 'running' the simulation, keeps track of the months that have passed and contains
 
  */
-
 package com.company;
 
-import java.io.IOException;
 import java.util.Scanner;
 
 public class Simulation
@@ -21,6 +19,9 @@ public class Simulation
 
     public void go()
     {
+        ConfigFile file = new ConfigFile();
+        file.getDirectoryOfFile();
+
         System.out.println("Please enter the number of iterations that you want the sim to perform: ");
         try
         {
