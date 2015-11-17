@@ -33,6 +33,13 @@ public class ConfigFile
         readConfig();
     }
 
+    public void getDirectoryOfFile()
+    {
+        configFilePath = inputScanner.nextLine();
+        configFile = new File(configFilePath);
+        readConfig();
+    }
+
     public void readConfig()
     {
         FileReader reader = null;
@@ -83,7 +90,7 @@ public class ConfigFile
             getDirectoryOfFile();
         }
         catch (IOException e)
-        {
+        {extractData();
             e.printStackTrace();
         }
         finally
@@ -96,8 +103,6 @@ public class ConfigFile
             {
                 e.printStackTrace();
             }
-
-
             extractData();
         }
     }
@@ -108,18 +113,28 @@ public class ConfigFile
         initializeAnimals(animalConfig);
         initializeEnclosure(enclosureConfig, enclosureForAnimal, numberOfEnclosuresToCreate);
         initializeKeepers(zookeeperConfig);
-        mySim.go();
+        mySim.startSimulation();
     }
 
     /*
-    This method creates the enclosures and populates them with the animals that have been read in from the config file
+    This method creates the enclosures and populates them with the animals that have been read in from the config file.
+    If no enclosures have been specified in the config file, then it will create as many enclosures as there are animals with default values for food.
     */
     public void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
     {
+        ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
         if(enclosureConfig.size() == 0) {
             System.out.println("No Enclosures configured in file! Resulting food will go to the zoo!");
+            for(int i = 0; i <= numberOfEnclosuresToCreate; i ++)
+            {
+                tempEnclosureList.add(new Enclosure());
+            }
+            mySim.getZooSimLinkedTo().enclosures = tempEnclosureList;
+            for(Animal a : enclosureForAnimal.keySet())
+            {
+                mySim.getZooSimLinkedTo().enclosures.get(enclosureForAnimal.get(a)).addAnimal(a);
+            }
         }else{
-            ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
             for(int i = 0; i < numberOfEnclosuresToCreate; i++)
             {
                 tempEnclosureList.add(new Enclosure());
@@ -144,16 +159,13 @@ public class ConfigFile
                 }
                 counter += 1;
             }
-            for(int i = 0; i < tempEnclosureList.size(); i++)
-            {
-                mySim.getZooSimLinkedTo().enclosures = tempEnclosureList;
-            }
+            mySim.getZooSimLinkedTo().enclosures = tempEnclosureList;
             for(Animal a : enclosureForAnimal.keySet())
             {
                 mySim.getZooSimLinkedTo().enclosures.get(enclosureForAnimal.get(a)).addAnimal(a);
             }
-            System.out.println("Enclosure initialised!");
         }
+        System.out.println("Enclosure initialised!");
     }
 
     public void setUpZoo(ArrayList<String> zooAndFoodConfig)
@@ -174,10 +186,13 @@ public class ConfigFile
 
     public void initializeAnimals(ArrayList<String> animalConfig)
     {
-
         for(String s : animalConfig)
         {
             String [] animalInfo = s.split(" ");
+            if(Integer.parseInt(animalInfo[4]) > numberOfEnclosuresToCreate)
+            {
+                numberOfEnclosuresToCreate = Integer.parseInt(animalInfo[4]);
+            }
             switch (animalInfo[0])
             {
                 case "Lion":
@@ -233,6 +248,13 @@ public class ConfigFile
                 case "Play":
                     tempKeeperList.add(new PlayZooKeeper(mySim.getZooSimLinkedTo()));
                     break;
+            }
+        }
+        if(tempKeeperList.size() < enclosureConfig.size())
+        {
+            while(tempKeeperList.size() < enclosureConfig.size())
+            {
+                
             }
         }
         mySim.getZooSimLinkedTo().zooKeepers = tempKeeperList;

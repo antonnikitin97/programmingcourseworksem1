@@ -95,7 +95,6 @@ public abstract class Animal
     protected void eat()
     {
         FoodStore temp = this.enclosureAnimalResidesIn.getFoodStore();
-        Integer failedAttempts = 0;
         for(String s : temp.foodStorage.keySet())
         {
             if(this.canEat(s))
@@ -105,13 +104,7 @@ public abstract class Animal
                     System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
-                    if(failedAttempts == this.eats.length)
-                    {
-                        System.out.println("Not enough food to feed animal! We should order more food!");
-                        break;
-                    }
-                    System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n " ,this.type, s, s);
-                    failedAttempts += 1;
+                    System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n" ,this.type, s, s);
                 }
             }
         }

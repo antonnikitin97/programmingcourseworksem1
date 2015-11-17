@@ -25,7 +25,6 @@ public class FoodStore
     public void addFood(String name, Integer quantityToAdd)
     {
         this.foodStorage.put(name, foodStorage.get(name) + quantityToAdd);
-        //System.out.format("\n%s of %s has been added to the store! There are now %s of this food in the store!\n", quantityToAdd, name, foodStorage.get(name));
     }
     
     public Boolean takeFood(String name)

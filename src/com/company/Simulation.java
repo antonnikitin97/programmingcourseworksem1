@@ -17,11 +17,15 @@ public class Simulation
     {
     }
 
-    public void go()
+    public void initialize(String pathOfFile)
     {
         ConfigFile file = new ConfigFile();
-        file.getDirectoryOfFile();
+        file.getDirectoryOfFile(pathOfFile);
 
+    }
+
+    public void startSimulation()
+    {
         System.out.println("Please enter the number of iterations that you want the sim to perform: ");
         try
         {
@@ -38,6 +42,8 @@ public class Simulation
             System.out.println("Iteration complete! Press 'enter' to continue!");
             inputScanner.nextLine();
         }
+        System.out.println("\n###SIMULATION COMPLETE###\nEXITING NOW!!");
+        System.exit(0);
     }
 
     public void incrementMonth()
