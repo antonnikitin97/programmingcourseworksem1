@@ -39,17 +39,19 @@ public class FoodStore
     {
         this.foodStorage.put(name, foodStorage.get(name) + quantityToAdd);
     }
-    
+
+    /*
+    Method to remove food from the foodstore. Returns true if the operation was successful, and false
+    if it failed. Method has been overloaded. One that only takes one item of food, and the other which takes how
+    ever many is passed in.
+    */
     public Boolean takeFood(String name)
     {
     	return takeFood(name, 1);
     }
-
     /*
-    Method to remove food from the foodstore. Returns true if the operation was successful, and false
-    if it failed.
+    Overloaded method...
     */
-
     public Boolean takeFood(String name, Integer quantity)
     {
         if(checkIsEnoughFood(name, quantity)) {

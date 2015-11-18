@@ -249,7 +249,7 @@ public class ConfigFile
                     enclosureForAnimal.put(tempF, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Bear":
-                    Animal tempG = new Lion(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
+                    Animal tempG = new Bear(Integer.parseInt(animalInfo[2]), Integer.parseInt(animalInfo[3]), animalInfo[1].charAt(0));
                     enclosureForAnimal.put(tempG, Integer.parseInt(animalInfo[4]));
                     break;
                 case "Gorilla":

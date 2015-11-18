@@ -1,3 +1,6 @@
+/*
+Class for 'Bear' animal. Contains method for the specific treat for the chimpanzee, and the 'aMonthPasses'
+*/
 package com.company;
 
 public class Bear extends Animal

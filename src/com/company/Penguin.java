@@ -1,3 +1,6 @@
+/*
+Class for 'Penguin' animal. Contains method for the specific treat for the penguin, and the 'aMonthPasses'
+*/
 package com.company;
 
 public class Penguin extends Animal

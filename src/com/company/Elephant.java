@@ -1,3 +1,6 @@
+/*
+Class for 'Elephant' animal. Contains method for the specific treat for the elephant, and the 'aMonthPasses'
+*/
 package com.company;
 
 public class Elephant extends Animal
