@@ -1,5 +1,10 @@
+/*
+Base Class that represents a general animal, contains fields for age, health, type, the enclosure it lives in, what it can eat and its gender.
+Also contains methods that allow other classes to access information (e.g. getAge, getHealth etc...), and methods to add and remove health, and add health based on
+food eaten.
+*/
+
 package com.company;
-import java.util.Random;
 
 public abstract class Animal
 {
@@ -12,7 +17,7 @@ public abstract class Animal
     protected String type;
 
     /*
-    Constructor for a general animal, sets the age to 0 and health to 10
+    Constructor for a general animal, sets the age, what it eats and health to whatever is passed in from the subclasses.
     */
     public Animal(Integer age, Integer lifeExpectancy, Integer health, String[] eats, char gender)
     {
@@ -63,17 +68,10 @@ public abstract class Animal
             this.health -= healthToRemove;
         }
     }
-
     protected Integer getHealth()
     {
         return this.health;
     }
-
-    protected void monthlyHealthDecrease()
-    {
-        removeHealth(2);
-    }
-
     /*
     Here we are iterating over the 'eats' array, checking whether or not the
     value at a certain index in the array equals the parameter passed in,
@@ -121,7 +119,6 @@ public abstract class Animal
     }
 
     protected abstract Boolean aMonthPasses();
-
     /*
     This method checks to see what food is being eaten, and adds food/waste accordingly.
     */
@@ -155,7 +152,6 @@ public abstract class Animal
                 break;
         }
     }
-
     /*
     Any given animal's health MUST be 10 or below. This method will check whether or not the planned health addition will take it over 10 health.
     If it does, it'll print out an 'error' message and return false. If it doesn't, it'll add the planned health to the animal's health and return
@@ -169,7 +165,6 @@ public abstract class Animal
             return true;
         }
     }
-
     /*
     This method will verify that the planned health removal will not take the animal's health below 0. If this is the case it will return false
     In all other cases it will return true.
