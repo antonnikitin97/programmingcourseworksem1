@@ -1,3 +1,8 @@
+/*
+Class that represents an enclosure, contains fields that represent animal waste, the list of keepers assigned to it
+the animals in the enclosure, whether it's full and finally the deadAnimalsToRemove (if there are any)
+*/
+
 package com.company;
 
 import java.util.ArrayList;
@@ -10,15 +15,15 @@ public class Enclosure
 	protected Boolean isFull = false;
     protected ArrayList<ZooKeeper> listOfKeepers = new ArrayList<>();
 	protected ArrayList<Animal> deadAnimalsToRemove = new ArrayList<>();
-	protected Boolean isEmpty = true;
-    protected Boolean allDead = false;
 
 	public Enclosure()
 	{
 		foodStore = new FoodStore();
 	}
 
-	// Adds the animal passed into the method to the ArrayList of animals.
+	/*
+	Adds the animal passed into the method to the ArrayList of animals.
+	*/
     public Boolean addAnimal(Animal animalToAdd)
 	{
 		if(isFull) {
@@ -31,7 +36,6 @@ public class Enclosure
 		}
 	}
 
-    // Removes the passed in animal from the enclosure.
     public void removeAnimal(Animal animalToRemove)
 	{
 		this.animalsInEnclosure.remove(animalToRemove);
@@ -94,6 +98,9 @@ public class Enclosure
 		}
 	}
 
+    /*
+    Checks to see whether the animal is dead, returns true if it is, else false.
+    */
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
 		if(a.getHealth() == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
@@ -103,7 +110,9 @@ public class Enclosure
 			return false;
 		}
 	}
-
+    /*
+    Method to check whether all the animals in this enclosure are dead
+    */
     public Boolean checkIfAllDead()
     {
         Integer numberDead = 0;
@@ -115,11 +124,6 @@ public class Enclosure
             }
         }
         return (numberDead.equals(this.size()));
-    }
-
-    public void addKeeper(ZooKeeper zk)
-    {
-        this.listOfKeepers.add(zk);
     }
 
 	public void printTypesOfAnimalInEnclosure()

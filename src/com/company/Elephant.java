@@ -2,10 +2,13 @@ package com.company;
 
 public class Elephant extends Animal
 {
+    /*
+    Constructor an 'Elephant' animal. Calls the Animal constructor and passes it values such as
+    what it eats, the age of the animal, life expectancy, health and gender.
+    */
     public Elephant(Integer age, Integer health, char gender)
     {
         super(age, 36, health, new String []{"hay", "fruit"}, gender);
-        //super(18, new String []{"hay", "fruit"});
         this.type = "Elephant";
     }
 

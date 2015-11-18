@@ -16,6 +16,7 @@ public class ConfigFile
     protected File configFile;
     protected Simulation mySim;
     private String configFilePath = "";
+
     /*
     The 4 Array lists declared below hold the information from the config file about the zoo's food (zooConfig), the enclosure's
     waste and food (enclosureConfig). The animals in the enclosure (animalConfig) and the zoo keepers (zooKeeperConfig)
@@ -24,6 +25,7 @@ public class ConfigFile
     protected ArrayList<String> enclosureConfig = new ArrayList<>();
     protected ArrayList<String> animalConfig = new ArrayList<>();
     protected ArrayList<String> zookeeperConfig = new ArrayList<>();
+
     /*
     The hashmap and integer variable declared below are merely used as intermediate storage for other methods.
     The enclosureForAnimal hashmap is used for the enclosureConfig() method to assign animals to enclosure (the Key is the animal object
@@ -49,6 +51,7 @@ public class ConfigFile
         configFile = new File(configFilePath);
         readConfig();
     }
+
     /*
     This method is responsible for reading the whole configuration file line by line and populating the arrays with data for each section of the config file.
     */
@@ -119,6 +122,7 @@ public class ConfigFile
             setUpSimulation();
         }
     }
+
     /*
     This method calls the methods to set up the zoo, (initializing animals, foodstore, enclosure, zookeepers)
     It also calls the startSimulation method after all of these have completed.
@@ -133,6 +137,7 @@ public class ConfigFile
         System.out.println("\n### DATA LOADED SUCCESSFULLY ###\n");
         mySim.startSimulation();
     }
+
     /*
     This method creates the enclosures and populates them with the animals that have been read in from the config file.
     If no enclosures have been specified in the config file, then it will create as many enclosures as there are animals with default values for food.
@@ -256,6 +261,7 @@ public class ConfigFile
 
         System.out.println("Animals initialised!");
     }
+
     /*
     This method is responsible for extracting the types of keepers required from zooKeeperConfig and populating a tempKeeperList
     with these keepers.

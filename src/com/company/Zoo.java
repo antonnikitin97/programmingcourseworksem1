@@ -71,7 +71,9 @@ public class Zoo
         }
         return listOfValid;
     }
-    //This method will order additional food for the zoo food store
+    /*
+    This method will order additional food for the zoo food store
+    */
     public void orderAdditionalFood()
     {
         for(String s : this.zooFoodStore.foodStorage.keySet())

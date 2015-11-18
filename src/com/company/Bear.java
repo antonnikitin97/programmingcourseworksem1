@@ -2,6 +2,10 @@ package com.company;
 
 public class Bear extends Animal
 {
+    /*
+    Constructor a 'bear' animal. Calls the Animal constructor and passes it values such as
+    what it eats, the age of the animal, life expectancy, health and gender.
+    */
     public Bear(Integer age, Integer health, char gender)
     {
         super(age, 18, health, new String []{"fish", "steak"}, gender);

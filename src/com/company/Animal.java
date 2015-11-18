@@ -72,6 +72,7 @@ public abstract class Animal
     {
         return this.health;
     }
+
     /*
     Here we are iterating over the 'eats' array, checking whether or not the
     value at a certain index in the array equals the parameter passed in,
@@ -108,6 +109,10 @@ public abstract class Animal
         }
     }
 
+    /*
+    Method that will treat the animal if the correct keeper is treating. This method is overridden in each sub-class
+    so that the treat method for each individual animal can be called.
+    */
     public void treat(String keeperLabel)
     {
     	
@@ -119,6 +124,7 @@ public abstract class Animal
     }
 
     protected abstract Boolean aMonthPasses();
+
     /*
     This method checks to see what food is being eaten, and adds food/waste accordingly.
     */
@@ -152,6 +158,7 @@ public abstract class Animal
                 break;
         }
     }
+
     /*
     Any given animal's health MUST be 10 or below. This method will check whether or not the planned health addition will take it over 10 health.
     If it does, it'll print out an 'error' message and return false. If it doesn't, it'll add the planned health to the animal's health and return
@@ -165,6 +172,7 @@ public abstract class Animal
             return true;
         }
     }
+
     /*
     This method will verify that the planned health removal will not take the animal's health below 0. If this is the case it will return false
     In all other cases it will return true.

@@ -8,7 +8,6 @@ types of zookeepers, the base class has a 'keeperLabel' that all the other types
 "physio" - physio keeper
 
 These will be used when deciding if a certain zookeeper can perform a given treat
-
 */
 
 package com.company;
@@ -49,7 +48,9 @@ public class ZooKeeper {
         return true;
     }
 
-    // Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
+    /*
+    Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
+    */
     public void getFoodFromZooStore()
     {
         if(this.keeperLabel.equals("default") || this.keeperLabel.equals("play"))
