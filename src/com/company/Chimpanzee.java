@@ -12,13 +12,13 @@ public class Chimpanzee extends Ape
     public Chimpanzee(Integer age, Integer health, char gender)
     {
         super(age, health, gender);
-        this.type = "Chimpanzee";
+        this.setType("Chimpanzee");
     }
 
     private void playChase()
     {
         this.addHealth(4);
-        System.out.format("Chase has been played with %s!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("Chase has been played with %s!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -28,9 +28,9 @@ public class Chimpanzee extends Ape
             this.playChase();
         }else{
             if(!keeperLabel.equals("play")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }

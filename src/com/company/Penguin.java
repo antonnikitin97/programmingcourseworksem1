@@ -13,13 +13,13 @@ public class Penguin extends Animal
     public Penguin(Integer age, Integer health, char gender)
     {
         super(age, 15, health, new String []{"fish", "ice cream"}, gender);
-        this.type = "Penguin";
+        this.setType("Penguin");
     }
 
     private void watchAFilm()
     {
         this.addHealth(2);
-        System.out.format("%s has watched a film!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("%s has watched a film!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -29,9 +29,9 @@ public class Penguin extends Animal
             this.watchAFilm();
         }else{
             if(!keeperLabel.equals("play")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }

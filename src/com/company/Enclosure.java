@@ -5,11 +5,15 @@ the animals in the enclosure, whether it's full and finally the deadAnimalsToRem
 
 package com.company;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Enclosure
 {
-	protected FoodStore foodStore;
+	protected Random random = new Random();
+
+    protected FoodStore foodStore;
 	protected ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
 	protected Integer animalWaste = 0;
 	protected Boolean isFull = false;
@@ -104,7 +108,7 @@ public class Enclosure
 	public Boolean checkIfAnimalIsDead(Animal a)
 	{
 		if(a.getHealth() == 0 || a.getAgeOfAnimal().equals(a.getLifeExpectancy())) {
-			System.out.format("###%s has died!###\n", a.type);
+			System.out.format("###%s has died!###\n", a.getType());
 			return true;
 		}else{
 			return false;
@@ -133,7 +137,43 @@ public class Enclosure
 
 		for(Animal s : animalsInEnclosure)
 		{
-			System.out.format("Animal: %s --- Health: %s --- Age: %s\n", s.type, s.getHealth(), s.getAgeOfAnimal());
+			System.out.format("Animal: %s --- Health: %s --- Age: %s\n", s.getType(), s.getHealth(), s.getAgeOfAnimal());
 		}
 	}
+
+
+    public void breedTwoAnimals()
+    {
+        Animal tempA = pickTwoRandom().get(0);
+        Animal tempB = pickTwoRandom().get(1);
+
+        if(checkCanBreed(tempA, tempB) && !this.isFull)
+        {
+            System.out.println(System.out.format("Two %s have bred and a new %s was born!", tempA.getType(), tempA.getType()));
+        }
+    }
+
+    public ArrayList<Animal> pickTwoRandom()
+    {
+        ArrayList<Animal> animalsToReturn = new ArrayList<>();
+
+        Integer x = random.nextInt(this.size());
+        Integer y = random.nextInt(this.size());
+
+        while(x.equals(y))
+        {
+            x = random.nextInt(this.size());
+            y = random.nextInt(this.size());
+        }
+
+        animalsToReturn.add(this.animalsInEnclosure.get(x));
+        animalsToReturn.add(this.animalsInEnclosure.get(y));
+
+        return animalsToReturn;
+    }
+
+    public Boolean checkCanBreed(Animal a, Animal b)
+    {
+        return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 2 && b.getAgeOfAnimal() > 2) && (a.getType().equals(b.getType())));
+    }
 }

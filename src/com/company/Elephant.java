@@ -12,13 +12,13 @@ public class Elephant extends Animal
     public Elephant(Integer age, Integer health, char gender)
     {
         super(age, 36, health, new String []{"hay", "fruit"}, gender);
-        this.type = "Elephant";
+        this.setType("Elephant");
     }
 
     private void bath()
     {
         this.addHealth(5);
-        System.out.format("%s has been bathed!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("%s has been bathed!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -28,9 +28,9 @@ public class Elephant extends Animal
             this.bath();
         }else{
             if(!keeperLabel.equals("physio")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }

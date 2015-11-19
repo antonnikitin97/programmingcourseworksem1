@@ -13,14 +13,14 @@ public class Giraffe extends Animal
     public Giraffe(Integer age, Integer health, char gender)
     {
         super(age, 28, health, new String []{"hay", "fruit"}, gender);
-        this.type = "Giraffe";
+        this.setType("Giraffe");
     }
 
     // This method will 'treat' the giraffe and give it health
     private void neckMassage()
     {
         this.addHealth(4);
-        System.out.format("%s has been massaged!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("%s has been massaged!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -30,9 +30,9 @@ public class Giraffe extends Animal
             this.neckMassage();
         }else{
             if(!keeperLabel.equals("physio")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }

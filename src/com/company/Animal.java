@@ -14,7 +14,7 @@ public abstract class Animal
     private Integer health;
     private Integer lifeExpectancy;
     protected Enclosure enclosureAnimalResidesIn;
-    protected String type;
+    private String type;
 
     /*
     Constructor for a general animal, sets the age, what it eats and health to whatever is passed in from the subclasses.
@@ -187,4 +187,13 @@ public abstract class Animal
         }
     }
 
+    public String getType()
+    {
+        return this.type;
+    }
+
+    public void setType(String typeToSet)
+    {
+        this.type = typeToSet;
+    }
 }

@@ -6,7 +6,7 @@ public class PhysioZooKeeper extends ZooKeeper
     {
         this.zoo = zoo;
         this.zooFoodStore = zoo.zooFoodStore;
-        this.keeperLabel = "physio";
+        this.setKeeperLabel("physio");
         this.assignEnclosure();
     }
 }

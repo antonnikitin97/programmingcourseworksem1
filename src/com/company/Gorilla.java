@@ -13,13 +13,13 @@ public class Gorilla extends Ape
     public Gorilla(Integer age, Integer health, char gender)
     {
         super(age, health, gender);
-        this.type = "Gorilla";
+        this.setType("Gorilla");
     }
 
     private void painting()
     {
         this.addHealth(4);
-        System.out.format("%s has painted!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("%s has painted!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -29,9 +29,9 @@ public class Gorilla extends Ape
             this.painting();
         }else{
             if(!keeperLabel.equals("play")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }

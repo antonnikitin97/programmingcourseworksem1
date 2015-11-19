@@ -20,7 +20,7 @@ public class ZooKeeper {
     protected Enclosure enclosureKeeperAssignedTo;
     protected FoodStore foodStoreKeeperAssignedTo;
     protected FoodStore zooFoodStore;
-    protected String keeperLabel;
+    private String keeperLabel;
     private Random generator = new Random();
     public ZooKeeper()
     {
@@ -96,4 +96,15 @@ public class ZooKeeper {
             }
         }
     }
+
+    protected String getKeeperLabel()
+    {
+        return this.keeperLabel;
+    }
+
+    protected void setKeeperLabel(String labelToSet)
+    {
+        this.keeperLabel = labelToSet;
+    }
+
 }

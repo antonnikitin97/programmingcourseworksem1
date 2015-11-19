@@ -14,13 +14,13 @@ public class Tiger extends BigCat
     public Tiger(Integer age, Integer health, char gender)
     {
         super(age, health, gender);
-        this.type = "Tiger";
+        this.setType("Tiger");
     }
 
     private void stroked()
     {
         this.addHealth(3);
-        System.out.format("%s has been stroked!\nHealth is now: %s", this.type ,this.getHealth());
+        System.out.format("%s has been stroked!\nHealth is now: %s", this.getType() ,this.getHealth());
     }
 
     @Override
@@ -30,9 +30,9 @@ public class Tiger extends BigCat
             this.stroked();
         }else{
             if(!keeperLabel.equals("default")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.type);
+                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
             }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.type);
+                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
             }
         }
     }
