@@ -40,7 +40,7 @@ public class Zoo
         }
         for(Enclosure e : getValidEnclosures())
         {
-            System.out.format("\nEnclosure %s animals eating!!!\n\n", enclosures.indexOf(e));
+            System.out.format("\nEnclosure %s Operations!\n\n", enclosures.indexOf(e));
             e.aMonthPasses();
         }
         System.out.println("\n--- ZOO KEEPER DUTY!!! ---");

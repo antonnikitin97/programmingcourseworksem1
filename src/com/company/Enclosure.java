@@ -78,7 +78,8 @@ public class Enclosure
 	public void aMonthPasses()
 	{
         breedTwoAnimals();
-		for(Animal a: animalsInEnclosure)
+        System.out.println("#### ANIMALS EATING ####");
+        for(Animal a: animalsInEnclosure)
         {
             try
             {
@@ -149,14 +150,15 @@ public class Enclosure
     */
     public void breedTwoAnimals()
     {
+        System.out.println("#### BREEDING ####");
         ArrayList<Animal> breed = pickTwoRandom();
-
         Animal tempA = breed.get(0);
         Animal tempB = breed.get(1);
 
         if(checkCanBreed(tempA, tempB) && !this.isFull)
         {
-            if (random.nextInt(100) % 2 == 0) {
+            if (random.nextInt(100) % 2 == 0)
+            {
                 System.out.format("\n%s and %s had a baby!! :)\n\n", tempA.getType(), tempB.getType());
                 switch (tempA.getType()) {
                     case "Lion":
@@ -184,10 +186,10 @@ public class Enclosure
                         this.addAnimal(new Giraffe(0, 10, generateGender()));
                         break;
                 }
-            } else {
+            }else{
                 System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But it didn't work out :'(\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
             }
-        }else{
+        }else {
             if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
                 System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
             }else{
