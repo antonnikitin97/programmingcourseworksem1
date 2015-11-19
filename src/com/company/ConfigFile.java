@@ -199,6 +199,10 @@ public class ConfigFile
         FoodStore tempZooStore = new FoodStore();
         for(String s : zooAndFoodConfig)
         {
+            if(s.contains("Waste"))
+            {
+                continue;
+            }
             String[] foodAndAmount = s.split(" ");
             if(foodAndAmount[0].equals("ice_cream"))
             {

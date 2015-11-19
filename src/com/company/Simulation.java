@@ -46,7 +46,7 @@ public class Simulation
         {
             zooSimLinkedTo.aMonthPasses();
             System.out.println("Iteration complete! Press 'enter' to continue!");
-            inputScanner.next();
+            inputScanner.nextLine();
         }
         System.out.println("\n###SIMULATION COMPLETE###\nEXITING NOW!!");
         System.exit(0);

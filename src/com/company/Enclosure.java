@@ -77,6 +77,7 @@ public class Enclosure
 	*/
 	public void aMonthPasses()
 	{
+        breedTwoAnimals();
 		for(Animal a: animalsInEnclosure)
         {
             try
@@ -141,18 +142,63 @@ public class Enclosure
 		}
 	}
 
-
+    /*
+    This method breeds two animals, first it gets two random animals and checks to see if they can breed
+    if they can it generates a random number and sees if it's divisible by 2. If it is then breeding is
+    successful.
+    */
     public void breedTwoAnimals()
     {
-        Animal tempA = pickTwoRandom().get(0);
-        Animal tempB = pickTwoRandom().get(1);
+        ArrayList<Animal> breed = pickTwoRandom();
+
+        Animal tempA = breed.get(0);
+        Animal tempB = breed.get(1);
 
         if(checkCanBreed(tempA, tempB) && !this.isFull)
         {
-            System.out.println(System.out.format("Two %s have bred and a new %s was born!", tempA.getType(), tempA.getType()));
+            if (random.nextInt(100) % 2 == 0) {
+                System.out.format("\n%s and %s had a baby!! :)\n\n", tempA.getType(), tempB.getType());
+                switch (tempA.getType()) {
+                    case "Lion":
+                        this.addAnimal(new Lion(0, 10, generateGender()));
+                        break;
+                    case "Bear":
+                        this.addAnimal(new Bear(0, 10, generateGender()));
+                        break;
+                    case "Tiger":
+                        this.addAnimal(new Tiger(0, 10, generateGender()));
+                        break;
+                    case "Elephant":
+                        this.addAnimal(new Elephant(0, 10, generateGender()));
+                        break;
+                    case "Penguin":
+                        this.addAnimal(new Penguin(0, 10, generateGender()));
+                        break;
+                    case "Chimpanzee":
+                        this.addAnimal(new Chimpanzee(0, 10, generateGender()));
+                        break;
+                    case "Gorilla":
+                        this.addAnimal(new Gorilla(0, 10, generateGender()));
+                        break;
+                    case "Giraffe":
+                        this.addAnimal(new Giraffe(0, 10, generateGender()));
+                        break;
+                }
+            } else {
+                System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But it didn't work out :'(\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+            }
+        }else{
+            if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
+                System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+            }else{
+                System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're not the right type!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+            }
         }
     }
 
+    /*
+    Picks two random animals from the enclosure.
+    */
     public ArrayList<Animal> pickTwoRandom()
     {
         ArrayList<Animal> animalsToReturn = new ArrayList<>();
@@ -172,8 +218,17 @@ public class Enclosure
         return animalsToReturn;
     }
 
+    public char generateGender()
+    {
+        if(random.nextInt(10) % 2 == 0) {
+            return 'M';
+        }else{
+            return 'F';
+        }
+    }
+
     public Boolean checkCanBreed(Animal a, Animal b)
     {
-        return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 2 && b.getAgeOfAnimal() > 2) && (a.getType().equals(b.getType())));
+        return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 4 && b.getAgeOfAnimal() > 4) && (a.getType().equals(b.getType())));
     }
 }
