@@ -77,7 +77,10 @@ public class Enclosure
 	*/
 	public void aMonthPasses()
 	{
-        breedTwoAnimals();
+        if(this.size() > 1)
+        {
+            breedTwoAnimals();
+        }
         System.out.println("#### ANIMALS EATING ####");
         for(Animal a: animalsInEnclosure)
         {
@@ -139,7 +142,7 @@ public class Enclosure
 
 		for(Animal s : animalsInEnclosure)
 		{
-			System.out.format("Animal: %s --- Health: %s --- Age: %s --- Gender\n", s.getType(), s.getHealth(), s.getAgeOfAnimal(), s.getGender());
+			System.out.format("Animal: %s --- Health: %s --- Age: %s --- Gender: %s\n", s.getType(), s.getHealth(), s.getAgeOfAnimal(), s.getGender());
 		}
 	}
 

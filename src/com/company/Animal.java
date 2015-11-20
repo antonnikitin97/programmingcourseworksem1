@@ -54,7 +54,7 @@ public abstract class Animal
 
     protected void addHealth(Integer healthToAdd)
     {
-        if(checkIfHealthCanBeAdded(healthToAdd) == false) {
+        if(checkIfHealthCanBeAdded(healthToAdd)) {
             System.out.format("Health of %s cannot be increased by %s as it would exceed 10 health!\n", this.type, healthToAdd);
         }else{
             this.health += healthToAdd;
@@ -103,7 +103,7 @@ public abstract class Animal
             if(this.canEat(s))
             {
                 if(temp.takeFood(s)) {
-                    giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn);
+                    giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
                     System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
@@ -132,32 +132,32 @@ public abstract class Animal
     /*
     This method checks to see what food is being eaten, and adds food/waste accordingly.
     */
-    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure)
+    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure, Animal animal)
     {
         switch(food)
         {
             case "hay":
-                addHealth(1);
+                animal.addHealth(1);
                 enclosure.addWaste(4);
                 break;
             case "steak":
-                addHealth(3);
+                animal.addHealth(3);
                 enclosure.addWaste(4);
                 break;
             case "fruit":
-                addHealth(2);
+                animal.addHealth(2);
                 enclosure.addWaste(3);
                 break;
             case "celery":
-                addHealth(0);
+                animal.addHealth(0);
                 enclosure.addWaste(1);
                 break;
             case "fish":
-                addHealth(3);
+                animal.addHealth(3);
                 enclosure.addWaste(2);
                 break;
             case "ice cream":
-                addHealth(1);
+                animal.addHealth(1);
                 enclosure.addWaste(3);
                 break;
         }
