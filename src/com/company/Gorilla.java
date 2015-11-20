@@ -15,7 +15,9 @@ public class Gorilla extends Ape
         super(age, health, gender);
         this.setType("Gorilla");
     }
-
+    /*
+    The specific treat for Gorilla, called by the overridden 'treat' method.
+    */
     private void painting()
     {
         this.addHealth(4);

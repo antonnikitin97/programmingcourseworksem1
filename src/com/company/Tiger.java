@@ -16,7 +16,9 @@ public class Tiger extends BigCat
         super(age, health, gender);
         this.setType("Tiger");
     }
-
+    /*
+    The specific treat for Tiger, called by the overridden 'treat' method.
+    */
     private void stroked()
     {
         this.addHealth(3);

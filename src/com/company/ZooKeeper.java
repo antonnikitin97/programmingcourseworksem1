@@ -34,6 +34,9 @@ public class ZooKeeper {
         assignEnclosure();
     }
 
+    /*
+    Assigns the zooKeeper randomly to an enclosure.
+    */
     public void assignEnclosure()
     {
         this.enclosureKeeperAssignedTo = zoo.enclosures.get(generator.nextInt(zoo.enclosures.size()));
@@ -84,14 +87,14 @@ public class ZooKeeper {
     private void treatTwoAnimals()
     {
         if(this.enclosureKeeperAssignedTo.checkIfAllDead()) {
-            System.out.format("\n%S Can't treat as all animals in my enclosure are dead!\n", this.keeperLabel);
+            System.out.format("\n%S Can't treat as all animals in my enclosure are dead!\n", this.getKeeperLabel());
         }else{
             System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
 
             for(int i = 0; i < 2; i ++ )
             {
                 System.out.format("Treating animal #%s: " , i + 1);
-                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.keeperLabel);
+                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.getKeeperLabel());
                 System.out.println();
             }
         }

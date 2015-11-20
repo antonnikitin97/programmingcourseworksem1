@@ -14,7 +14,9 @@ public class Chimpanzee extends Ape
         super(age, health, gender);
         this.setType("Chimpanzee");
     }
-
+    /*
+    The specific treat for Chimpanzee, called by the overridden 'treat' method.
+    */
     private void playChase()
     {
         this.addHealth(4);

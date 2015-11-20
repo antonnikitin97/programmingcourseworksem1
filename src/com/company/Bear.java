@@ -14,7 +14,9 @@ public class Bear extends Animal
         super(age, 18, health, new String []{"fish", "steak"}, gender);
         this.setType("Bear");
     }
-
+    /*
+    The specific treat for Bear, called by the overridden 'treat' method.
+    */
     private void hug()
     {
         this.addHealth(3);

@@ -14,7 +14,9 @@ public class Elephant extends Animal
         super(age, 36, health, new String []{"hay", "fruit"}, gender);
         this.setType("Elephant");
     }
-
+    /*
+    The specific treat for Elephant, called by the overridden 'treat' method.
+    */
     private void bath()
     {
         this.addHealth(5);

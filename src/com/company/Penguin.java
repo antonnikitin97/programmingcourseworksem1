@@ -15,7 +15,9 @@ public class Penguin extends Animal
         super(age, 15, health, new String []{"fish", "ice cream"}, gender);
         this.setType("Penguin");
     }
-
+    /*
+    The specific treat for Penguin, called by the overridden 'treat' method.
+    */
     private void watchAFilm()
     {
         this.addHealth(2);

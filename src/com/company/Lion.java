@@ -16,7 +16,9 @@ public class Lion extends BigCat
         super(age, health, gender);
         this.setType("Lion");
     }
-
+    /*
+    The specific treat for Lion, called by the overridden 'treat' method.
+    */
     private void stroked()
     {
         this.addHealth(2);

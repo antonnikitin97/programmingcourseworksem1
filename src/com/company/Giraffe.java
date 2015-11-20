@@ -15,8 +15,9 @@ public class Giraffe extends Animal
         super(age, 28, health, new String []{"hay", "fruit"}, gender);
         this.setType("Giraffe");
     }
-
-    // This method will 'treat' the giraffe and give it health
+    /*
+    The specific treat for Giraffe, called by the overridden 'treat' method.
+    */
     private void neckMassage()
     {
         this.addHealth(4);
