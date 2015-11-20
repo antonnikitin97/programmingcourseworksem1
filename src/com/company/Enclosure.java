@@ -149,7 +149,7 @@ public class Enclosure
         System.out.println("--- STATUS ON FOOD IN ENCLOSURE ---");
         for(String s : this.getFoodStore().getAvailableFoodInZoo())
         {
-            System.out.format("Food: %s --- Quantity: %s", s, this.getFoodStore().getFoodQuantity(s));
+            System.out.format("Food: %s --- Quantity: %s\n", s, this.getFoodStore().getFoodQuantity(s));
         }
     }
 
