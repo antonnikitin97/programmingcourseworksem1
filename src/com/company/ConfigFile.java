@@ -226,6 +226,10 @@ public class ConfigFile
             {
                 numberOfEnclosuresToCreate = Integer.parseInt(animalInfo[4]);
             }
+            if(Integer.parseInt(animalInfo[3]) > 10 || Integer.parseInt(animalInfo[3]) <= 0)
+            {
+                animalInfo[3] = "10";
+            }
             switch (animalInfo[0])
             {
                 case "Lion":

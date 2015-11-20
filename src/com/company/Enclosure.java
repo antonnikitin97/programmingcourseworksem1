@@ -139,7 +139,7 @@ public class Enclosure
 
 		for(Animal s : animalsInEnclosure)
 		{
-			System.out.format("Animal: %s --- Health: %s --- Age: %s\n", s.getType(), s.getHealth(), s.getAgeOfAnimal());
+			System.out.format("Animal: %s --- Health: %s --- Age: %s --- Gender\n", s.getType(), s.getHealth(), s.getAgeOfAnimal(), s.getGender());
 		}
 	}
 
@@ -190,8 +190,8 @@ public class Enclosure
                 System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But it didn't work out :'(\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
             }
         }else{
-            if(tempA.getGender() == tempB.getGender()) {
-                System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!!", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
+            if(tempA.getType().equals(tempB.getType()) && tempA.getGender() == tempB.getGender()) {
+                System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!!\n", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
             }else{
                 if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
                     System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
@@ -236,6 +236,10 @@ public class Enclosure
         }
     }
 
+    /*
+    Method that checks to see if two animals can breed.
+    Checks if the genders are different, the ages are greater than 4 and their types are the same.
+    */
     public Boolean checkCanBreed(Animal a, Animal b)
     {
         return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 4 && b.getAgeOfAnimal() > 4) && (a.getType().equals(b.getType())));

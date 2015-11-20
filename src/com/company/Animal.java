@@ -8,8 +8,8 @@ package com.company;
 
 public abstract class Animal
 {
-    protected Integer ageOfAnimal;
-    protected char gender;
+    private Integer ageOfAnimal;
+    private char gender;
     private String[] eats;
     private Integer health;
     private Integer lifeExpectancy;
@@ -63,9 +63,13 @@ public abstract class Animal
 
     protected void removeHealth(Integer healthToRemove)
     {
-        if(checkIfHealthCanBeRemoved(healthToRemove))
-        {
+        if(checkIfHealthCanBeRemoved(healthToRemove)) {
             this.health -= healthToRemove;
+        }else{
+            if(checkIfHealthCanBeRemoved(1))
+            {
+                this.health -= 1;
+            }
         }
     }
     protected Integer getHealth()
@@ -99,7 +103,7 @@ public abstract class Animal
             if(this.canEat(s))
             {
                 if(temp.takeFood(s)) {
-                    giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
+                    giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn);
                     System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
@@ -128,7 +132,7 @@ public abstract class Animal
     /*
     This method checks to see what food is being eaten, and adds food/waste accordingly.
     */
-    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure, Animal animal)
+    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure)
     {
         switch(food)
         {
@@ -166,11 +170,7 @@ public abstract class Animal
     */
     protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
     {
-        if(this.getHealth() + plannedHealthAddition > 10) {
-            return false;
-        }else{
-            return true;
-        }
+        return (this.getHealth() + plannedHealthAddition > 10);
     }
 
     /*
