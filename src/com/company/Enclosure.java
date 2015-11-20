@@ -137,14 +137,21 @@ public class Enclosure
 
 	public void printTypesOfAnimalInEnclosure()
 	{
-
-		System.out.println("--- STATUS ON ANIMALS IN ENCLOSURE ---");
-
+        System.out.println("--- STATUS ON ANIMALS IN ENCLOSURE ---");
 		for(Animal s : animalsInEnclosure)
 		{
 			System.out.format("Animal: %s --- Health: %s --- Age: %s --- Gender: %s\n", s.getType(), s.getHealth(), s.getAgeOfAnimal(), s.getGender());
 		}
 	}
+
+    public void printFoodStatus()
+    {
+        System.out.println("--- STATUS ON FOOD IN ENCLOSURE ---");
+        for(String s : this.getFoodStore().getAvailableFoodInZoo())
+        {
+            System.out.format("Food: %s --- Quantity: %s", s, this.getFoodStore().getFoodQuantity(s));
+        }
+    }
 
     /*
     This method breeds two animals, first it gets two random animals and checks to see if they can breed
@@ -247,4 +254,5 @@ public class Enclosure
     {
         return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 4 && b.getAgeOfAnimal() > 4) && (a.getType().equals(b.getType())));
     }
+
 }

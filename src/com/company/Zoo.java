@@ -94,7 +94,7 @@ public class Zoo
     }
     /*
     This method iterates over all the enclosures in the zoo and prints out information about them including
-    the types of animal in the enclosure, their age and their health.
+    the types of animal in the enclosure, their age and their health, and the food in the enclosure.
     */
     private void getEnclosureStatus()
     {
@@ -104,6 +104,7 @@ public class Zoo
         {
             System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.size(), e.getWasteSize());
             e.printTypesOfAnimalInEnclosure();
+            e.printFoodStatus();
             System.out.println("#######################################");
             currentEnclosure += 1;
         }
