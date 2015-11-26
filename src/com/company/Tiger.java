@@ -28,14 +28,10 @@ public class Tiger extends BigCat
     @Override
     public void treat(String keeperLabel)
     {
-        if(keeperLabel.equals("default") && this.checkIfHealthCanBeAdded(3)) {
+        if(this.checkIfHealthCanBeAdded(3)) {
             this.stroked();
         }else{
-            if(!keeperLabel.equals("default")) {
-                System.out.format("This keeper (%s) cannot treat this animal! (%s)", keeperLabel, this.getType());
-            }else{
                 System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
-            }
         }
     }
 

@@ -199,17 +199,17 @@ public class Enclosure
             }else{
                 System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But it didn't work out :'(\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
             }
-        }else{
-            if(tempA.getType().equals(tempB.getType()) && tempA.getGender() == tempB.getGender()) {
-                System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!!\n", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
             }else{
-                if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
-                    System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+                if(tempA.getType().equals(tempB.getType()) && tempA.getGender() == tempB.getGender()) {
+                    System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!\n", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
                 }else{
-                    System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're not the right type!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+                    if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
+                        System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+                    }else{
+                        System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're not the right type!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
+                    }
                 }
             }
-        }
     }
 
     /*
