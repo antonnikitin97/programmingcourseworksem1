@@ -12,6 +12,7 @@ public class Simulation
     private Zoo zooSimLinkedTo;
     protected Scanner inputScanner = new Scanner(System.in);
     Integer numberOfIterations;
+    Boolean continuous = false;
 
     public Simulation()
     {
@@ -20,8 +21,20 @@ public class Simulation
     /*
     Method to start the process of reading the config file for the zoo.
     */
-    public void initialize(String pathOfFile)
+    public void initialize(String pathOfFile, String continuousCondition)
     {
+        switch (continuousCondition)
+        {
+            case "true":
+                continuous = true;
+                break;
+            case "false":
+                continuous = false;
+                break;
+            default:
+                continuous = false;
+                break;
+        }
         ConfigFile file = new ConfigFile();
         file.getDirectoryOfFile(pathOfFile);
     }
@@ -42,11 +55,17 @@ public class Simulation
             System.out.println("Input must be a number! Please try again!");
             startSimulation();
         }
-        for (int i = 0; i < numberOfIterations; i++)
-        {
-            zooSimLinkedTo.aMonthPasses();
-            System.out.println("Iteration complete! Press 'enter' to continue!");
-            inputScanner.nextLine();
+        if(continuous) {
+            for (int i = 0; i < numberOfIterations; i++) {
+                zooSimLinkedTo.aMonthPasses();
+            }
+        }else{
+            for (int i = 0; i < numberOfIterations; i++)
+            {
+                zooSimLinkedTo.aMonthPasses();
+                System.out.println("Iteration complete! Press 'enter' to continue!");
+                inputScanner.nextLine();
+            }
         }
         System.out.println("\n###SIMULATION COMPLETE###\nEXITING NOW!!");
         System.exit(0);

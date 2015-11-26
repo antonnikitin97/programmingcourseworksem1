@@ -5,7 +5,6 @@ the animals in the enclosure, whether it's full and finally the deadAnimalsToRem
 
 package com.company;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Random;
 
@@ -65,7 +64,7 @@ public class Enclosure
 		return foodStore;
 	}
 
-	public Integer size()
+	public Integer getSize()
 	{
 		return animalsInEnclosure.size();
 	}
@@ -77,7 +76,7 @@ public class Enclosure
 	*/
 	public void aMonthPasses()
 	{
-        if(this.size() > 1)
+        if(this.getSize() > 1)
         {
             breedTwoAnimals();
         }
@@ -132,7 +131,7 @@ public class Enclosure
                 numberDead += 1;
             }
         }
-        return (numberDead.equals(this.size()));
+        return (numberDead.equals(this.getSize()));
     }
 
 	public void printTypesOfAnimalInEnclosure()
@@ -165,7 +164,7 @@ public class Enclosure
         Animal tempA = breed.get(0);
         Animal tempB = breed.get(1);
 
-        if(checkCanBreed(tempA, tempB) && !this.isFull)
+        if(checkCanBreed(tempA, tempB))
         {
             if (random.nextInt(100) % 2 == 0)
             {
@@ -199,9 +198,9 @@ public class Enclosure
             }else{
                 System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But it didn't work out :'(\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
             }
-            }else{
-                if(tempA.getType().equals(tempB.getType()) && tempA.getGender() == tempB.getGender()) {
-                    System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!\n", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
+                }else{
+                    if(tempA.getType().equals(tempB.getType()) && tempA.getGender() == tempB.getGender()) {
+                     System.out.format("\n%s (Age: %s) (Gender: %s) and %s (Age %s) (Gender: %s) tried to breed! But they're the same gender!\n", tempA.getType(), tempA.getAgeOfAnimal(), tempA.getGender(), tempB.getType(), tempB.getAgeOfAnimal(), tempB.getGender());
                 }else{
                     if((tempA.getType().equals(tempB.getType())) && (tempA.getAgeOfAnimal() <= 4 || tempB.getAgeOfAnimal() <= 4)) {
                         System.out.format("\n%s (Age: %s) and %s (Age: %s) tried to breed! But they're too young!\n\n", tempA.getType(), tempA.getAgeOfAnimal(), tempB.getType(), tempB.getAgeOfAnimal());
@@ -219,13 +218,13 @@ public class Enclosure
     {
         ArrayList<Animal> animalsToReturn = new ArrayList<>();
 
-        Integer x = random.nextInt(this.size());
-        Integer y = random.nextInt(this.size());
+        Integer x = random.nextInt(this.getSize());
+        Integer y = random.nextInt(this.getSize());
 
         while(x.equals(y))
         {
-            x = random.nextInt(this.size());
-            y = random.nextInt(this.size());
+            x = random.nextInt(this.getSize());
+            y = random.nextInt(this.getSize());
         }
 
         animalsToReturn.add(this.animalsInEnclosure.get(x));
@@ -252,7 +251,20 @@ public class Enclosure
     */
     public Boolean checkCanBreed(Animal a, Animal b)
     {
-        return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 4 && b.getAgeOfAnimal() > 4) && (a.getType().equals(b.getType())));
+        if(this.isFull) {
+            return false;
+        }else{
+            return ((a.getGender() != b.getGender()) && (a.getAgeOfAnimal() > 4 && b.getAgeOfAnimal() > 4) && (a.getType().equals(b.getType())));
+        }
+    }
+
+    public void checkIfFull()
+    {
+        if(this.getSize() >= 20) {
+            this.isFull = true;
+        }else{
+            this.isFull = false;
+        }
     }
 
 }

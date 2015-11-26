@@ -58,11 +58,14 @@ public class ZooKeeper {
     {
         if(this.keeperLabel.equals("default") || this.keeperLabel.equals("play"))
         {
-            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet()) {
-                if (this.zooFoodStore.takeFood(foodInHashMap, 2)) {
+            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
+            {
+                if (this.zooFoodStore.takeFood(foodInHashMap, 2))
+                {
                     this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
                     System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
-                }else{
+                }else
+                {
                     System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
                 }
             }
@@ -81,7 +84,7 @@ public class ZooKeeper {
     }
 
     /*
-    This method allows the zookeeper to treat up to two animals, it does this by generating two random numbers between 0 and the size of the enclosure (to avoid
+    This method allows the zookeeper to treat up to two animals, it does this by generating two random numbers between 0 and the Size of the enclosure (to avoid
     out of bounds exceptions). The keeper then treats this animal. (Twice)
     */
     private void treatTwoAnimals()
@@ -94,7 +97,7 @@ public class ZooKeeper {
             for(int i = 0; i < 2; i ++ )
             {
                 System.out.format("Treating animal #%s: " , i + 1);
-                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.size())).treat(this.getKeeperLabel());
+                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.getSize())).treat(this.getKeeperLabel());
                 System.out.println();
             }
         }

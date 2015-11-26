@@ -5,6 +5,6 @@ public class Main
     public static void main(String[] args)
     {
         Simulation mySim = new Simulation();
-        mySim.initialize("");
+        mySim.initialize("", "false");
     }
 }

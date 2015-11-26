@@ -5,7 +5,6 @@ Zoo class that models the actual zoo, contains fields that represent the enclosu
 package com.company;
 
 import java.util.ArrayList;
-import java.util.Random;
 
 public class Zoo
 {
@@ -102,7 +101,7 @@ public class Zoo
 
         for(Enclosure e : this.enclosures)
         {
-            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.size(), e.getWasteSize());
+            System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.getSize(), e.getWasteSize());
             e.printTypesOfAnimalInEnclosure();
             e.printFoodStatus();
             System.out.println("#######################################");

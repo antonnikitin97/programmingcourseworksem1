@@ -28,11 +28,7 @@ public class Tiger extends BigCat
     @Override
     public void treat(String keeperLabel)
     {
-        if(this.checkIfHealthCanBeAdded(3)) {
-            this.stroked();
-        }else{
-                System.out.format("Health of %s max! Cannot treat at this time!", this.getType());
-        }
+        this.stroked();
     }
 
     @Override
