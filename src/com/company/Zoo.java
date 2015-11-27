@@ -31,20 +31,18 @@ public class Zoo
     public void aMonthPasses()
     {
         displayStats();
-        if(getValidEnclosures().size() == 0)
-        {
+        if(getValidEnclosures().size() == 0) {
             Integer iterationSimStopped = mySim.getMonthsPassed();
             System.out.format("\n###All animals have died! Simulation ending!###\nYour zoo ran for %s iterations!", iterationSimStopped);
-            System.exit(0);
+            mySim.exit();
         }
-        for(Enclosure e : getValidEnclosures())
-        {
+        for(Enclosure e : getValidEnclosures()) {
+            //Iterating over enclosures and calling aMonthPasses on them.
             System.out.format("\nEnclosure %s Operations!\n\n", enclosures.indexOf(e));
             e.aMonthPasses();
         }
         System.out.println("\n--- ZOO KEEPER DUTY!!! ---");
-        for(ZooKeeper k : zooKeepers)
-        {
+        for(ZooKeeper k : zooKeepers){
             k.aMonthPasses();
         }
         System.out.println("\n--- ZOO ADMIN ---");
@@ -98,7 +96,7 @@ public class Zoo
     private void getEnclosureStatus()
     {
         Integer currentEnclosure = 0;
-
+        //Iterating over the enclosures and printing out stats.
         for(Enclosure e : this.enclosures)
         {
             System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.getSize(), e.getWasteSize());

@@ -43,6 +43,9 @@ public class ZooKeeper {
         this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
     }
 
+    /*
+    This method makes the zoo keeper do its duties every month.
+    */
     public Boolean aMonthPasses()
     {
         getFoodFromZooStore();
@@ -93,7 +96,6 @@ public class ZooKeeper {
             System.out.format("\n%S Can't treat as all animals in my enclosure are dead!\n", this.getKeeperLabel());
         }else{
             System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
-
             for(int i = 0; i < 2; i ++ )
             {
                 System.out.format("Treating animal #%s: " , i + 1);

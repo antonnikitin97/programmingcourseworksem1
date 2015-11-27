@@ -14,12 +14,8 @@ public class Simulation
     Integer numberOfIterations;
     Boolean continuous = false;
 
-    public Simulation()
-    {
-    }
-
     /*
-    Method to start the process of reading the config file for the zoo.
+    Method to start the process of reading the config file for the zoo, and the setting of the continuous variable.
     */
     public void initialize(String pathOfFile, String continuousCondition)
     {
@@ -32,6 +28,7 @@ public class Simulation
                 continuous = false;
                 break;
             default:
+                //If the user enters anything other than true/false. It will default to false.
                 continuous = false;
                 break;
         }
@@ -48,6 +45,7 @@ public class Simulation
         System.out.println("Please enter the number of iterations that you want the sim to perform: ");
         try
         {
+            //Attempts to take input from the user, throws an exception if NaN.
             numberOfIterations = Integer.parseInt(inputScanner.nextLine());
         }
         catch (NumberFormatException e)
@@ -57,18 +55,19 @@ public class Simulation
         }
         if(continuous) {
             for (int i = 0; i < numberOfIterations; i++) {
+                //If continuous is set to true the simulation will just loop uninterrupted until the sim ends.
                 zooSimLinkedTo.aMonthPasses();
             }
         }else{
-            for (int i = 0; i < numberOfIterations; i++)
-            {
+            for (int i = 0; i < numberOfIterations; i++) {
+                //If continuous is false, then the sim will pause after each iteration.
                 zooSimLinkedTo.aMonthPasses();
                 System.out.println("Iteration complete! Press 'enter' to continue!");
                 inputScanner.nextLine();
             }
         }
         System.out.println("\n###SIMULATION COMPLETE###\nEXITING NOW!!");
-        System.exit(0);
+        exit();
     }
 
     public void incrementMonth()
@@ -81,13 +80,25 @@ public class Simulation
         return monthPassed;
     }
 
+    /*
+    Sets the zoo object reference to the simulation's variable so that the simulation class can access methods/properties
+    of the zoo necessary
+    */
     public void setZooSimLinkedTo(Zoo zoo)
     {
         this.zooSimLinkedTo = zoo;
     }
 
+    /*
+    Returns the zoo that the sim has linked to it.
+    */
     public Zoo getZooSimLinkedTo()
     {
         return zooSimLinkedTo;
+    }
+
+    public void exit()
+    {
+        System.exit(0);
     }
 }

@@ -66,12 +66,14 @@ public class ConfigFile
             bufferedReader = new BufferedReader(reader);
 
             String line = "";
+            //Reads the file until it gets to the end of the 'zoo' section, adds the data to the zooConfig Array
             while(!(line = bufferedReader.readLine()).contains("NewEnclosure"))
             {
                 zooConfig.add(line);
             }
             switch(line.split(" ")[1])
             {
+                //Splits the line that contains the instruction for a new enclosure into an array containing two elements
                 case "0":
                     while(!(line = bufferedReader.readLine()).equals("Animals:"))
                     {
@@ -88,11 +90,13 @@ public class ConfigFile
             }
             enclosureConfig.remove("NewEnclosure " + numberOfEnclosuresToCreate);
             zooConfig.remove("zoo:");
+            //Reads the file until it gets to the end of the 'animals' section, adds the data to the animalConfig Array.
             while(!(line = bufferedReader.readLine()).equals("ZooKeeper:"))
             {
                 animalConfig.add(line);
             }
             animalConfig.remove("Animals:");
+            //Reads the file until it gets to the end of the 'zookeeper' section, adds the data to the zookeeperConfig Array.
             while((line = bufferedReader.readLine()) != null)
             {
                 zookeeperConfig.add(line);
@@ -230,6 +234,7 @@ public class ConfigFile
             {
                 animalInfo[3] = "10";
             }
+            //Code to ascertain what type of animal to create.
             switch (animalInfo[0])
             {
                 case "Lion":
