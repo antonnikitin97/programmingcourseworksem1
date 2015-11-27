@@ -35,9 +35,9 @@ public class ConfigFile
     protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
     Integer numberOfEnclosuresToCreate = 0;
 
-    public ConfigFile()
+    public ConfigFile(Simulation mySimToSet)
     {
-        mySim = new Simulation();
+        mySim = mySimToSet;
     }
 
     public void getDirectoryOfFile(String configFilePath)

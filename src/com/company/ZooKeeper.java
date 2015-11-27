@@ -22,6 +22,7 @@ public class ZooKeeper {
     protected FoodStore zooFoodStore;
     private String keeperLabel;
     private Random generator = new Random();
+
     public ZooKeeper()
     {
         // Default constructor for zookeeper
