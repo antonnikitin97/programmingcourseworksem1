@@ -61,6 +61,9 @@ public abstract class Animal
         }
     }
 
+    /*
+    Checks to see if the given health can be removed, if it can't it tries to remove 1 health.
+    */
     protected void removeHealth(Integer healthToRemove)
     {
         if(checkIfHealthCanBeRemoved(healthToRemove)) {

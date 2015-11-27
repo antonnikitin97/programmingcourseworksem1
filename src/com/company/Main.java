@@ -9,6 +9,6 @@ public class Main
     public static void main(String[] args)
     {
         Simulation mySim = new Simulation();
-        mySim.initialize("", "false");
+        mySim.initialize(args[0], args[1]);
     }
 }
