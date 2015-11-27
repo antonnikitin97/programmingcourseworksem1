@@ -12,7 +12,7 @@ public class Gorilla extends Ape
     */
     public Gorilla(Integer age, Integer health, char gender)
     {
-        super(age, health, gender);
+        super(age, health, gender, 32);
         this.setType("Gorilla");
     }
     /*

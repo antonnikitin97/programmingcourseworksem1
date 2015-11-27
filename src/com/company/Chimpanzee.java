@@ -11,7 +11,7 @@ public class Chimpanzee extends Ape
     */
     public Chimpanzee(Integer age, Integer health, char gender)
     {
-        super(age, health, gender);
+        super(age, health, gender, 24);
         this.setType("Chimpanzee");
     }
     /*
