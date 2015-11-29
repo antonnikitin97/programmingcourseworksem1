@@ -12,6 +12,7 @@ These will be used when deciding if a certain zookeeper can perform a given trea
 
 package com.company;
 
+import java.util.ArrayList;
 import java.util.Random;
 
 public class ZooKeeper {
@@ -40,7 +41,9 @@ public class ZooKeeper {
     */
     public void assignEnclosure()
     {
-        this.enclosureKeeperAssignedTo = zoo.enclosures.get(generator.nextInt(zoo.enclosures.size()));
+        ArrayList<Enclosure> validEnclosures = new ArrayList<>();
+        validEnclosures = zoo.getValidEnclosures();
+        this.enclosureKeeperAssignedTo = validEnclosures.get(generator.nextInt(validEnclosures.size()));
         this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
     }
 
@@ -64,10 +67,10 @@ public class ZooKeeper {
         {
             for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
             {
-                if (this.zooFoodStore.takeFood(foodInHashMap, 2))
+                if (this.zooFoodStore.takeFood(foodInHashMap, 10))
                 {
-                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 2);
-                    System.out.format("\n2 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 10);
+                    System.out.format("\n10 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
                 }else
                 {
                     System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);

@@ -60,7 +60,7 @@ public class Zoo
 
         for(Enclosure e : enclosures)
         {
-            if(e.checkIfAllDead()) {
+            if(e.checkIfAllDead() || e.getSize() == 0) {
                 continue;
             }else{
                 listOfValid.add(e);
@@ -86,7 +86,7 @@ public class Zoo
     */
     public void displayStats()
     {
-        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Enclosures: %s\n", mySim.getMonthsPassed() , this.enclosures.size());
+        System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Filled Enclosures: %s\n", mySim.getMonthsPassed() , this.getValidEnclosures().size());
         getEnclosureStatus();
     }
     /*
@@ -97,7 +97,7 @@ public class Zoo
     {
         Integer currentEnclosure = 0;
         //Iterating over the enclosures and printing out stats.
-        for(Enclosure e : this.enclosures)
+        for(Enclosure e : this.getValidEnclosures())
         {
             System.out.format("### Enclosure %s ###\nAnimals in Enclosure: %s\nWaste size: %s\n", currentEnclosure, e.getSize(), e.getWasteSize());
             e.printTypesOfAnimalInEnclosure();

@@ -145,7 +145,7 @@ public class Enclosure
 
     public void printFoodStatus()
     {
-        System.out.println("--- STATUS ON FOOD IN ENCLOSURE ---");
+        System.out.println("--- STATUS ON FOOD IN ENCLOSURE AT START OF MONTH ---");
         for(String s : this.getFoodStore().getAvailableFoodInZoo())
         {
             System.out.format("Food: %s --- Quantity: %s\n", s, this.getFoodStore().getFoodQuantity(s));

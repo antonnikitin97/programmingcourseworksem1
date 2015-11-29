@@ -56,7 +56,7 @@ public class Simulation
         }
         if(continuous) {
             for (int i = 0; i <= numberOfIterations; i++) {
-                //If continuous is set to true the simulation will just loop uninterrupted until the sim ends.
+                //If continuous is set to true the simulation will just run uninterrupted until the sim ends.
                 zooSimLinkedTo.aMonthPasses();
             }
         }else{
