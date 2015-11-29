@@ -63,18 +63,15 @@ public class ZooKeeper {
     */
     public void getFoodFromZooStore()
     {
-        if(this.keeperLabel.equals("default") || this.keeperLabel.equals("play"))
+        for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
         {
-            for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
+            if (this.zooFoodStore.takeFood(foodInHashMap, 5))
             {
-                if (this.zooFoodStore.takeFood(foodInHashMap, 10))
-                {
-                    this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 10);
-                    System.out.format("\n10 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
-                }else
-                {
-                    System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
-                }
+                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 5);
+                System.out.format("\n5 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+            }else
+            {
+                System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
             }
         }
     }

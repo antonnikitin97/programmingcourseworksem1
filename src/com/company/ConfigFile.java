@@ -62,8 +62,7 @@ public class ConfigFile
 
         try
         {
-            reader = new FileReader(configFile);
-            bufferedReader = new BufferedReader(reader);
+            bufferedReader = new BufferedReader(new FileReader(configFile));
 
             String line = "";
             //Reads the file until it gets to the end of the 'zoo' section, adds the data to the zooConfig Array
@@ -103,6 +102,7 @@ public class ConfigFile
             }
             zookeeperConfig.remove("ZooKeeper:");
         }
+        //Exception that is thrown if the file path entered is incorrect.
         catch (FileNotFoundException e)
         {
             System.out.println("We cannot find the required file! Please try again!");
@@ -110,7 +110,6 @@ public class ConfigFile
         }
         catch (IOException e)
         {
-            setUpSimulation();
             e.printStackTrace();
         }
         finally
