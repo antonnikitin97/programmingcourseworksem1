@@ -99,6 +99,7 @@ public class ZooKeeper {
             System.out.format("\n--- %s NOW TREATING IN ENCLOSURE %s ---\n", this.keeperLabel, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
             for(int i = 0; i < 2; i ++ )
             {
+                //Loop that executes twice (the keeper can only treat 2 animals)
                 System.out.format("Treating animal #%s: " , i + 1);
                 this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.getSize())).treat(this.getKeeperLabel());
                 System.out.println();

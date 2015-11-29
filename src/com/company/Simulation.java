@@ -32,6 +32,7 @@ public class Simulation
                 continuous = false;
                 break;
         }
+        //Creates a new config file and passes itself (the simulation) as a parameter so the configfile class can access simulation methods etc...
         ConfigFile file = new ConfigFile(this);
         file.getDirectoryOfFile(pathOfFile);
     }
