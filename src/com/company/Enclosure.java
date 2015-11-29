@@ -12,12 +12,11 @@ public class Enclosure
 {
 	protected Random random = new Random();
 
-    protected FoodStore foodStore;
-	protected ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
-	protected Integer animalWaste = 0;
-	protected Boolean isFull = false;
-    protected ArrayList<ZooKeeper> listOfKeepers = new ArrayList<>();
-	protected ArrayList<Animal> deadAnimalsToRemove = new ArrayList<>();
+    private FoodStore foodStore;
+	private ArrayList<Animal> animalsInEnclosure = new ArrayList<>();
+	private Integer animalWaste = 0;
+	private Boolean isFull = false;
+	private ArrayList<Animal> deadAnimalsToRemove = new ArrayList<>();
 
 	public Enclosure()
 	{
@@ -35,6 +34,7 @@ public class Enclosure
 		}else{
 			this.animalsInEnclosure.add(animalToAdd);
             animalToAdd.enclosureAnimalResidesIn = this;
+            setFullStatus();
 			return true;
 		}
 	}
@@ -258,7 +258,7 @@ public class Enclosure
         }
     }
 
-    public void checkIfFull()
+    public void setFullStatus()
     {
         if(this.getSize() >= 20) {
             this.isFull = true;
@@ -267,4 +267,8 @@ public class Enclosure
         }
     }
 
+    public Animal getAnimal(Integer indexOfAnimal)
+    {
+        return this.animalsInEnclosure.get(indexOfAnimal);
+    }
 }

@@ -101,7 +101,7 @@ public class ZooKeeper {
             {
                 //Loop that executes twice (the keeper can only treat 2 animals)
                 System.out.format("Treating animal #%s: " , i + 1);
-                this.enclosureKeeperAssignedTo.animalsInEnclosure.get(generator.nextInt(this.enclosureKeeperAssignedTo.getSize())).treat(this.getKeeperLabel());
+                this.enclosureKeeperAssignedTo.getAnimal(generator.nextInt(this.enclosureKeeperAssignedTo.getSize())).treat(this.getKeeperLabel());
                 System.out.println();
             }
         }
