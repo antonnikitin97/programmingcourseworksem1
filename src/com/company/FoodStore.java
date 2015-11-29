@@ -9,7 +9,7 @@ import java.util.HashMap;
 
 public class FoodStore
 {
-    protected HashMap<String, Integer> foodStorage;
+    private HashMap<String, Integer> foodStorage;
 
     /*
     FoodStore constructor creates a new HashMap instance and assigns it to 'foodStorage'.
@@ -84,4 +84,8 @@ public class FoodStore
         return new String[]{"hay" , "steak" , "fruit" , "celery" , "fish" , "ice cream"};
     }
 
+    public HashMap<String, Integer> getFoodStorage()
+    {
+        return this.foodStorage;
+    }
 }

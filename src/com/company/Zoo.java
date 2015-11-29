@@ -73,7 +73,7 @@ public class Zoo
     */
     public void orderAdditionalFood()
     {
-        for(String s : this.zooFoodStore.foodStorage.keySet())
+        for(String s : this.zooFoodStore.getFoodStorage().keySet())
         {
             this.zooFoodStore.addFood(s, 80);
             System.out.format("80 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);

@@ -10,7 +10,7 @@ import java.util.Random;
 
 public class Enclosure
 {
-	protected Random random = new Random();
+	private Random random = new Random();
 
     private FoodStore foodStore;
 	private ArrayList<Animal> animalsInEnclosure = new ArrayList<>();

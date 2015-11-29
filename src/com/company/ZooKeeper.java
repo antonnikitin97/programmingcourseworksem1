@@ -63,7 +63,7 @@ public class ZooKeeper {
     */
     public void getFoodFromZooStore()
     {
-        for (String foodInHashMap : this.zooFoodStore.foodStorage.keySet())
+        for (String foodInHashMap : this.zooFoodStore.getFoodStorage().keySet())
         {
             if (this.zooFoodStore.takeFood(foodInHashMap, 5))
             {

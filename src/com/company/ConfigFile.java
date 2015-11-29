@@ -12,9 +12,9 @@ import java.util.Scanner;
 
 public class ConfigFile
 {
-    protected Scanner inputScanner = new Scanner(System.in);
-    protected File configFile;
-    protected Simulation mySim;
+    private Scanner inputScanner = new Scanner(System.in);
+    private File configFile;
+    private Simulation mySim;
     private String configFilePath = "";
 
     /*

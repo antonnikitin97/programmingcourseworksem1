@@ -101,16 +101,24 @@ public abstract class Animal
     protected void eat()
     {
         FoodStore temp = this.enclosureAnimalResidesIn.getFoodStore();
-        for(String s : temp.foodStorage.keySet())
+        Integer failedAttempts = 0;
+        for(String s : temp.getFoodStorage().keySet())
         {
             if(this.canEat(s))
             {
                 if(temp.takeFood(s)) {
+                    //Checks if the animal can eat food, if yes then we take an item and break out of the loop (to ensure only one item is eaten per month)
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
                     System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
                     break;
                 }else{
                     System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n" ,this.type, s, s);
+                    failedAttempts += 1;
+                    if(failedAttempts == this.eats.length)
+                    {
+                        System.out.format("No food available for %s to eat! :(\n", this.getType());
+                        break;
+                    }
                 }
             }
         }
