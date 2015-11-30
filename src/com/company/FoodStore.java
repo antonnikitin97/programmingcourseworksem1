@@ -11,7 +11,7 @@ public class FoodStore
 {
     private HashMap<String, Integer> foodStorage;
 
-    /*
+    /**
     FoodStore constructor creates a new HashMap instance and assigns it to 'foodStorage'.
     Also populates the foodStore with 0 of each item.
     */
@@ -21,7 +21,7 @@ public class FoodStore
         populateZeroFood();
     }
 
-    /*
+    /**
     Populates the foodStore with 0 of each item when it gets initially created.
     */
     public void populateZeroFood()
@@ -32,7 +32,7 @@ public class FoodStore
         }
     }
 
-    /*
+    /**
     Method to add food to the food store. Takes two parameters, one for the name, one for the quantity.
     */
     public void addFood(String name, Integer quantityToAdd)
@@ -40,7 +40,7 @@ public class FoodStore
         this.foodStorage.put(name, foodStorage.get(name) + quantityToAdd);
     }
 
-    /*
+    /**
     Method to remove food from the foodstore. Returns true if the operation was successful, and false
     if it failed. Method has been overloaded. One that only takes one item of food, and the other which takes how
     ever many is passed in.
@@ -49,7 +49,7 @@ public class FoodStore
     {
     	return takeFood(name, 1);
     }
-    /*
+    /**
     Overloaded method...
     */
     public Boolean takeFood(String name, Integer quantity)
@@ -62,7 +62,7 @@ public class FoodStore
         }
     }
 
-    /*
+    /**
     Here we are checking if there is enough food of the given type in the foodstore,
     we'll return true if there is, and false if there isn't.
     */
@@ -76,7 +76,7 @@ public class FoodStore
         return this.foodStorage.get(name);
     }
 
-    /*
+    /**
     Returns a string array of all the possible types of food in the zoo.
     */
     public String[] getAvailableFoodInZoo()

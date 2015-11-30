@@ -41,8 +41,8 @@ public class Giraffe extends Animal
     @Override
     public Boolean aMonthPasses()
     {
-        eat();
-        removeHealth(2);
+        this.eat();
+        this.removeHealth(2);
         return true;
     }
 }

@@ -57,7 +57,6 @@ public class ConfigFile
     */
     public void readConfig()
     {
-        FileReader reader = null;
         BufferedReader bufferedReader = null;
 
         try
