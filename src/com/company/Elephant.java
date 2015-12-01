@@ -1,11 +1,11 @@
-/*
+/**
 Class for 'Elephant' animal. Contains method for the specific treat for the elephant, and the 'aMonthPasses'
 */
 package com.company;
 
 public class Elephant extends Animal
 {
-    /*
+    /**
     Constructor an 'Elephant' animal. Calls the Animal constructor and passes it values such as
     what it eats, the age of the animal, life expectancy, health and gender.
     */
@@ -14,7 +14,7 @@ public class Elephant extends Animal
         super(age, 36, health, new String []{"hay", "fruit"}, gender);
         this.setType("Elephant");
     }
-    /*
+    /**
     The specific treat for Elephant, called by the overridden 'treat' method.
     */
     private void bath()

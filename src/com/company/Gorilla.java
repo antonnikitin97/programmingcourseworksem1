@@ -1,11 +1,11 @@
-/*
+/**
 Class for 'Gorilla' animal. Contains method for the specific treat for the gorilla, and the 'aMonthPasses'
 */
 package com.company;
 
 public class Gorilla extends Ape
 {
-    /*
+    /**
     Constructor for the Gorilla object, in it we are calling the constructor of the parent class
     This is because the parent class' constructor initializes values for 'eats' and
     lifeExpectancy for 'gorilla'.
@@ -15,7 +15,7 @@ public class Gorilla extends Ape
         super(age, health, gender, 32);
         this.setType("Gorilla");
     }
-    /*
+    /**
     The specific treat for Gorilla, called by the overridden 'treat' method.
     */
     private void painting()

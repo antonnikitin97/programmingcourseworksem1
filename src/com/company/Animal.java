@@ -16,7 +16,7 @@ public abstract class Animal
     protected Enclosure enclosureAnimalResidesIn;
     private String type;
 
-    /*
+    /**
     Constructor for a general animal, sets the age, what it eats and health to whatever is passed in from the subclasses.
     */
     public Animal(Integer age, Integer lifeExpectancy, Integer health, String[] eats, char gender)
@@ -28,7 +28,7 @@ public abstract class Animal
         this.gender = gender;
     }
 
-    /*
+    /**
     Method to return the life expectancy of the animal
     */
     protected Integer getLifeExpectancy()
@@ -36,7 +36,7 @@ public abstract class Animal
         return lifeExpectancy;
     }
 
-    /*
+    /**
     Method to return the gender of the animal
     */
     protected char getGender()
@@ -44,7 +44,7 @@ public abstract class Animal
         return gender;
     }
 
-    /*
+    /**
     Method to get the age of the animal
     */
     protected Integer getAgeOfAnimal()
@@ -61,7 +61,7 @@ public abstract class Animal
         }
     }
 
-    /*
+    /**
     Checks to see if the given health can be removed, if it can't it tries to remove 1 health.
     */
     protected void removeHealth(Integer healthToRemove)
@@ -80,7 +80,7 @@ public abstract class Animal
         return this.health;
     }
 
-    /*
+    /**
     Here we are iterating over the 'eats' array, checking whether or not the
     value at a certain index in the array equals the parameter passed in,
     and returning true if it does, if the loop finishes, it will by default
@@ -124,7 +124,7 @@ public abstract class Animal
         }
     }
 
-    /*
+    /**
     Method that will treat the animal if the correct keeper is treating. This method is overridden in each sub-class
     so that the treat method for each individual animal can be called.
     */

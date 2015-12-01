@@ -23,7 +23,7 @@ public class Enclosure
 		foodStore = new FoodStore();
 	}
 
-	/*
+	/**
 	Adds the animal passed into the method to the ArrayList of animals.
 	*/
     public Boolean addAnimal(Animal animalToAdd)
@@ -69,7 +69,7 @@ public class Enclosure
 		return animalsInEnclosure.size();
 	}
 
-	/*
+	/**
 	Executes the 'aMonthPasses' on each animal in the enclosure. Checks to see whether the animal is dead.
     If so the animal is removed from the enclosure list. Also checks to see whether an animal object is
 	Referencing null, in this case, the animal is removed from the enclosure list.
@@ -106,7 +106,7 @@ public class Enclosure
 		}
 	}
 
-    /*
+    /**
     Checks to see whether the animal is dead, returns true if it is, else false.
     */
 	public Boolean checkIfAnimalIsDead(Animal a)
@@ -118,7 +118,7 @@ public class Enclosure
 			return false;
 		}
 	}
-    /*
+    /**
     Method to check whether all the animals in this enclosure are dead
     */
     public Boolean checkIfAllDead()
@@ -152,7 +152,7 @@ public class Enclosure
         }
     }
 
-    /*
+    /**
     This method breeds two animals, first it gets two random animals and checks to see if they can breed
     if they can it generates a random number and sees if it's divisible by 2. If it is then breeding is
     successful.
@@ -211,7 +211,7 @@ public class Enclosure
             }
     }
 
-    /*
+    /**
     Picks two random animals from the enclosure.
     */
     public ArrayList<Animal> pickTwoRandom()
@@ -233,7 +233,7 @@ public class Enclosure
         return animalsToReturn;
     }
 
-    /*
+    /**
     This method generates either a 'M' or 'F' at random.
     */
     public char generateGender()
@@ -245,7 +245,7 @@ public class Enclosure
         }
     }
 
-    /*
+    /**
     Method that checks to see if two animals can breed.
     Checks if the genders are different, the ages are greater than 4 and their types are the same.
     */

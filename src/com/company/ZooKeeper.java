@@ -1,4 +1,4 @@
-/*
+/**
 ZooKeeper class houses all basic  functionality for the zookeeper, includes methods to get food from the zoo enclosure into the enclosure store, remove waste from
 the enclosure and a 'aMonthPasses' method. This is the base class for the Physio and Play ZooKeeper classes. As certain treats can only be administered by certain
 types of zookeepers, the base class has a 'keeperLabel' that all the other types will use. Each different keeper has a certain 'value' as follows:
@@ -36,7 +36,7 @@ public class ZooKeeper {
         assignEnclosure();
     }
 
-    /*
+    /**
     Assigns the zooKeeper randomly to an enclosure.
     */
     public void assignEnclosure()
@@ -47,7 +47,7 @@ public class ZooKeeper {
         this.foodStoreKeeperAssignedTo = this.enclosureKeeperAssignedTo.getFoodStore();
     }
 
-    /*
+    /**
     This method makes the zoo keeper do its duties every month.
     */
     public Boolean aMonthPasses()
@@ -58,7 +58,7 @@ public class ZooKeeper {
         return true;
     }
 
-    /*
+    /**
     Gets 2 items from the zooFoodStore and puts it into the enclosure foodStore.
     */
     public void getFoodFromZooStore()
@@ -86,7 +86,7 @@ public class ZooKeeper {
         }
     }
 
-    /*
+    /**
     This method allows the zookeeper to treat up to two animals, it does this by generating two random numbers between 0 and the Size of the enclosure (to avoid
     out of bounds exceptions). The keeper then treats this animal. (Twice)
     */

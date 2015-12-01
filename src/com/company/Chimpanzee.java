@@ -1,11 +1,11 @@
-/*
+/**
 Class for 'Chimpanzee' animal. Contains method for the specific treat for the chimpanzee, and the 'aMonthPasses'
 */
 package com.company;
 
 public class Chimpanzee extends Ape
 {
-    /*
+    /**
     Constructor an 'Chimpanzee' animal. Calls the Animal constructor and passes it values such as
     what it eats, the age of the animal, life expectancy, health and gender.
     */
@@ -14,7 +14,7 @@ public class Chimpanzee extends Ape
         super(age, health, gender, 24);
         this.setType("Chimpanzee");
     }
-    /*
+    /**
     The specific treat for Chimpanzee, called by the overridden 'treat' method.
     */
     private void playChase()

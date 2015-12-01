@@ -1,4 +1,4 @@
-/*
+/**
 Zoo class that models the actual zoo, contains fields that represent the enclosures, and the zookeepers
 */
 
@@ -12,7 +12,7 @@ public class Zoo
     protected ArrayList<ZooKeeper> zooKeepers;
     protected FoodStore zooFoodStore;
     protected Simulation mySim;
-    /*
+    /**
     Constructor for the zoo, creates a foodStore that the zoo will use
     */
     public Zoo(Simulation mySim, FoodStore zooFoodStore)
@@ -20,7 +20,7 @@ public class Zoo
         this.mySim = mySim;
         this.zooFoodStore = zooFoodStore;
     }
-    /*
+    /**
     This method first displays the statistics for the whole zoo, which includes the number of months that have passed, the number of enclosures in the zoo,
     the animals in those enclosure and their health and age. It then proceeds to check through the list of enclosures, and returns the ones that have animals
     in them. It then calls the 'aMonthPasses' method on these enclosures. After this has finished. It then checks to see whether these enclosures STILL
@@ -49,7 +49,7 @@ public class Zoo
         orderAdditionalFood();
         mySim.incrementMonth();
     }
-    /*
+    /**
     Iterates over the list of enclosures and checks to see whether they are empty,
     returns the ones which are not. If the method returns a list containing no enclosures, then this means
     all the animals are dead.
@@ -68,7 +68,7 @@ public class Zoo
         }
         return listOfValid;
     }
-    /*
+    /**
     This method will order additional food for the zoo food store
     */
     public void orderAdditionalFood()
@@ -79,7 +79,7 @@ public class Zoo
             System.out.format("80 lots of %s has been ordered for the zoo store, there are now %s of %s in the store!\n", s , this.zooFoodStore.getFoodQuantity(s), s);
         }
     }
-    /*
+    /**
     Displays statistics such as the months passed, and the number of enclosures in the zoo
     It then proceeds to call a method which displays information about the animals in the
     enclosures.
@@ -89,7 +89,7 @@ public class Zoo
         System.out.format("#### ZOO STATUS ###\nMonths Passed: %s\nNumber of Filled Enclosures: %s\n", mySim.getMonthsPassed() , this.getValidEnclosures().size());
         getEnclosureStatus();
     }
-    /*
+    /**
     This method iterates over all the enclosures in the zoo and prints out information about them including
     the types of animal in the enclosure, their age and their health, and the food in the enclosure.
     */

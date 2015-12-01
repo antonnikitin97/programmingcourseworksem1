@@ -1,11 +1,11 @@
-/*
+/**
 Class for 'Giraffe' animal. Contains method for the specific treat for the giraffe, and the 'aMonthPasses'
 */
 package com.company;
 
 public class Giraffe extends Animal
 {
-    /*
+    /**
     Constructor for the Gorilla object, in it we are calling the constructor of the parent class
     This is because the parent class' constructor initializes values for 'eats' and
     lifeExpectancy for 'gorilla'.
@@ -15,7 +15,7 @@ public class Giraffe extends Animal
         super(age, 28, health, new String []{"hay", "fruit"}, gender);
         this.setType("Giraffe");
     }
-    /*
+    /**
     The specific treat for Giraffe, called by the overridden 'treat' method.
     */
     private void neckMassage()

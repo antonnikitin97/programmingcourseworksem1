@@ -1,4 +1,4 @@
-/*
+/**
 The class responsible for 'running' the simulation, keeps track of the months that have passed and contains methods
 that initialize the zoo, obtaining status of the whole zoo and their enclosures and the 'start' method.
 */
@@ -14,7 +14,7 @@ public class Simulation
     Integer numberOfIterations;
     Boolean continuous = false;
 
-    /*
+    /**
     Method to start the process of reading the config file for the zoo, and the setting of the continuous variable.
     */
     public void initialize(String pathOfFile, String continuousCondition)
@@ -37,7 +37,7 @@ public class Simulation
         file.getDirectoryOfFile(pathOfFile);
     }
 
-    /*
+    /**
     Begins the simulation process. Takes input to decide how many iterations to do. Performs these iterations.
     When all iterations have completed. The program terminates.
     */
@@ -81,7 +81,7 @@ public class Simulation
         return monthPassed;
     }
 
-    /*
+    /**
     Sets the zoo object reference to the simulation's variable so that the simulation class can access methods/properties
     of the zoo necessary
     */
@@ -90,7 +90,7 @@ public class Simulation
         this.zooSimLinkedTo = zoo;
     }
 
-    /*
+    /**
     Returns the zoo that the sim has linked to it.
     */
     public Zoo getZooSimLinkedTo()

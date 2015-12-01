@@ -1,4 +1,4 @@
-/*
+/**
 This class defines a 'play' keeper, contains a no fields but one constructor to initialize values for the keeper.
 */
 package com.company;

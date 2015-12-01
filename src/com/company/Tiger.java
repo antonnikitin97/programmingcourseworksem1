@@ -1,4 +1,4 @@
-/*
+/**
 Class for 'Tiger' animal. Contains method for the specific treat for the tiger, and the 'aMonthPasses'
 */
 
@@ -6,7 +6,7 @@ package com.company;
 
 public class Tiger extends BigCat
 {
-    /*
+    /**
     Constructor for the tiger object, in it we are calling the constructor of the parent class
     This is because the parent class' constructor initializes values for 'eats' and
     lifeExpectancy for 'tiger'.
@@ -16,7 +16,7 @@ public class Tiger extends BigCat
         super(age, health, gender);
         this.setType("Tiger");
     }
-    /*
+    /**
     The specific treat for Tiger, called by the overridden 'treat' method.
     */
     private void stroked()
