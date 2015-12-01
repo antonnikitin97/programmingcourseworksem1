@@ -24,7 +24,7 @@ public class FoodStore
     /**
     Populates the foodStore with 0 of each item when it gets initially created.
     */
-    public void populateZeroFood()
+    private void populateZeroFood()
     {
         for(String s : getAvailableFoodInZoo())
         {
@@ -66,7 +66,7 @@ public class FoodStore
     Here we are checking if there is enough food of the given type in the foodstore,
     we'll return true if there is, and false if there isn't.
     */
-    public Boolean checkIsEnoughFood(String nameOfFood, Integer quantity)
+    private Boolean checkIsEnoughFood(String nameOfFood, Integer quantity)
     {
         return (getFoodQuantity(nameOfFood) == null || getFoodQuantity(nameOfFood) >= quantity);
     }
