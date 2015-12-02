@@ -1,150 +1,55 @@
-/**
-This class is responsible for loading and parsing the configuration file, it contains methods to read the lines in the file and extract the data,
-and call the appropriate methods to operate on the data.
-*/
-
 package com.company;
 
-import java.io.*;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Scanner;
 
-public class ConfigFile
+/**
+ * Class responsible for taking the data from the configurationFile and initializing the zoo.
+ */
+public class SimulationInitialize
 {
-    private Scanner inputScanner = new Scanner(System.in);
-    private File configFile;
-    private Simulation mySim;
-    private String configFilePath = "";
-
     /**
-    The 4 Array lists declared below hold the information from the config file about the zoo's food (zooConfig), the enclosure's
-    waste and food (enclosureConfig). The animals in the enclosure (animalConfig) and the zoo keepers (zooKeeperConfig)
-    */
-    protected ArrayList<String> zooConfig = new ArrayList<>();
-    protected ArrayList<String> enclosureConfig = new ArrayList<>();
-    protected ArrayList<String> animalConfig = new ArrayList<>();
-    protected ArrayList<String> zookeeperConfig = new ArrayList<>();
+     * The hashmap and integer variable declared below are merely used as intermediate storage for other methods.
+     * The enclosureForAnimal hashmap is used for the enclosureConfig() method to assign animals to enclosure (the Key is the animal object
+     * the value is the enclosure for that animal). The integer variable is used by the enclosureConfig() method in the event of no enclosures being specified
+     * in the config file, so that it can create empty enclosures for the animals.
+     */
+    protected static HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
+    static Integer numberOfEnclosuresToCreateNoneSpecified = 0;
 
-    /**
-    The hashmap and integer variable declared below are merely used as intermediate storage for other methods.
-    The enclosureForAnimal hashmap is used for the enclosureConfig() method to assign animals to enclosure (the Key is the animal object
-    the value is the enclosure for that animal). The integer variable is used by the enclosureConfig() method in the event of no enclosures being specified
-    in the config file, so that it can create empty enclosures for the animals.
-    */
-    protected HashMap<Animal, Integer> enclosureForAnimal = new HashMap<>();
-    Integer numberOfEnclosuresToCreate = 0;
+    protected static Simulation mySim;
+    protected static Config file;
 
-    public ConfigFile(Simulation mySimToSet)
-    {
-        mySim = mySimToSet;
+    public SimulationInitialize(){
+        mySim = new Simulation();
     }
 
-    public void getDirectoryOfFile(String configFilePath)
-    {
-        configFile = new File(configFilePath);
-        readConfig();
-    }
-    public void getDirectoryOfFile()
-    {
-        configFilePath = inputScanner.nextLine();
-        configFile = new File(configFilePath);
-        readConfig();
+    protected static void beginConfigLoading(String pathOfFile){
+        file = new Config();
+        file.getDirectoryOfFile(pathOfFile);
     }
 
     /**
-    This method is responsible for reading the whole configuration file line by line and populating the arrays with data for each section of the config file.
-    */
-    public void readConfig()
-    {
-        BufferedReader bufferedReader = null;
-
-        try
-        {
-            bufferedReader = new BufferedReader(new FileReader(configFile));
-
-            String line = "";
-            //Reads the file until it gets to the end of the 'zoo' section, adds the data to the zooConfig Array
-            while(!(line = bufferedReader.readLine()).contains("NewEnclosure"))
-            {
-                zooConfig.add(line);
-            }
-            switch(line.split(" ")[1])
-            {
-                //Splits the line that contains the instruction for a new enclosure into an array containing two elements
-                case "0":
-                    while(!(line = bufferedReader.readLine()).equals("Animals:"))
-                    {
-                        zooConfig.add(line);
-                    }
-                    break;
-                default:
-                    numberOfEnclosuresToCreate = Integer.parseInt(line.split(" ")[1]);
-                    while(!(line = bufferedReader.readLine()).equals("Animals:"))
-                    {
-                        enclosureConfig.add(line);
-                    }
-                    break;
-            }
-            enclosureConfig.remove("NewEnclosure " + numberOfEnclosuresToCreate);
-            zooConfig.remove("zoo:");
-            //Reads the file until it gets to the end of the 'animals' section, adds the data to the animalConfig Array.
-            while(!(line = bufferedReader.readLine()).equals("ZooKeeper:"))
-            {
-                animalConfig.add(line);
-            }
-            animalConfig.remove("Animals:");
-            //Reads the file until it gets to the end of the 'zookeeper' section, adds the data to the zookeeperConfig Array.
-            while((line = bufferedReader.readLine()) != null)
-            {
-                zookeeperConfig.add(line);
-            }
-            zookeeperConfig.remove("ZooKeeper:");
-        }
-        //Exception that is thrown if the file path entered is incorrect.
-        catch (FileNotFoundException e)
-        {
-            System.out.println("We cannot find the required file! Please try again!");
-            getDirectoryOfFile();
-        }
-        catch (IOException e)
-        {
-            e.printStackTrace();
-        }
-        finally
-        {
-            try
-            {
-                bufferedReader.close();
-            }
-            catch (IOException e)
-            {
-                e.printStackTrace();
-            }
-            setUpSimulation();
-        }
-    }
-
-    /**
-    This method calls the methods to set up the zoo, (initializing animals, foodstore, enclosure, zookeepers)
-    It also calls the startSimulation method after all of these have completed.
-    */
-    public void setUpSimulation()
-    {
+     This method calls the methods to set up the zoo, (initializing animals, foodstore, enclosure, zookeepers)
+     It also calls the startSimulation method after all of these have completed.
+     */
+    public static Simulation setUpSimulation(String continuousCondition) {
         System.out.println("### BEGIN CONFIG FILE LOAD ###");
-        setUpZoo(zooConfig);
-        initializeAnimals(animalConfig);
-        initializeEnclosure(enclosureConfig, enclosureForAnimal, numberOfEnclosuresToCreate);
-        initializeKeepers(zookeeperConfig);
+        setUpZoo(file.getZooConfig());
+        initializeAnimals(file.getAnimalConfig());
+        initializeEnclosure(file.getEnclosureConfig(), enclosureForAnimal, file.getNumberOfEnclosuresToCreate());
+        initializeKeepers(file.getZookeeperConfig());
         System.out.println("\n### DATA LOADED SUCCESSFULLY ###\n");
-        mySim.startSimulation();
+        mySim.setContinuousCondition(continuousCondition);
+        return mySim;
     }
 
+
     /**
-    This method creates the enclosures and populates them with the animals that have been read in from the config file.
-    If no enclosures have been specified in the config file, then it will create as many enclosures as there are animals with default values for food.
-    */
-    public void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
+     This method creates the enclosures and populates them with the animals that have been read in from the config file.
+     If no enclosures have been specified in the config file, then it will create as many enclosures as there are animals with default values for food.
+     */
+    public static void initializeEnclosure(ArrayList<String> enclosureConfig, HashMap<Animal, Integer> enclosureForAnimal, Integer numberOfEnclosuresToCreate)
     {
         ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
         if(enclosureConfig.size() == 0) {
@@ -193,10 +98,10 @@ public class ConfigFile
     }
 
     /**
-    This method is responsible for reading the data from the zooConfig arrayList and creating a foodStore, populating that
-    food store and finally creating the zoo object.
-    */
-    public void setUpZoo(ArrayList<String> zooAndFoodConfig)
+     This method is responsible for reading the data from the zooConfig arrayList and creating a foodStore, populating that
+     food store and finally creating the zoo object.
+     */
+    public static void setUpZoo(ArrayList<String> zooAndFoodConfig)
     {
         FoodStore tempZooStore = new FoodStore();
         for(String s : zooAndFoodConfig)
@@ -212,21 +117,21 @@ public class ConfigFile
             }
             tempZooStore.addFood(foodAndAmount[0], Integer.parseInt(foodAndAmount[1]));
         }
-        mySim.setZooSimLinkedTo(new Zoo(this.mySim, tempZooStore));
+        mySim.setZooSimLinkedTo(new Zoo(mySim, tempZooStore));
         System.out.println("Zoo initialised!");
     }
 
     /**
-    This method is responsible for extracting the animal's type, gender, health and enclosure number, and populating the enclosureForAnimal hashmap
-    */
-    public void initializeAnimals(ArrayList<String> animalConfig)
+     This method is responsible for extracting the animal's type, gender, health and enclosure number, and populating the enclosureForAnimal hashmap
+     */
+    public static void initializeAnimals(ArrayList<String> animalConfig)
     {
         for(String s : animalConfig)
         {
             String [] animalInfo = s.split(" ");
-            if(Integer.parseInt(animalInfo[4]) > numberOfEnclosuresToCreate)
+            if(Integer.parseInt(animalInfo[4]) > file.getNumberOfEnclosuresToCreate())
             {
-                numberOfEnclosuresToCreate = Integer.parseInt(animalInfo[4]);
+                numberOfEnclosuresToCreateNoneSpecified = Integer.parseInt(animalInfo[4]);
             }
             if(Integer.parseInt(animalInfo[3]) > 10 || Integer.parseInt(animalInfo[3]) <= 0)
             {
@@ -274,10 +179,10 @@ public class ConfigFile
     }
 
     /**
-    This method is responsible for extracting the types of keepers required from zooKeeperConfig and populating a tempKeeperList
-    with these keepers.
-    */
-    public void initializeKeepers(ArrayList<String> zookeeperConfig)
+     This method is responsible for extracting the types of keepers required from zooKeeperConfig and populating a tempKeeperList
+     with these keepers.
+     */
+    public static void initializeKeepers(ArrayList<String> zookeeperConfig)
     {
         ArrayList<ZooKeeper> tempKeeperList = new ArrayList<>();
         for(String s : zookeeperConfig)

@@ -8,7 +8,8 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Simulation mySim = new Simulation();
-        mySim.initialize(args[0], args[1]);
+        SimulationInitialize simulationInitialize = new SimulationInitialize();
+        simulationInitialize.beginConfigLoading("C:\\Users\\anton\\Desktop\\Zoo\\src\\config.txt");
+        simulationInitialize.setUpSimulation("false").startSimulation();
     }
 }

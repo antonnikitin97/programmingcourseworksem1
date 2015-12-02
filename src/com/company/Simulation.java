@@ -17,7 +17,7 @@ public class Simulation
     /**
     Method to start the process of reading the config file for the zoo, and the setting of the continuous variable.
     */
-    public void initialize(String pathOfFile, String continuousCondition)
+    public void setContinuousCondition(String continuousCondition)
     {
         switch (continuousCondition)
         {
@@ -32,9 +32,6 @@ public class Simulation
                 continuous = false;
                 break;
         }
-        //Creates a new config file and passes itself (the simulation) as a parameter so the configfile class can access simulation methods etc...
-        ConfigFile file = new ConfigFile(this);
-        file.getDirectoryOfFile(pathOfFile);
     }
 
     /**

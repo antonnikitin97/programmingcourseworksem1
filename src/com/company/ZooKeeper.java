@@ -63,14 +63,22 @@ public class ZooKeeper {
     */
     public void getFoodFromZooStore()
     {
+        Integer foodTaken = 0;
+        Integer foodRand = generator.nextInt(3);
         for (String foodInHashMap : this.zooFoodStore.getFoodStorage().keySet())
         {
-            if (this.zooFoodStore.takeFood(foodInHashMap, 5))
-            {
-                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, 5);
-                System.out.format("\n5 lots of %s from the zoo store has been added to enclosure %s!", foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+            while(foodRand.equals(0)){
+                foodRand = generator.nextInt(3);
+            }
+            if (this.zooFoodStore.takeFood(foodInHashMap, foodRand)) {
+                this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, foodRand);
+                System.out.format("\n%s lots of %s from the zoo store has been added to enclosure %s!",foodRand, foodInHashMap, zoo.enclosures.indexOf(this.enclosureKeeperAssignedTo));
+                foodTaken += foodRand;
             }else{
                 System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
+            }
+            if(foodTaken.equals(20)){
+                break;
             }
         }
     }
