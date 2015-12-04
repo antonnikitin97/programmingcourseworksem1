@@ -109,7 +109,7 @@ public abstract class Animal
                 if(temp.takeFood(s)) {
                     //Checks if the animal can eat food, if yes then we take an item and break out of the loop (to ensure only one item is eaten per month)
                     giveHealthAndAddWasteBasedOnFood(s, this.enclosureAnimalResidesIn, this);
-                    System.out.format("%s has eaten %s! Health is now %s\n", this.type , s, this.getHealth());
+                    System.out.format("%s (Gender: %s, Age: %s) has eaten %s! Health is now %s\n", this.type, this.getGender(), this.getAgeOfAnimal(), s, this.getHealth());
                     break;
                 }else{
                     System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n" ,this.type, s, s);

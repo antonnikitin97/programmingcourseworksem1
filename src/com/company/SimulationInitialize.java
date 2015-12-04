@@ -54,6 +54,7 @@ public class SimulationInitialize
         ArrayList<Enclosure> tempEnclosureList = new ArrayList<>();
         if(enclosureConfig.size() == 0) {
             System.out.println("No Enclosures configured in file! Resulting food will go to the zoo!");
+            //If no enclosures specified in config file, create that many...
             for(int i = 0; i <= numberOfEnclosuresToCreate; i ++)
             {
                 tempEnclosureList.add(new Enclosure());
@@ -74,6 +75,7 @@ public class SimulationInitialize
                 for (String s : enclosureConfig)
                 {
                     String[] enclosureInfo = s.split(" ");
+                    //Ascertain how much waste has been specified in the config file.
                     switch (enclosureInfo[0])
                     {
                         case "Waste":
