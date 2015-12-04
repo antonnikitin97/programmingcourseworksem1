@@ -68,7 +68,7 @@ public class ZooKeeper {
         for (String foodInHashMap : this.zooFoodStore.getFoodStorage().keySet())
         {
             while(foodRand.equals(0)){
-                foodRand = generator.nextInt(3);
+                foodRand = generator.nextInt(6);
             }
             if (this.zooFoodStore.takeFood(foodInHashMap, foodRand)) {
                 this.foodStoreKeeperAssignedTo.addFood(foodInHashMap, foodRand);
@@ -78,6 +78,7 @@ public class ZooKeeper {
                 System.out.format("\nNot enough of %s in the zoo store to add to enclosure!", foodInHashMap);
             }
             if(foodTaken.equals(20)){
+                System.out.format("\n20 items of food has been moved by this keeper! (%s)", this.getKeeperLabel());
                 break;
             }
         }

@@ -55,7 +55,7 @@ public abstract class Animal
     protected void addHealth(Integer healthToAdd)
     {
         if(checkIfHealthCanBeAdded(healthToAdd)) {
-            System.out.format("Health of %s cannot be increased by %s as it would exceed 10 health!\n", this.type, healthToAdd);
+            System.out.format("Health of %s (Gender: %s) cannot be increased by %s as it would exceed 10 health!\n", this.getType(), this.getGender(), healthToAdd);
         }else{
             this.health += healthToAdd;
         }
@@ -114,8 +114,7 @@ public abstract class Animal
                 }else{
                     System.out.format("%s tried to eat %s. Not enough of %s in store, continuing search...\n" ,this.type, s, s);
                     failedAttempts += 1;
-                    if(failedAttempts == this.eats.length)
-                    {
+                    if(failedAttempts == this.eats.length) {
                         System.out.format("No food available for %s to eat! :(\n", this.getType());
                         break;
                     }
@@ -128,8 +127,7 @@ public abstract class Animal
     Method that will treat the animal if the correct keeper is treating. This method is overridden in each sub-class
     so that the treat method for each individual animal can be called.
     */
-    public void treat(String keeperLabel)
-    {
+    public void treat(String keeperLabel) {
     	
     }
 
@@ -143,8 +141,7 @@ public abstract class Animal
     /**
     This method checks to see what food is being eaten, and adds food/waste accordingly.
     */
-    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure, Animal animal)
-    {
+    private void giveHealthAndAddWasteBasedOnFood(String food, Enclosure enclosure, Animal animal) {
         switch(food)
         {
             case "hay":
@@ -179,8 +176,7 @@ public abstract class Animal
     If it does, it'll print out an 'error' message and return false. If it doesn't, it'll add the planned health to the animal's health and return
     true.
     */
-    protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition)
-    {
+    protected Boolean checkIfHealthCanBeAdded(Integer plannedHealthAddition) {
         return (this.getHealth() + plannedHealthAddition > 10);
     }
 

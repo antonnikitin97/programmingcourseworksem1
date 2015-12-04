@@ -85,6 +85,10 @@ public class Enclosure
         {
             try
             {
+                /**
+                 * Checking if an animal is dead, if it is we add it to the list of dead animals, as we can't remove during the for loop as this will yield a
+                 * 'ConcurrentModification' exception.
+                 */
                 if(checkIfAnimalIsDead(a))
                 {
                     deadAnimalsToRemove.add(a);
@@ -258,6 +262,10 @@ public class Enclosure
         }
     }
 
+    /**
+     * Checks to see whether the enclosure is full and sets the 'isFull' variable
+     * accordingly.
+     */
     public void setFullStatus()
     {
         if(this.getSize() >= 20) {

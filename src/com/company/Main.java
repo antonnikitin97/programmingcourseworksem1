@@ -9,7 +9,7 @@ public class Main
     public static void main(String[] args)
     {
         SimulationInitialize simulationInitialize = new SimulationInitialize();
-        simulationInitialize.beginConfigLoading("C:\\Users\\anton\\Desktop\\Zoo\\src\\config.txt");
-        simulationInitialize.setUpSimulation("false").startSimulation();
+        simulationInitialize.beginConfigLoading(args[0]);
+        simulationInitialize.setUpSimulation(args[1]).startSimulation();
     }
 }
