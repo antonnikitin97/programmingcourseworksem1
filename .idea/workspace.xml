@@ -6,6 +6,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="12c4e788-1b3b-4123-a4ae-155e894d84c7" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/ECS Zoo.rar" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Animal.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Ape.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Bear.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/BigCat.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Chimpanzee.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Config.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Elephant.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Enclosure.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/FoodStore.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Giraffe.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Gorilla.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Lion.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Main.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Penguin.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/PhysioZooKeeper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/PlayZooKeeper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Simulation.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/SimulationInitialize.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Tiger.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/Zoo.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/com/company/ZooKeeper.class" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/out/production/programmingcourseworksem1/NotCode/Exemplar Config File" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="programmingcourseworksem1.iws" />
@@ -127,7 +150,7 @@
       <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.29115647">
+            <state vertical-scroll-proportion="0.65034014">
               <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
               <folding />
             </state>
@@ -829,7 +852,7 @@
       <workItem from="1449231368450" duration="6606000" />
       <workItem from="1449344166434" duration="1637000" />
       <workItem from="1449517390523" duration="3780000" />
-      <workItem from="1449536307480" duration="10744000" />
+      <workItem from="1449536307480" duration="10901000" />
     </task>
     <task id="LOCAL-00005" summary="Added some comments to the classes the explain method functionality.">
       <created>1447539619153</created>
@@ -1105,7 +1128,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210253000" />
+    <option name="totallyTimeSpent" value="210410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
@@ -1702,7 +1725,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.29115647">
+        <state vertical-scroll-proportion="0.65034014">
           <caret line="57" column="31" selection-start-line="57" selection-start-column="31" selection-end-line="57" selection-end-column="31" />
           <folding />
         </state>
