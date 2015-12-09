@@ -55,12 +55,12 @@ public class Simulation
         }
         while (continueInput);
         if(continuous) {
-            for (int i = 0; i <= numberOfIterations; i++) {
+            for (int i = 0; i < numberOfIterations; i++) {
                 //If continuous is set to true the simulation will just run uninterrupted until the sim ends.
                 zooSimLinkedTo.aMonthPasses();
             }
         }else{
-            for (int i = 0; i <= numberOfIterations; i++) {
+            for (int i = 0; i < numberOfIterations; i++) {
                 //If continuous is false, then the sim will pause after each iteration.
                 zooSimLinkedTo.aMonthPasses();
                 System.out.println("Iteration complete! Press 'enter' to continue!");
