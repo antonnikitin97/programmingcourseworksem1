@@ -33,8 +33,8 @@ public class Config {
      */
     public void getDirectoryOfFile(String configFilePath) {
         configFile = new File(configFilePath);
-        if(!configFile.exists() ||configFile.isDirectory()){
-            //user input
+        if(!configFile.exists() || !configFile.isDirectory()){
+            //Checks to see if config file exists, if not prompt for new file
             getDirectoryOfFile();
         }else{
             readConfig();
@@ -45,6 +45,7 @@ public class Config {
     public void getDirectoryOfFile() {
         boolean continueInput = false;
         do{
+            System.out.println("We could not find that file! Please enter a new path: ");
             configFilePath = inputScanner.nextLine();
             configFile = new File(configFilePath);
             continueInput = !configFile.exists() ||configFile.isDirectory();
