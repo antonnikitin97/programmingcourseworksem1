@@ -40,7 +40,7 @@ public class Simulation
     */
     public void startSimulation()
     {
-        System.out.println("Please enter the number of iterations that you want the sim to perform: ");
+        System.out.format("\nContinuous: %s Please enter the number of iterations that you want the sim to perform: ", continuous);
         try
         {
             //Attempts to take input from the user, throws an exception if NaN.

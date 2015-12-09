@@ -6,10 +6,10 @@ package com.company;
 
 public class Main
 {
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         SimulationInitialize simulationInitialize = new SimulationInitialize();
-        simulationInitialize.beginConfigLoading(args[0]);
-        simulationInitialize.setUpSimulation(args[1]).startSimulation();
+        String[] argumentsToPass = simulationInitialize.verifyArguments(args);
+        simulationInitialize.beginConfigLoading(argumentsToPass[0]);
+        simulationInitialize.setUpSimulation(argumentsToPass[1]).startSimulation();
     }
 }

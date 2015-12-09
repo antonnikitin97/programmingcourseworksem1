@@ -26,14 +26,32 @@ public class Config {
 
     Integer numberOfEnclosuresToCreate = 0;
 
+    /**
+     * Method for getting directory of file using values passed into the command prompt as arugamnts
+     * An overloaded version is provided
+     * @param configFilePath
+     */
     public void getDirectoryOfFile(String configFilePath) {
         configFile = new File(configFilePath);
-        readConfig();
+        if(!configFile.exists() ||configFile.isDirectory()){
+            //user input
+            getDirectoryOfFile();
+        }else{
+            readConfig();
+        }
+
     }
 
     public void getDirectoryOfFile() {
-        configFilePath = inputScanner.nextLine();
-        configFile = new File(configFilePath);
+        boolean continueInput = false;
+        do{
+            configFilePath = inputScanner.nextLine();
+            configFile = new File(configFilePath);
+            continueInput = !configFile.exists() ||configFile.isDirectory();
+            if(continueInput){
+                System.out.println("We cannot find the required file! Please try again!");
+            }
+        }while (continueInput);
         readConfig();
     }
 
@@ -81,16 +99,17 @@ public class Config {
         //Exception that is thrown if the file path entered is incorrect.
         catch (FileNotFoundException e) {
             System.out.println("We cannot find the required file! Please try again!");
-            getDirectoryOfFile();
         }catch(IOException e){
             e.printStackTrace();
         }finally{
             try{
                 bufferedReader.close();
-            } catch (IOException e) {
+            } catch (NullPointerException e) {
                 e.printStackTrace();
             }
-
+            catch (IOException e){
+                e.printStackTrace();
+            }
         }
     }
 

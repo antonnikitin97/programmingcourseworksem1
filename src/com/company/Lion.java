@@ -11,8 +11,7 @@ public class Lion extends BigCat
     This is because the parent class' constructor initializes default values for 'eats' and
     lifeExpectancy for 'BigCats'
     */
-    public Lion(Integer age, Integer health, char gender)
-    {
+    public Lion(Integer age, Integer health, char gender) {
         super(age, health, gender);
         this.setType("Lion");
     }
