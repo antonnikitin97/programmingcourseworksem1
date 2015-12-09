@@ -7,7 +7,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12c4e788-1b3b-4123-a4ae-155e894d84c7" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Config.java" afterPath="$PROJECT_DIR$/src/com/company/Config.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/com/company/Simulation.java" afterPath="$PROJECT_DIR$/src/com/company/Simulation.java" />
     </list>
     <ignored path="programmingcourseworksem1.iws" />
@@ -130,8 +129,8 @@
       <file leaf-file-name="Simulation.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2627866">
-              <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.340388">
+              <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -832,7 +831,7 @@
       <workItem from="1449231368450" duration="6606000" />
       <workItem from="1449344166434" duration="1637000" />
       <workItem from="1449517390523" duration="3780000" />
-      <workItem from="1449536307480" duration="10144000" />
+      <workItem from="1449536307480" duration="10470000" />
     </task>
     <task id="LOCAL-00005" summary="Added some comments to the classes the explain method functionality.">
       <created>1447539619153</created>
@@ -1086,11 +1085,17 @@
       <option name="project" value="LOCAL" />
       <updated>1449622410393</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="Added text to prompt the user to enter a new file if the passed in could not be found.">
+      <created>1449622740689</created>
+      <option name="number" value="00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1449622740689</updated>
+    </task>
+    <option name="localTasksCounter" value="48" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="209653000" />
+    <option name="totallyTimeSpent" value="209979000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1162,7 +1167,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Implemented breeding. &#10;Need to finalize testing.." />
     <MESSAGE value="Finalized breeding. &#10;Pre final testing!!" />
     <MESSAGE value="Commenting the breeding and fixing minor issues" />
     <MESSAGE value="Fixing minor issues..." />
@@ -1187,7 +1191,8 @@
     <MESSAGE value="Added some comments.&#10;Added (Gender: %s) to line 58 of Animal&#10;Changed main to allow for commands from the cmd prompt&#10;Added System.out.format(&quot;\n20 items of food has been moved by this keeper! (%s)&quot;, this.getKeeperLabel()); to ZooKeeper class." />
     <MESSAGE value="Changed amount of food to order each month from 40 to 80&#10;Added some comments to SimulationInitialize" />
     <MESSAGE value="Added code to handle wrong type of parameters in the command line." />
-    <option name="LAST_COMMIT_MESSAGE" value="Added code to handle wrong type of parameters in the command line." />
+    <MESSAGE value="Added text to prompt the user to enter a new file if the passed in could not be found." />
+    <option name="LAST_COMMIT_MESSAGE" value="Added text to prompt the user to enter a new file if the passed in could not be found." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1682,8 +1687,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Simulation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2627866">
-          <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.340388">
+          <caret line="44" column="70" selection-start-line="44" selection-start-column="70" selection-end-line="44" selection-end-column="70" />
           <folding />
         </state>
       </provider>

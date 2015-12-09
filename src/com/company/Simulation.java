@@ -41,16 +41,19 @@ public class Simulation
     public void startSimulation()
     {
         System.out.format("\nContinuous?: (%s) Please enter the number of iterations that you want the sim to perform: ", continuous);
-        try
-        {
-            //Attempts to take input from the user, throws an exception if NaN.
-            numberOfIterations = Integer.parseInt(inputScanner.nextLine());
+        boolean continueInput = true;
+        //Continue to prompt the user until a valid number is entered.
+        do{
+            try {
+                //Attempts to take input from the user, throws an exception if NaN.
+                numberOfIterations = Integer.parseInt(inputScanner.nextLine());
+                continueInput = false;
+            }
+            catch (NumberFormatException e) {
+                System.out.println("Input must be a number! Please try again!");
+            }
         }
-        catch (NumberFormatException e)
-        {
-            System.out.println("Input must be a number! Please try again!");
-            startSimulation();
-        }
+        while (continueInput);
         if(continuous) {
             for (int i = 0; i <= numberOfIterations; i++) {
                 //If continuous is set to true the simulation will just run uninterrupted until the sim ends.
